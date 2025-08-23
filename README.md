@@ -40,39 +40,32 @@ A modern, professional website for Nigeria's leading web design company, built w
 - **Deployment**: Vercel
 - **SEO**: Next.js built-in SEO, structured data, sitemap
 
+## 📁 Project Structure
 
-## 🎨 Customization
-
-### **Colors and Branding**
-Update the color scheme in `tailwind.config.js`:
-
-```javascript
-module.exports = {
-  theme: {
-    extend: {
-      colors: {
-        primary: {
-          50: '#eff6ff',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
-        },
-        // Add your brand colors
-      },
-    },
-  },
-}
 ```
-
-
-
-### **Technical SEO**
-- Fast loading times (<3 seconds)
-- Mobile optimization
-- Core Web Vitals optimization
-- Structured data markup
-- XML sitemap generation
-- Robots.txt optimization
+prowebnigeria/
+├── app/
+│   ├── components/          # React components
+│   │   ├── Header.js       # Navigation header
+│   │   ├── Hero.js         # Hero section
+│   │   ├── Services.js     # Services showcase
+│   │   ├── About.js        # About us section
+│   │   ├── Portfolio.js    # Portfolio showcase
+│   │   ├── Blog.js         # Blog section
+│   │   ├── Testimonials.js # Client testimonials
+│   │   ├── Contact.js      # Contact forms
+│   │   └── Footer.js       # Site footer
+│   ├── globals.css         # Global styles
+│   ├── layout.js           # Root layout with SEO
+│   └── page.js             # Home page
+├── public/                  # Static assets
+│   ├── robots.txt          # SEO robots file
+│   └── sitemap.xml         # SEO sitemap
+├── package.json            # Dependencies and scripts
+├── tailwind.config.js      # Tailwind configuration
+├── next.config.js          # Next.js configuration
+└── README.md               # Project documentation
+```
 
 ## 📱 Responsive Design
 
