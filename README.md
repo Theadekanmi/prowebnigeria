@@ -1,8 +1,8 @@
-# Website Designer Nigeria - Professional Web Design Company
+# ProWeb Nigeria - Professional Web Design Company
 
 A modern, professional website for Nigeria's leading web design company, built with Next.js 14, Tailwind CSS, and Framer Motion.
 
-## 🚀 Features
+##  Features
 
 ### **Core Website Features**
 - **Modern Design**: Clean, professional design with smooth animations
@@ -37,86 +37,9 @@ A modern, professional website for Nigeria's leading web design company, built w
 - **Styling**: Tailwind CSS, CSS3
 - **Animations**: Framer Motion
 - **Icons**: Lucide React
-- **Deployment**: Vercel (recommended), Netlify, or any hosting platform
+- **Deployment**: Vercel
 - **SEO**: Next.js built-in SEO, structured data, sitemap
 
-## 📋 Prerequisites
-
-Before running this project, make sure you have:
-
-- **Node.js** 18.17 or later
-- **npm** or **yarn** package manager
-- **Git** for version control
-
-## 🚀 Getting Started
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/yourusername/websitedesignernigeria.git
-cd websitedesignernigeria
-```
-
-### 2. Install Dependencies
-
-```bash
-npm install
-# or
-yarn install
-```
-
-### 3. Run the Development Server
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
-
-### 4. Build for Production
-
-```bash
-npm run build
-# or
-yarn build
-```
-
-### 5. Start Production Server
-
-```bash
-npm start
-# or
-yarn start
-```
-
-## 📁 Project Structure
-
-```
-websitedesignernigeria/
-├── app/
-│   ├── components/          # React components
-│   │   ├── Header.js       # Navigation header
-│   │   ├── Hero.js         # Hero section
-│   │   ├── Services.js     # Services showcase
-│   │   ├── About.js        # About us section
-│   │   ├── Portfolio.js    # Portfolio showcase
-│   │   ├── Blog.js         # Blog section
-│   │   ├── Testimonials.js # Client testimonials
-│   │   ├── Contact.js      # Contact forms
-│   │   └── Footer.js       # Site footer
-│   ├── globals.css         # Global styles
-│   ├── layout.js           # Root layout with SEO
-│   └── page.js             # Home page
-├── public/                  # Static assets
-│   ├── robots.txt          # SEO robots file
-│   └── sitemap.xml         # SEO sitemap
-├── package.json            # Dependencies and scripts
-├── tailwind.config.js      # Tailwind configuration
-├── next.config.js          # Next.js configuration
-└── README.md               # Project documentation
-```
 
 ## 🎨 Customization
 
@@ -141,39 +64,7 @@ module.exports = {
 }
 ```
 
-### **Content Updates**
-- **Company Information**: Update contact details, addresses, and company info in components
-- **Services**: Modify service offerings and pricing in `Services.js`
-- **Portfolio**: Add your projects in `Portfolio.js`
-- **Team**: Update team members in `About.js`
-- **Blog**: Add your blog posts in `Blog.js`
 
-### **SEO Configuration**
-Update SEO settings in `app/layout.js`:
-
-```javascript
-export const metadata = {
-  title: 'Your Company Name - Custom Title',
-  description: 'Your custom description',
-  keywords: ['your', 'custom', 'keywords'],
-  // ... other metadata
-}
-```
-
-## 🌍 SEO Features
-
-### **Local SEO (Nigeria)**
-- Google My Business integration ready
-- Local business schema markup
-- Nigeria-specific keywords and content
-- Lagos and Abuja office locations
-- Local business directories integration
-
-### **Global SEO**
-- International SEO optimization
-- Multi-language support ready
-- Global keyword targeting
-- Cross-border service descriptions
 
 ### **Technical SEO**
 - Fast loading times (<3 seconds)
@@ -207,94 +98,3 @@ Customize colors, fonts, and spacing
 
 ### **Next.js** (`next.config.js`)
 Configure Next.js settings and optimizations
-
-### **Package.json**
-Manage dependencies and scripts
-
-## 📊 Analytics Setup
-
-### **Google Analytics**
-1. Get your GA4 measurement ID
-2. Update the ID in `app/layout.js`
-3. Replace `GA_MEASUREMENT_ID` with your actual ID
-
-### **Google Search Console**
-1. Add your domain to Google Search Console
-2. Submit your sitemap.xml
-3. Monitor search performance
-
-## 🌐 Deployment
-
-### **Vercel (Recommended)**
-```bash
-npm install -g vercel
-vercel
-```
-
-### **Netlify**
-1. Connect your GitHub repository
-2. Build command: `npm run build`
-3. Publish directory: `.next`
-
-### **Other Hosting**
-1. Build the project: `npm run build`
-2. Upload the `.next` folder to your hosting
-3. Configure your server for Next.js
-
-## 📈 Monitoring and Maintenance
-
-### **Performance Monitoring**
-- Core Web Vitals tracking
-- Page load speed monitoring
-- User experience metrics
-
-### **SEO Monitoring**
-- Search rankings tracking
-- Organic traffic monitoring
-- Keyword performance
-
-### **Regular Updates**
-- Content updates
-- Security patches
-- Performance optimizations
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 📞 Support
-
-For support and questions:
-
-- **Email**: contact@websitedesignernigeria.com
-- **Phone**: +234 814 888 2303
-- **WhatsApp**: +234 814 888 2303
-
-## 🎯 Business Goals
-
-This website is designed to:
-
-1. **Generate Leads**: Multiple contact forms and CTAs
-2. **Showcase Work**: Professional portfolio display
-3. **Build Trust**: Client testimonials and case studies
-4. **Improve SEO**: Local and global search optimization
-5. **Convert Visitors**: Clear value propositions and CTAs
-
-## 🚀 Future Enhancements
-
-- **Multi-language Support**: French, Hausa, Yoruba
-- **E-commerce Integration**: Service booking system
-- **Client Portal**: Project management dashboard
-- **Advanced Analytics**: Conversion tracking and reporting
-- **Chat Integration**: Live chat and WhatsApp integration
-
----
-

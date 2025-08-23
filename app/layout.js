@@ -49,8 +49,8 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'ProWeb Nigeria - Professional Web Design & Development Company',
     description: 'Nigeria\'s leading web design company offering professional website development, e-commerce solutions, mobile apps, SEO services, and digital marketing.',
-    creator: '@websitedesignernigeria',
-    site: '@websitedesignernigeria',
+    creator: '@prowebnigeria',
+    site: '@prowebnigeria',
   },
   robots: {
     index: true,
@@ -154,13 +154,16 @@ export default function RootLayout({ children }) {
         
         {/* Business specific meta tags */}
         <meta name="business:contact:phone" content="+2348148882303" />
-        <meta name="business:contact:email" content="contact@websitedesignernigeria.com" />
+        <meta name="business:contact:email" content="prowebnigeria@gmail.com" />
         <meta name="business:contact:address" content="Lagos & Abuja, Nigeria" />
-        <meta name="business:contact:website" content="https://websitedesignernigeria.com" />
+        <meta name="business:contact:website" content="https://prowebnigeria.ng" />
         
         {/* Performance and security meta tags */}
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        {/* Bing Webmaster Tools Verification */}
+        <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE" />
       </head>
       <body className={inter.className}>
         {children}

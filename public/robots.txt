@@ -18,6 +18,10 @@ Allow: /services
 Allow: /portfolio
 Allow: /blog
 Allow: /contact
+Allow: /resources
+Allow: /pricing
+Allow: /courses
+Allow: /faq
 
 # Specific rules for search engines
 User-agent: Googlebot
@@ -31,3 +35,13 @@ Crawl-delay: 1
 User-agent: Slurp
 Allow: /
 Crawl-delay: 1
+
+# Additional search engines
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /

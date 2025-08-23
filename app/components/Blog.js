@@ -121,51 +121,51 @@ export default function Blog() {
               key={post.id}
               className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300"
             >
-              <div className="grid lg:grid-cols-2 gap-0">
-                <div className="h-64 lg:h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+              <div className="grid md:grid-cols-2 gap-0">
+                <div className="h-48 md:h-64 lg:h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
                   <div className="text-center">
-                    <Tag className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-                    <p className="text-gray-500">Featured Post Image</p>
+                    <Tag className="w-12 h-12 md:w-16 md:h-16 text-gray-400 mx-auto mb-2 md:mb-4" />
+                    <p className="text-gray-500 text-sm md:text-base">Featured Post Image</p>
                   </div>
                 </div>
                 
-                <div className="p-8 lg:p-12 flex flex-col justify-center">
-                  <div className="flex items-center space-x-4 mb-4">
+                <div className="p-6 md:p-8 lg:p-12 flex flex-col justify-center">
+                  <div className="flex flex-wrap items-center gap-2 md:gap-4 mb-4">
                     <span className="px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
                       {post.category}
                     </span>
                     <span className="text-sm text-gray-500">Featured</span>
                   </div>
                   
-                  <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 mb-4 leading-tight">
                     {post.title}
                   </h3>
                   
-                  <p className="text-gray-600 mb-6 leading-relaxed">
+                  <p className="text-gray-600 mb-6 leading-relaxed text-sm md:text-base">
                     {post.excerpt}
                   </p>
                   
-                  <div className="flex items-center space-x-6 text-sm text-gray-500 mb-6">
+                  <div className="flex flex-wrap items-center gap-4 md:gap-6 text-xs md:text-sm text-gray-500 mb-6">
                     <div className="flex items-center space-x-2">
-                      <User className="w-4 h-4" />
+                      <User className="w-3 h-3 md:w-4 md:h-4" />
                       <span>{post.author}</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <Calendar className="w-4 h-4" />
+                      <Calendar className="w-3 h-3 md:w-4 md:h-4" />
                       <span>{post.date}</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <Clock className="w-4 h-4" />
+                      <Clock className="w-3 h-3 md:w-4 md:h-4" />
                       <span>{post.readTime}</span>
                     </div>
                   </div>
                   
                   <Link
                     href={`/blog/${post.id}`}
-                    className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold group"
+                    className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold group text-sm md:text-base"
                   >
                     Read Full Article
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="ml-2 w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
@@ -179,12 +179,12 @@ export default function Blog() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-3 mb-12"
+          className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 md:mb-12 px-4"
         >
           {categories.map((category, index) => (
             <button
               key={category}
-              className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
+              className={`px-3 md:px-4 py-2 rounded-lg font-medium transition-all duration-300 text-sm md:text-base ${
                 index === 0
                   ? 'bg-blue-600 text-white shadow-lg'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -196,7 +196,7 @@ export default function Blog() {
         </motion.div>
 
         {/* Blog Posts Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16 px-4 md:px-0">
           {blogPosts.filter(post => !post.featured).map((post, index) => (
             <motion.article
               key={post.id}
@@ -207,44 +207,44 @@ export default function Blog() {
               className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
             >
               {/* Post Image */}
-              <div className="h-48 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+              <div className="h-40 md:h-48 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
                 <div className="text-center">
-                  <Tag className="w-12 h-12 text-gray-400 mx-auto mb-2" />
-                  <p className="text-gray-500 text-sm">Post Image</p>
+                  <Tag className="w-10 h-10 md:w-12 md:h-12 text-gray-400 mx-auto mb-2" />
+                  <p className="text-gray-500 text-xs md:text-sm">Post Image</p>
                 </div>
               </div>
               
               {/* Post Content */}
-              <div className="p-6">
+              <div className="p-4 md:p-6">
                 <div className="flex items-center justify-between mb-3">
-                  <span className="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">
+                  <span className="px-2 md:px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">
                     {post.category}
                   </span>
                   <span className="text-xs text-gray-500">{post.readTime}</span>
                 </div>
                 
-                <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
+                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 line-clamp-2">
                   {post.title}
                 </h3>
                 
-                <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                <p className="text-gray-600 text-xs md:text-sm mb-4 line-clamp-3">
                   {post.excerpt}
                 </p>
                 
                 <div className="flex items-center justify-between text-xs text-gray-500 mb-4">
                   <div className="flex items-center space-x-2">
                     <User className="w-3 h-3" />
-                    <span>{post.author}</span>
+                    <span className="truncate">{post.author}</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Calendar className="w-3 h-3" />
-                    <span>{post.date}</span>
+                    <span className="truncate">{post.date}</span>
                   </div>
                 </div>
                 
                 <Link
                   href={`/blog/${post.id}`}
-                  className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium text-sm group"
+                  className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium text-xs md:text-sm group"
                 >
                   Read More
                   <ArrowRight className="ml-1 w-3 h-3 group-hover:translate-x-1 transition-transform" />

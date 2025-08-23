@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Phone, Mail, MapPin, MessageCircle, Calendar, Clock, CheckCircle } from 'lucide-react';
 
 const Contact = () => {
@@ -14,6 +14,8 @@ const Contact = () => {
     budget: '',
     timeline: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   const handleInputChange = (e) => {
     setFormData({
@@ -22,10 +24,53 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      // Use Basin to send email (professional and reliable!)
+      const response = await fetch('https://usebasin.com/f/567a5c1e537b', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || 'Not provided',
+          company: formData.company || 'Not provided',
+          service: formData.service || 'General inquiry',
+          budget: formData.budget || 'Not specified',
+          timeline: formData.timeline || 'Not specified',
+          message: formData.message
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          message: '',
+          service: '',
+          budget: '',
+          timeline: ''
+        });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -43,7 +88,7 @@ const Contact = () => {
       description: "Book a consultation session",
       action: "Book Now",
       color: "from-blue-500 to-blue-600",
-      link: "/#contact"
+      link: "https://calendly.com/prowebnigeria/30min"
     },
     {
       icon: Mail,
@@ -247,10 +292,36 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="w-full py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-lg rounded-xl hover:shadow-2xl hover:shadow-blue-600/25 transform hover:-translate-y-1 transition-all duration-300"
+                  disabled={isSubmitting}
+                  className="w-full py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-lg rounded-xl hover:shadow-2xl hover:shadow-blue-600/25 transform hover:-translate-y-1 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
+
+                {/* Form Submission Status */}
+                {submitStatus === 'success' && (
+                  <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-xl">
+                    <div className="flex items-center space-x-2">
+                      <CheckCircle className="w-5 h-5 text-green-500" />
+                      <span className="text-green-700 font-medium">
+                        Message sent successfully! We'll get back to you within 24 hours.
+                      </span>
+                    </div>
+                  </div>
+                )}
+
+                {submitStatus === 'error' && (
+                  <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-xl">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-5 h-5 bg-red-500 rounded-full flex items-center justify-center">
+                        <span className="text-white text-xs font-bold">!</span>
+                      </div>
+                      <span className="text-red-700 font-medium">
+                        Failed to send message. Please try again or contact us directly.
+                      </span>
+                    </div>
+                  </div>
+                )}
               </form>
             </div>
 

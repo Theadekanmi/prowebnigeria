@@ -8,7 +8,6 @@ import {
   Code, 
   Globe, 
   ShoppingCart,
-  Smartphone,
   Search,
   Megaphone
 } from 'lucide-react'
@@ -21,7 +20,6 @@ export default function Portfolio() {
     { id: 'all', label: 'All Projects' },
     { id: 'web', label: 'Web Development' },
     { id: 'ecommerce', label: 'E-commerce' },
-    { id: 'mobile', label: 'Mobile Apps' },
     { id: 'branding', label: 'Branding' }
   ]
 
@@ -50,20 +48,9 @@ export default function Portfolio() {
       github: "#",
       featured: true
     },
+
     {
       id: 3,
-      title: "Abuja Real Estate App",
-      category: "mobile",
-      image: "/api/placeholder/600/400",
-      description: "Mobile application for real estate agents and property seekers in Abuja.",
-      technologies: ["React Native", "Firebase", "Google Maps API", "Push Notifications"],
-      results: "10,000+ downloads, 4.8 star rating on app stores",
-      link: "#",
-      github: "#",
-      featured: false
-    },
-    {
-      id: 4,
       title: "Nigerian Food Delivery",
       category: "web",
       image: "/api/placeholder/600/400",
@@ -75,7 +62,7 @@ export default function Portfolio() {
       featured: false
     },
     {
-      id: 5,
+      id: 4,
       title: "Church Management System",
       category: "web",
       image: "/api/placeholder/600/400",
@@ -87,7 +74,7 @@ export default function Portfolio() {
       featured: false
     },
     {
-      id: 6,
+      id: 5,
       title: "NGO Website & Portal",
       category: "web",
       image: "/api/placeholder/600/400",
@@ -99,7 +86,7 @@ export default function Portfolio() {
       featured: false
     },
     {
-      id: 7,
+      id: 6,
       title: "Travel Agency Platform",
       category: "web",
       image: "/api/placeholder/600/400",
@@ -111,7 +98,7 @@ export default function Portfolio() {
       featured: false
     },
     {
-      id: 8,
+      id: 7,
       title: "Healthcare Management System",
       category: "web",
       image: "/api/placeholder/600/400",
@@ -132,7 +119,6 @@ export default function Portfolio() {
     switch(category) {
       case 'web': return Globe
       case 'ecommerce': return ShoppingCart
-      case 'mobile': return Smartphone
       case 'branding': return Megaphone
       default: return Code
     }
