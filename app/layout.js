@@ -90,7 +90,7 @@ export default function RootLayout({ children }) {
               "name": "ProWeb Nigeria",
               "description": "Nigeria's leading web design company offering professional website development, e-commerce solutions, mobile apps, SEO services, and digital marketing.",
               "url": "https://prowebnigeria.ng",
-              "telephone": "+2348148882303",
+              "telephone": "08100098339",
               "email": "prowebnigeria@gmail.com",
               "address": [
                 {
@@ -153,7 +153,7 @@ export default function RootLayout({ children }) {
         <meta name="region" content="West Africa" />
         
         {/* Business specific meta tags */}
-        <meta name="business:contact:phone" content="+2348148882303" />
+        <meta name="business:contact:phone" content="08100098339" />
         <meta name="business:contact:email" content="prowebnigeria@gmail.com" />
         <meta name="business:contact:address" content="Lagos & Abuja, Nigeria" />
         <meta name="business:contact:website" content="https://prowebnigeria.ng" />
