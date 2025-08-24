@@ -164,6 +164,9 @@ export default function RootLayout({ children }) {
         
         {/* Bing Webmaster Tools Verification */}
         <meta name="msvalidate.01" content="259024B2A7C1EC254C50B67449B0B88D" />
+        
+        {/* Google Search Console Verification */}
+        <meta name="google-site-verification" content="7KH4o_a3Nl5DSZOu4hUD_mE4fwcKQhs2xxPRBArwl-0" />
       </head>
       <body className={inter.className}>
         {children}
