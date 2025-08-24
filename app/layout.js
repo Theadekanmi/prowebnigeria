@@ -163,7 +163,7 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         
         {/* Bing Webmaster Tools Verification */}
-        <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE" />
+        <meta name="msvalidate.01" content="259024B2A7C1EC254C50B67449B0B88D" />
       </head>
       <body className={inter.className}>
         {children}
