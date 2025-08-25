@@ -29,6 +29,9 @@ export default function ContactPage() {
       <main className="min-h-screen">
         <Header />
         <div className="pt-20">
+          <div className="container mx-auto px-4 mb-8">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-900">Contact ProWeb Nigeria</h1>
+          </div>
           <Contact />
         </div>
         <Footer />
