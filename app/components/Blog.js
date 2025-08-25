@@ -99,9 +99,9 @@ export default function Blog() {
           <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-blue-100 text-blue-800 mb-4">
             📚 Our Blog
           </span>
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Latest Insights & Updates
-          </h2>
+          </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Stay updated with the latest trends in web design, digital marketing, and technology. 
             Our expert team shares valuable insights to help your business grow.
@@ -161,7 +161,7 @@ export default function Blog() {
                   </div>
                   
                   <Link
-                    href={`/blog/${post.id}`}
+                    href={`/blog`}
                     className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold group text-sm md:text-base"
                   >
                     Read Full Article
@@ -243,7 +243,7 @@ export default function Blog() {
                 </div>
                 
                 <Link
-                  href={`/blog/${post.id}`}
+                  href={`/blog`}
                   className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium text-xs md:text-sm group"
                 >
                   Read More

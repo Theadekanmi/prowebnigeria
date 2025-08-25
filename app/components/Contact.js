@@ -80,7 +80,7 @@ const Contact = () => {
       description: "Quick responses via WhatsApp",
       action: "Chat Now",
       color: "from-green-500 to-green-600",
-      link: "https://wa.me/08100098339"
+      link: "https://wa.me/2348100098339"
     },
     {
       icon: Calendar,

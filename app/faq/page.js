@@ -9,6 +9,7 @@ export default function FAQPage() {
     <main className="min-h-screen">
       <Header />
       <div className="pt-20">
+        {/* Ensure an H1 exists inside FAQ component or add a fallback */}
         <FAQ />
       </div>
       <Footer />

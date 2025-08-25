@@ -84,9 +84,9 @@ const Resources = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Resources & Learning
-          </h2>
+          </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Access our comprehensive collection of resources, guides, and learning materials 
             to help you succeed in web design and development.
@@ -155,7 +155,7 @@ const Resources = () => {
                 <h4 className="font-semibold text-gray-900 mb-2 text-sm md:text-base">{resource.title}</h4>
                 <p className="text-xs md:text-sm text-gray-600 mb-4">{resource.description}</p>
                 <Link
-                  href={resource.link}
+                  href="/resources"
                   className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium text-xs md:text-sm group"
                 >
                   Read More
@@ -203,7 +203,7 @@ const Resources = () => {
               <ArrowRight className="w-5 h-5 ml-2" />
             </Link>
             <Link
-              href="https://wa.me/08100098339"
+              href="https://wa.me/2348100098339"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-4 border-2 border-blue-600 text-blue-600 font-bold text-lg rounded-xl hover:bg-blue-600 hover:text-white transition-all duration-300"
