@@ -92,6 +92,50 @@ const Hero = () => {
             ))}
           </div>
 
+          {/* Company Flyers Showcase */}
+          <div className="mt-16 pt-8 border-t border-gray-200">
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">
+              Our Company Overview
+            </h3>
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <div className="group cursor-pointer transform hover:scale-105 transition-all duration-300">
+                <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                  <img
+                    src="/flyers1.jpg"
+                    alt="ProWeb Nigeria Company Flyer - Digital Services"
+                    className="w-full h-64 object-cover group-hover:brightness-110 transition-all duration-300"
+                  />
+                  <div className="p-6">
+                    <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                      Digital Services Overview
+                    </h4>
+                    <p className="text-gray-600 text-sm">
+                      Professional web design, e-commerce solutions, and digital marketing services
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="group cursor-pointer transform hover:scale-105 transition-all duration-300">
+                <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                  <img
+                    src="/flyers2.jpg"
+                    alt="ProWeb Nigeria Company Flyer - Technology Stack"
+                    className="w-full h-64 object-cover group-hover:brightness-110 transition-all duration-300"
+                  />
+                  <div className="p-6">
+                    <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                      Technology & Innovation
+                    </h4>
+                    <p className="text-gray-600 text-sm">
+                      Modern tech stack, mobile-responsive design, and cutting-edge solutions
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Trust Indicators */}
           <div className="mt-16 pt-8 border-t border-gray-200">
             <p className="text-gray-500 mb-4">Trusted by businesses worldwide</p>

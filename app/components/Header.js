@@ -50,7 +50,7 @@ const Header = () => {
           </div>
           <div className="hidden md:flex items-center space-x-4">
             <a 
-              href="https://wa.me/08100098339" 
+              href="https://wa.me/2348100098339" 
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:text-accent-300 transition-colors"
@@ -70,15 +70,20 @@ const Header = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center space-x-2 group">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform duration-300">
-                PN
+            <Link href="/" className="flex items-center space-x-3 group">
+              <div className="header-logo-container">
+                <img
+                  src="/logo.jpg"
+                  alt="ProWeb Nigeria Logo"
+                  className="header-logo h-12 w-auto object-contain"
+                />
               </div>
               <div className="text-2xl font-bold text-gray-900">
                 <span className="text-blue-600">PROWEB</span>
                 <br />
                 <span className="text-purple-600">NIGERIA</span>
               </div>
+              <span className="sr-only">ProWeb Nigeria</span>
             </Link>
 
             {/* Desktop Navigation */}

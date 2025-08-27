@@ -12,6 +12,11 @@
   body {
     font-family: 'Inter', system-ui, sans-serif;
   }
+
+  /* Push content below fixed top bar (32px) + header (top-8 + h-20 ≈ 72px) */
+  main {
+    padding-top: 7rem; /* ~112px total to avoid header overlap on desktop */
+  }
   
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', system-ui, sans-serif;
@@ -71,6 +76,30 @@
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+}
+
+/* Logo styling for better integration */
+.header-logo {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  transition: all 0.3s ease;
+}
+
+.header-logo:hover {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+  transform: scale(1.05);
+}
+
+/* Ensure logo fits well in header */
+.header-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  border-radius: 12px;
+  padding: 4px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
 /* Blob animation for hero section */

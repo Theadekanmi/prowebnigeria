@@ -98,18 +98,68 @@ const About = () => {
             <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-3xl border border-blue-200">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
               <p className="text-gray-700 leading-relaxed">
-                To revolutionize the digital landscape by empowering businesses with cutting-edge web solutions that drive growth, 
-                enhance user experience, and deliver measurable results. We strive to be the catalyst that transforms ideas into 
-                powerful digital experiences.
+                To empower businesses with cutting-edge digital solutions that drive growth, 
+                enhance customer engagement, and establish a strong online presence in the digital marketplace.
               </p>
             </div>
             <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-3xl border border-purple-200">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
               <p className="text-gray-700 leading-relaxed">
-                To be the undisputed leader in web design and digital solutions worldwide, recognized for innovation, 
-                quality, and client success. We envision a future where every business has access to world-class digital 
-                tools and expertise.
+                To be the leading digital transformation partner for businesses across Africa, 
+                known for innovation, quality, and exceptional customer service.
               </p>
+            </div>
+          </div>
+
+          {/* Company Flyers Showcase */}
+          <div className="mb-20">
+            <div className="text-center mb-12">
+              <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                Our Company Overview
+              </h3>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                Discover our comprehensive range of digital services and technology expertise
+              </p>
+            </div>
+            
+            <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              <div className="group cursor-pointer transform hover:scale-105 transition-all duration-300">
+                <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl transition-all duration-300">
+                  <img
+                    src="/flyers1.jpg"
+                    alt="ProWeb Nigeria - Digital Services & Web Development"
+                    className="w-full h-80 object-cover group-hover:brightness-110 transition-all duration-300"
+                  />
+                  <div className="p-8">
+                    <h4 className="text-xl font-bold text-gray-900 mb-3">
+                      Complete Digital Solutions
+                    </h4>
+                    <p className="text-gray-600 leading-relaxed">
+                      From concept to launch, we provide end-to-end web development services including 
+                      responsive design, e-commerce platforms, and digital marketing solutions.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="group cursor-pointer transform hover:scale-105 transition-all duration-300">
+                <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl transition-all duration-300">
+                  <img
+                    src="/flyers2.jpg"
+                    alt="ProWeb Nigeria - Technology Stack & Innovation"
+                    className="w-full h-80 object-cover group-hover:brightness-110 transition-all duration-300"
+                  />
+                  <div className="p-8">
+                    <h4 className="text-xl font-bold text-gray-900 mb-3">
+                      Cutting-Edge Technology
+                    </h4>
+                    <p className="text-gray-600 leading-relaxed">
+                      We leverage the latest technologies and frameworks to create fast, secure, 
+                      and scalable web applications that give your business a competitive edge.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
