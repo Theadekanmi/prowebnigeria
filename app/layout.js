@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'ProWeb Nigeria - Professional Web Design & Development Company',
-  description: 'Nigeria\'s leading web design company offering professional website development, e-commerce solutions, mobile apps, SEO services, and digital marketing. Based in Lagos and Abuja.',
+  description: 'Leading Nigerian web design company for websites, e-commerce, SEO and digital marketing. Based in Lagos and Abuja.',
   keywords: [
     'web design nigeria',
     'website designer nigeria', 
@@ -31,7 +31,6 @@ export const metadata = {
   publisher: 'ProWeb Nigeria',
   metadataBase: new URL('https://prowebnigeria.ng'),
   alternates: {
-    canonical: '/',
     languages: {
       'en-US': '/en',
       'fr-FR': '/fr',
@@ -39,7 +38,7 @@ export const metadata = {
   },
   openGraph: {
     title: 'ProWeb Nigeria - Professional Web Design & Development Company',
-    description: 'Nigeria\'s leading web design company offering professional website development, e-commerce solutions, mobile apps, SEO services, and digital marketing. Based in Lagos and Abuja.',
+    description: 'Leading Nigerian web design company for websites, e-commerce, SEO and digital marketing. Based in Lagos and Abuja.',
     url: 'https://prowebnigeria.ng',
     siteName: 'ProWeb Nigeria',
     locale: 'en_US',
@@ -48,7 +47,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'ProWeb Nigeria - Professional Web Design & Development Company',
-    description: 'Nigeria\'s leading web design company offering professional website development, e-commerce solutions, mobile apps, SEO services, and digital marketing.',
+    description: 'Leading Nigerian web design company for websites, e-commerce, SEO and digital marketing. Based in Lagos and Abuja.',
     creator: '@prowebnigeria',
     site: '@prowebnigeria',
   },
