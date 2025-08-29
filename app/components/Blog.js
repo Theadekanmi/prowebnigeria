@@ -8,65 +8,77 @@ export default function Blog() {
   const blogPosts = [
     {
       id: 1,
-      title: "How to Create a Shopify Store in Nigeria",
-      excerpt: "Learn the step-by-step process of setting up a successful e-commerce store in Nigeria using Shopify, including payment gateway integration and local market strategies.",
-      author: "David Okonkwo",
-      date: "August 08, 2025",
-      readTime: "8 min read",
-      category: "E-commerce",
-      image: "/api/placeholder/400/250",
-      featured: true
+      title: "Web Design Services in Lagos, Nigeria",
+      excerpt: "Discover why Lagos businesses choose ProWeb Nigeria for professional web design, development, and digital solutions. Get insights into our services, pricing, and what makes us the leading web design company in Nigeria.",
+      author: "ProWeb Nigeria Team",
+      date: "January 27, 2025",
+      readTime: "12 min read",
+      category: "Web Design",
+      image: "/flyers1.jpg",
+      featured: true,
+      slug: "web-design-services-lagos-nigeria"
     },
     {
       id: 2,
+      title: "How to Create a Shopify Store in Nigeria",
+      excerpt: "Learn the step-by-step process of setting up a successful e-commerce store in Nigeria using Shopify, including payment gateway integration and local market strategies.",
+      author: "David Okonkwo",
+      date: "January 25, 2025",
+      readTime: "8 min read",
+      category: "E-commerce",
+      image: "/api/placeholder/400/250",
+      featured: false
+    },
+    {
+      id: 3,
       title: "SEO Best Practices for Nigerian Businesses",
       excerpt: "Discover proven SEO strategies that work specifically for the Nigerian market, including local SEO optimization and content strategies for African audiences.",
       author: "Sarah Adebayo",
-      date: "August 05, 2025",
+      date: "January 22, 2025",
       readTime: "12 min read",
       category: "SEO",
       image: "/api/placeholder/400/250",
       featured: false
     },
     {
-      id: 3,
+      id: 4,
       title: "Mobile App Development Trends in Africa",
       excerpt: "Explore the latest trends in mobile app development across Africa, including fintech solutions, e-commerce apps, and emerging technologies.",
       author: "Michael Chukwudi",
-      date: "August 01, 2025",
+      date: "January 20, 2025",
       readTime: "10 min read",
       category: "Mobile Development",
       image: "/api/placeholder/400/250",
       featured: false
     },
     {
-      id: 4,
+      id: 5,
       title: "Building Trust in Nigerian E-commerce",
       excerpt: "Learn how to build customer trust in your Nigerian e-commerce business through security measures, customer service, and local payment solutions.",
       author: "Grace Okechukwu",
-      date: "July 28, 2025",
+      date: "January 18, 2025",
       readTime: "6 min read",
       category: "Business",
       image: "/api/placeholder/400/250",
       featured: false
     },
     {
-      id: 5,
+      id: 6,
       title: "WordPress vs Custom Development: Which is Right for Your Business?",
       excerpt: "Compare WordPress and custom development solutions to determine the best approach for your Nigerian business website needs.",
       author: "David Okonkwo",
-      date: "July 25, 2025",
+      date: "January 15, 2025",
       readTime: "15 min read",
       category: "Web Development",
       image: "/api/placeholder/400/250",
       featured: false
     },
     {
-      id: 6,
+      id: 7,
       title: "Digital Marketing Strategies for Nigerian SMEs",
       excerpt: "Effective digital marketing strategies tailored for small and medium enterprises in Nigeria, including social media and Google Ads.",
       author: "Sarah Adebayo",
-      date: "July 22, 2025",
+      date: "January 12, 2025",
       readTime: "9 min read",
       category: "Digital Marketing",
       image: "/api/placeholder/400/250",
@@ -76,6 +88,7 @@ export default function Blog() {
 
   const categories = [
     "All Posts",
+    "Web Design",
     "E-commerce",
     "SEO",
     "Web Development",
@@ -123,10 +136,18 @@ export default function Blog() {
             >
               <div className="grid md:grid-cols-2 gap-0">
                 <div className="h-48 md:h-64 lg:h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
-                  <div className="text-center">
-                    <Tag className="w-12 h-12 md:w-16 md:h-16 text-gray-400 mx-auto mb-2 md:mb-4" />
-                    <p className="text-gray-500 text-sm md:text-base">Featured Post Image</p>
-                  </div>
+                  {post.image && post.image !== "/api/placeholder/400/250" ? (
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="text-center">
+                      <Tag className="w-12 h-12 md:w-16 md:h-16 text-gray-400 mx-auto mb-2 md:mb-4" />
+                      <p className="text-gray-500 text-sm md:text-base">Featured Post Image</p>
+                    </div>
+                  )}
                 </div>
                 
                 <div className="p-6 md:p-8 lg:p-12 flex flex-col justify-center">
@@ -161,11 +182,11 @@ export default function Blog() {
                   </div>
                   
                   <Link
-                    href={`/blog`}
+                    href={`/blog/${post.slug}`}
                     className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold group text-sm md:text-base"
                   >
                     Read Full Article
-                    <ArrowRight className="ml-2 w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
@@ -208,10 +229,18 @@ export default function Blog() {
             >
               {/* Post Image */}
               <div className="h-40 md:h-48 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
-                <div className="text-center">
-                  <Tag className="w-10 h-10 md:w-12 md:h-12 text-gray-400 mx-auto mb-2" />
-                  <p className="text-gray-500 text-xs md:text-sm">Post Image</p>
-                </div>
+                {post.image && post.image !== "/api/placeholder/400/250" ? (
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="text-center">
+                    <Tag className="w-10 h-10 md:w-12 md:h-12 text-gray-400 mx-auto mb-2" />
+                    <p className="text-gray-500 text-xs md:text-sm">Post Image</p>
+                  </div>
+                )}
               </div>
               
               {/* Post Content */}
@@ -243,7 +272,7 @@ export default function Blog() {
                 </div>
                 
                 <Link
-                  href={`/blog`}
+                  href={post.slug ? `/blog/${post.slug}` : `/blog`}
                   className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium text-xs md:text-sm group"
                 >
                   Read More

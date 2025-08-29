@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ArrowUp, Mail, Phone, MapPin, Globe } from 'lucide-react';
+import { ArrowUp, Mail, Phone, MapPin, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -41,14 +41,14 @@ const Footer = () => {
 
   const officeLocations = [
     {
-      city: 'Osogbo',
-      address: 'Osogbo, Osun State, Nigeria',
+      city: 'Lagos',
+      address: 'Otta Road, Ijora Olopa, Lagos State, Nigeria',
       phone: '08100098339',
       email: 'prowebnigeria@gmail.com'
     },
     {
-      city: 'Ibadan',
-      address: 'Ibadan, Oyo State, Nigeria',
+      city: 'Abuja',
+      address: 'Jabi, Gwarinpa, FCT, Nigeria',
       phone: '08100098339',
       email: 'prowebnigeria@gmail.com'
     }
@@ -62,8 +62,12 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center text-white font-bold text-xl">
-                PN
+              <div className="header-logo-container">
+                <img
+                  src="/logo.jpg"
+                  alt="ProWeb Nigeria Logo"
+                  className="header-logo h-12 w-auto object-contain"
+                />
               </div>
               <div className="text-2xl font-bold">
                 <span className="text-blue-400">PROWEB</span>
@@ -75,8 +79,14 @@ const Footer = () => {
               Professional web design services helping businesses across the world establish their digital presence with cutting-edge solutions.
             </p>
             <div className="flex space-x-4">
-              <a href="https://wa.me/08100098339" className="text-gray-400 hover:text-green-400 transition-colors">
-                <Globe className="w-5 h-5" />
+              <a 
+                href="https://wa.me/08100098339" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-green-400 transition-colors"
+                title="WhatsApp Support"
+              >
+                <MessageCircle className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -157,12 +167,14 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-xl transition-colors"
             >
+              <MessageCircle className="w-5 h-5 mr-2" />
               WhatsApp: 08100098339
             </a>
             <a
               href="tel:08100098339"
               className="inline-flex items-center justify-center px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-xl transition-colors"
             >
+              <Phone className="w-5 h-5 mr-2" />
               Emergency: 08100098339
             </a>
           </div>
