@@ -146,6 +146,44 @@ export default function RootLayout({ children }) {
           }}
         />
         
+        {/* Organization Logo structured data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "ProWeb Nigeria",
+              "url": "https://prowebnigeria.ng",
+              "logo": "https://prowebnigeria.ng/logo.jpg",
+              "sameAs": [
+                "https://www.facebook.com/prowebnigeria",
+                "https://www.instagram.com/prowebnigeria",
+                "https://www.linkedin.com/company/prowebnigeria",
+                "https://x.com/prowebnigeria"
+              ]
+            })
+          }}
+        />
+
+        {/* WebSite structured data with SearchAction */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "ProWeb Nigeria",
+              "url": "https://prowebnigeria.ng",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://prowebnigeria.ng/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            })
+          }}
+        />
+        
         {/* Additional meta tags for Nigeria/Africa targeting */}
         <meta name="geo.region" content="NG" />
         <meta name="geo.placename" content="Lagos, Abuja, Nigeria" />
