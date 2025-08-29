@@ -26,9 +26,9 @@ export const metadata = {
     'nigeria seo company',
     'nigeria digital marketing'
   ],
-  authors: [{ name: 'Website Designer Nigeria' }],
-  creator: 'Website Designer Nigeria',
-  publisher: 'Website Designer Nigeria',
+  authors: [{ name: 'ProWeb Nigeria' }],
+  creator: 'ProWeb Nigeria',
+  publisher: 'ProWeb Nigeria',
   metadataBase: new URL('https://prowebnigeria.ng'),
   alternates: {
     canonical: '/',
@@ -41,7 +41,7 @@ export const metadata = {
     title: 'ProWeb Nigeria - Professional Web Design & Development Company',
     description: 'Nigeria\'s leading web design company offering professional website development, e-commerce solutions, mobile apps, SEO services, and digital marketing. Based in Lagos and Abuja.',
     url: 'https://prowebnigeria.ng',
-    siteName: 'Website Designer Nigeria',
+    siteName: 'ProWeb Nigeria',
     locale: 'en_US',
     type: 'website',
   },
@@ -92,6 +92,12 @@ export default function RootLayout({ children }) {
               "url": "https://prowebnigeria.ng",
               "telephone": "08100098339",
               "email": "prowebnigeria@gmail.com",
+              "sameAs": [
+                "https://www.facebook.com/prowebnigeria",
+                "https://www.instagram.com/prowebnigeria",
+                "https://www.linkedin.com/company/prowebnigeria",
+                "https://x.com/prowebnigeria"
+              ],
               "address": [
                 {
                 "@type": "PostalAddress",
