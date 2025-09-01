@@ -4,6 +4,14 @@ const nextConfig = {
     domains: ['localhost'],
     formats: ['image/webp', 'image/avif'],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/favicon.ico',
+        destination: '/favicon-32x32.png',
+      },
+    ]
+  },
   async headers() {
     return [
       {

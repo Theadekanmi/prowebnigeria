@@ -30,12 +30,7 @@ export const metadata = {
   creator: 'ProWeb Nigeria',
   publisher: 'ProWeb Nigeria',
   metadataBase: new URL('https://prowebnigeria.ng'),
-  alternates: {
-    languages: {
-      'en-US': '/en',
-      'fr-FR': '/fr',
-    },
-  },
+  // Removed hreflang alternates for non-existent locales to avoid duplicate/canonical confusion
   openGraph: {
     title: 'ProWeb Nigeria - Professional Web Design & Development Company',
     description: 'Leading Nigerian web design company for websites, e-commerce, SEO and digital marketing. Based in Lagos and Abuja.',
