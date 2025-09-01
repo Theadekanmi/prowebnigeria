@@ -1,96 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Homepage -->
   <url>
     <loc>https://prowebnigeria.ng/</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  
-  <!-- Main Pages -->
   <url>
     <loc>https://prowebnigeria.ng/about</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
   <url>
     <loc>https://prowebnigeria.ng/services</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  
   <url>
     <loc>https://prowebnigeria.ng/portfolio</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  
   <url>
     <loc>https://prowebnigeria.ng/blog</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  
   <url>
     <loc>https://prowebnigeria.ng/contact</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  
   <url>
     <loc>https://prowebnigeria.ng/resources</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  
   <url>
     <loc>https://prowebnigeria.ng/pricing</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  
   <url>
     <loc>https://prowebnigeria.ng/courses</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  
   <url>
     <loc>https://prowebnigeria.ng/faq</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
-  
-  <!-- Resource Sub-pages -->
   <url>
     <loc>https://prowebnigeria.ng/resources/tech-tips</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
-  
   <url>
     <loc>https://prowebnigeria.ng/resources/tech-reviews</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
-  
-  <!-- Blog Posts -->
   <url>
     <loc>https://prowebnigeria.ng/blog/web-design-services-lagos-nigeria</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
