@@ -90,7 +90,8 @@ export default function RootLayout({ children }) {
                 "https://www.facebook.com/prowebnigeria",
                 "https://www.instagram.com/prowebnigeria",
                 "https://www.linkedin.com/company/prowebnigeria",
-                "https://x.com/prowebnigeria"
+                "https://x.com/prowebnigeria",
+                "https://www.tiktok.com/@prowebnigeria"
               ],
               "address": [
                 {
@@ -155,7 +156,8 @@ export default function RootLayout({ children }) {
                 "https://www.facebook.com/prowebnigeria",
                 "https://www.instagram.com/prowebnigeria",
                 "https://www.linkedin.com/company/prowebnigeria",
-                "https://x.com/prowebnigeria"
+                "https://x.com/prowebnigeria",
+                "https://www.tiktok.com/@prowebnigeria"
               ]
             })
           }}
