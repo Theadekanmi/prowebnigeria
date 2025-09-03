@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
@@ -218,8 +219,14 @@ export default function CoursesPage() {
   };
 
   return (
-    <main className="min-h-screen">
-      <Header />
+    <>
+      <Head>
+        <title>Web Development Courses - ProWeb Nigeria | Learn to Code</title>
+        <meta name="description" content="Master web development with our comprehensive courses. Learn React, Django, SEO, and more from industry experts in Nigeria." />
+        <link rel="canonical" href="https://prowebnigeria.ng/courses" />
+      </Head>
+      <main className="min-h-screen">
+        <Header />
       <div className="pt-20">
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-blue-50 via-white to-purple-50 py-20">
@@ -443,8 +450,9 @@ export default function CoursesPage() {
           </div>
         </section>
       </div>
-      <Footer />
-      <FloatingWhatsApp />
-    </main>
+        <Footer />
+        <FloatingWhatsApp />
+      </main>
+    </>
   );
 }

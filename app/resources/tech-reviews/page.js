@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import FloatingWhatsApp from '../../components/FloatingWhatsApp';
@@ -108,8 +109,14 @@ export default function TechReviewsPage() {
   };
 
   return (
-    <main className="min-h-screen">
-      <Header />
+    <>
+      <Head>
+        <title>Technology Reviews & Analysis - ProWeb Nigeria</title>
+        <meta name="description" content="In-depth reviews of web technologies, frameworks, and tools. Get expert insights to make informed decisions for your projects." />
+        <link rel="canonical" href="https://prowebnigeria.ng/resources/tech-reviews" />
+      </Head>
+      <main className="min-h-screen">
+        <Header />
       <div className="pt-20">
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-blue-50 via-white to-purple-50 py-20">
@@ -229,8 +236,9 @@ export default function TechReviewsPage() {
           </div>
         </section>
       </div>
-      <Footer />
-      <FloatingWhatsApp />
-    </main>
+        <Footer />
+        <FloatingWhatsApp />
+      </main>
+    </>
   );
 }

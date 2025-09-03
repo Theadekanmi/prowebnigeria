@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
@@ -92,8 +93,14 @@ export default function PricingPage() {
   ];
 
   return (
-    <main className="min-h-screen">
-      <Header />
+    <>
+      <Head>
+        <title>Web Design Pricing - ProWeb Nigeria | Transparent Pricing</title>
+        <meta name="description" content="Get transparent pricing for web design, development, and digital marketing services. Custom quotes tailored to your project needs." />
+        <link rel="canonical" href="https://prowebnigeria.ng/pricing" />
+      </Head>
+      <main className="min-h-screen">
+        <Header />
       <div className="pt-20">
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-blue-50 via-white to-purple-50 py-20">
@@ -301,8 +308,9 @@ export default function PricingPage() {
           </div>
         </section>
       </div>
-      <Footer />
-      <FloatingWhatsApp />
-    </main>
+        <Footer />
+        <FloatingWhatsApp />
+      </main>
+    </>
   );
 }
