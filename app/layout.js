@@ -1,7 +1,20 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Inter, Poppins } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+  variable: '--font-inter'
+})
+
+const poppins = Poppins({ 
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  display: 'swap',
+  preload: true,
+  variable: '--font-poppins'
+})
 
 export const metadata = {
   title: 'ProWeb Nigeria - Professional Web Design & Development Company',
@@ -66,6 +79,8 @@ export default function RootLayout({ children }) {
         {/* Preconnect to external domains for performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://wa.me" />
+        <link rel="dns-prefetch" href="https://the-adekanmi.vercel.app" />
         
         {/* Favicon and app icons */}
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -90,8 +105,7 @@ export default function RootLayout({ children }) {
                 "https://www.facebook.com/prowebnigeria",
                 "https://www.instagram.com/prowebnigeria",
                 "https://www.linkedin.com/company/prowebnigeria",
-                "https://x.com/prowebnigeria",
-                "https://www.tiktok.com/@prowebnigeria"
+                "https://x.com/prowebnigeria"
               ],
               "address": [
                 {
@@ -156,8 +170,7 @@ export default function RootLayout({ children }) {
                 "https://www.facebook.com/prowebnigeria",
                 "https://www.instagram.com/prowebnigeria",
                 "https://www.linkedin.com/company/prowebnigeria",
-                "https://x.com/prowebnigeria",
-                "https://www.tiktok.com/@prowebnigeria"
+                "https://x.com/prowebnigeria"
               ]
             })
           }}
@@ -208,7 +221,7 @@ export default function RootLayout({ children }) {
         {/* Google Search Console Verification */}
         <meta name="google-site-verification" content="7KH4o_a3Nl5DSZOu4hUD_mE4fwcKQhs2xxPRBArwl-0" />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.variable} ${poppins.variable} font-sans`}>
         {children}
       </body>
     </html>

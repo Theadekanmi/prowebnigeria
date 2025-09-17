@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, ExternalLink, Play, Star } from 'lucide-react';
 
 const Hero = () => {
@@ -100,9 +101,13 @@ const Hero = () => {
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <div className="group cursor-pointer transform hover:scale-105 transition-all duration-300">
                 <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
-                  <img
-                    src="/flyers1.jpg"
+                  <Image
+                    src="/flyers1.webp"
                     alt="ProWeb Nigeria Company Flyer - Digital Services"
+                    width={400}
+                    height={256}
+                    priority={false}
+                    loading="lazy"
                     className="w-full h-64 object-cover group-hover:brightness-110 transition-all duration-300"
                   />
                   <div className="p-6">
@@ -118,9 +123,13 @@ const Hero = () => {
               
               <div className="group cursor-pointer transform hover:scale-105 transition-all duration-300">
                 <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
-                  <img
-                    src="/flyers2.jpg"
+                  <Image
+                    src="/flyers2.webp"
                     alt="ProWeb Nigeria Company Flyer - Technology Stack"
+                    width={400}
+                    height={256}
+                    priority={false}
+                    loading="lazy"
                     className="w-full h-64 object-cover group-hover:brightness-110 transition-all duration-300"
                   />
                   <div className="p-6">

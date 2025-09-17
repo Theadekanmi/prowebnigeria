@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowUp, Mail, Phone, MapPin, MessageCircle, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
 
 const Footer = () => {
@@ -63,9 +64,12 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
               <div className="header-logo-container">
-                <img
-                  src="/logo.jpg"
+                <Image
+                  src="/logo.webp"
                   alt="ProWeb Nigeria Logo"
+                  width={48}
+                  height={48}
+                  priority={false}
                   className="header-logo h-12 w-auto object-contain"
                 />
               </div>

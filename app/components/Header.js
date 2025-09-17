@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X, ChevronDown, Phone, Mail } from 'lucide-react';
 
 const Header = () => {
@@ -72,9 +73,12 @@ const Header = () => {
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-3 group">
               <div className="header-logo-container">
-                <img
-                  src="/logo.jpg"
+                <Image
+                  src="/logo.webp"
                   alt="ProWeb Nigeria Logo"
+                  width={48}
+                  height={48}
+                  priority={true}
                   className="header-logo h-12 w-auto object-contain"
                 />
               </div>
