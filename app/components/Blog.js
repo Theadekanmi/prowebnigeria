@@ -1,6 +1,5 @@
 'use client'
 import React from 'react'
-import { motion } from 'framer-motion'
 import { Calendar, Clock, User, ArrowRight, Tag } from 'lucide-react'
 import Link from 'next/link'
 
@@ -102,13 +101,7 @@ export default function Blog() {
     <section id="blog" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-blue-100 text-blue-800 mb-4">
             📚 Our Blog
           </span>
@@ -119,14 +112,10 @@ export default function Blog() {
             Stay updated with the latest trends in web design, digital marketing, and technology. 
             Our expert team shares valuable insights to help your business grow.
           </p>
-        </motion.div>
+        </div>
 
         {/* Featured Post */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+        <div
           className="mb-16"
         >
           {blogPosts.filter(post => post.featured).map((post) => (
@@ -192,14 +181,10 @@ export default function Blog() {
               </div>
             </div>
           ))}
-        </motion.div>
+        </div>
 
         {/* Category Filter */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+        <div
           className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 md:mb-12 px-4"
         >
           {categories.map((category, index) => (
@@ -214,12 +199,12 @@ export default function Blog() {
               {category}
             </button>
           ))}
-        </motion.div>
+        </div>
 
         {/* Blog Posts Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16 px-4 md:px-0">
           {blogPosts.filter(post => !post.featured).map((post, index) => (
-            <motion.article
+            <article
               key={post.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -279,16 +264,12 @@ export default function Blog() {
                   <ArrowRight className="ml-1 w-3 h-3 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
-            </motion.article>
+            </article>
           ))}
         </div>
 
         {/* Newsletter Signup */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+        <div
           className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-8 lg:p-12 text-white text-center"
         >
           <h3 className="text-3xl font-bold mb-4">
@@ -314,14 +295,10 @@ export default function Blog() {
               We respect your privacy. Unsubscribe at any time.
             </p>
           </div>
-        </motion.div>
+        </div>
 
         {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+        <div
           className="text-center mt-16"
         >
           <div className="bg-gray-50 rounded-3xl p-8 lg:p-12">
@@ -348,7 +325,7 @@ export default function Blog() {
               </Link>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

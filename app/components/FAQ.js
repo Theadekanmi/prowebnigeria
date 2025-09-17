@@ -1,6 +1,5 @@
 'use client'
 import React, { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown, HelpCircle } from 'lucide-react'
 
 const FAQ = () => {
@@ -57,7 +56,7 @@ const FAQ = () => {
     <section id="faq" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <motion.div
+        <div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -74,13 +73,13 @@ const FAQ = () => {
             Get answers to the most common questions about our web design services, 
             development process, and what makes us the best choice for your project.
           </p>
-        </motion.div>
+        </div>
 
         {/* FAQ Grid */}
         <div className="max-w-4xl mx-auto">
           <div className="grid gap-4">
             {faqs.map((faq, index) => (
-              <motion.div
+              <div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -100,18 +99,17 @@ const FAQ = () => {
                       {faq.question}
                     </h3>
                   </div>
-                  <motion.div
+                  <div
                     animate={{ rotate: openIndex === index ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
                     className="flex-shrink-0"
                   >
                     <ChevronDown className="w-5 h-5 text-gray-500" />
-                  </motion.div>
+                  </div>
                 </button>
 
-                <AnimatePresence>
                   {openIndex === index && (
-                    <motion.div
+                    <div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
@@ -125,16 +123,15 @@ const FAQ = () => {
                           </p>
                         </div>
                       </div>
-                    </motion.div>
+                    </div>
                   )}
-                </AnimatePresence>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
 
         {/* CTA Section */}
-        <motion.div
+        <div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
@@ -172,7 +169,7 @@ const FAQ = () => {
             <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
             <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full blur-xl" />
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

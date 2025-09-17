@@ -120,10 +120,7 @@ export default function Testimonials() {
     <section id="testimonials" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+        <div
           viewport={{ once: true }}
           className="text-center mb-16"
         >
@@ -137,37 +134,31 @@ export default function Testimonials() {
             Don't just take our word for it. Here's what our satisfied clients across Nigeria and Africa 
             have to say about their experience working with us.
           </p>
-        </motion.div>
+        </div>
 
         {/* Stats Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+        <div
           viewport={{ once: true }}
           className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
         >
           {stats.map((stat, index) => (
-            <motion.div
+            <div
               key={stat.label}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
               className="text-center"
             >
               <div className="text-3xl font-bold text-blue-600 mb-2">{stat.number}</div>
               <div className="text-gray-600">{stat.label}</div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
 
         {/* Main Testimonials */}
         <div className="max-w-6xl mx-auto mb-16">
           <div className="relative">
             {/* Testimonial Cards */}
             <AnimatePresence mode="wait">
-              <motion.div
+              <div
                 key={currentTestimonial}
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -238,7 +229,7 @@ export default function Testimonials() {
                     </button>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </AnimatePresence>
 
             {/* Navigation Arrows */}
@@ -290,10 +281,7 @@ export default function Testimonials() {
         </div>
 
         {/* Additional Testimonials Grid */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+        <div
           viewport={{ once: true }}
           className="mb-16"
         >
@@ -302,11 +290,8 @@ export default function Testimonials() {
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {testimonials.slice(0, 6).map((testimonial, index) => (
-              <motion.div
+              <div
                 key={testimonial.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
               >
@@ -334,16 +319,13 @@ export default function Testimonials() {
                   </div>
                   <span className="text-xs text-gray-500">{testimonial.results}</span>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+        <div
           viewport={{ once: true }}
           className="text-center"
         >
@@ -369,7 +351,7 @@ export default function Testimonials() {
               </a>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

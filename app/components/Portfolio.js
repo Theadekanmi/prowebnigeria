@@ -1,6 +1,5 @@
 'use client'
 import React, { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 import { 
   ExternalLink, 
   Github, 
@@ -128,10 +127,7 @@ export default function Portfolio() {
     <section id="portfolio" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+        <div
           viewport={{ once: true }}
           className="text-center mb-16"
         >
@@ -145,13 +141,10 @@ export default function Portfolio() {
             Explore our diverse portfolio of successful projects that have transformed businesses 
             across Nigeria and Africa. Each project represents our commitment to quality and innovation.
           </p>
-        </motion.div>
+        </div>
 
         {/* Filter Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+        <div
           viewport={{ once: true }}
           className="flex flex-wrap justify-center gap-4 mb-12"
         >
@@ -168,18 +161,13 @@ export default function Portfolio() {
               {filter.label}
             </button>
           ))}
-        </motion.div>
+        </div>
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          <AnimatePresence mode="wait">
             {filteredProjects.map((project, index) => (
-              <motion.div
+              <div
                 key={project.id}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -30 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
               >
                 {/* Project Image */}
@@ -253,24 +241,17 @@ export default function Portfolio() {
                     </a>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
-          </AnimatePresence>
         </div>
 
         {/* Project Modal */}
         {selectedProject && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+          <div
             className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
             onClick={() => setSelectedProject(null)}
           >
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
+            <div
               className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
@@ -351,15 +332,12 @@ export default function Portfolio() {
                   </div>
                 </div>
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         )}
 
         {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+        <div
           viewport={{ once: true }}
           className="text-center"
         >
@@ -385,7 +363,7 @@ export default function Portfolio() {
               </a>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )
