@@ -1,6 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Basic configuration only
+  reactStrictMode: true,
+  swcMinify: true,
+  experimental: {
+    outputFileTracingRoot: undefined
+  },
+  output: 'standalone'
 }
 
 module.exports = nextConfig
