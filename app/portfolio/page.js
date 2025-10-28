@@ -2,6 +2,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import FloatingWhatsApp from '../components/FloatingWhatsApp'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, ExternalLink } from 'lucide-react'
 
 export const metadata = {
@@ -18,7 +19,7 @@ export default function PortfolioPage({ searchParams }) {
       category: 'E‑commerce',
       description: 'Modern online store with secure payments and inventory synchronization for smooth operations.',
       result: '300% increase in monthly sales within 3 months',
-      image: '/projects/ecommerce-uk.jpg',
+      image: '/funmitan.png',
       link: 'https://funmitanempire.uk',
       caseStudy: '/case-studies'
     },
@@ -27,7 +28,7 @@ export default function PortfolioPage({ searchParams }) {
       category: 'Construction',
       description: 'Infrastructure and civil works showcase with service pages, project highlights, and lead-capture CTAs.',
       result: '800% increase in monthly sales within 3 months',
-      image: '/projects/hitech.jpg',
+      image: '/Hitech.png',
       link: 'https://coastal-road.vercel.app/',
       caseStudy: '/case-studies'
     },
@@ -36,7 +37,7 @@ export default function PortfolioPage({ searchParams }) {
       category: 'Freelancing',
       description: 'A modern freelance marketplace connecting buyers and service providers with streamlined search and secure workflows.',
       result: '170% increase in monthly sales within 3 months',
-      image: '/projects/kata-kara.jpg',
+      image: '/kata-kara.png',
       link: 'https://kata-kara.vercel.app/',
       caseStudy: '/case-studies'
     },
@@ -45,7 +46,7 @@ export default function PortfolioPage({ searchParams }) {
       category: 'Hospitality',
       description: 'Responsive food delivery experience with intuitive ordering, reservations, and optimized checkout.',
       result: '400% increase in monthly sales within 3 months',
-      image: '/projects/omnifood.jpg',
+      image: '/Omnifood.jpg',
       link: 'https://omnifood-dusky.vercel.app/',
       caseStudy: '/case-studies'
     },
@@ -54,7 +55,7 @@ export default function PortfolioPage({ searchParams }) {
       category: 'Utilities & Payments',
       description: 'Airtime/data top‑ups, bill payments, and digital services—fast, reliable, and affordable.',
       result: '200% increase in monthly sales within 3 months',
-      image: '/projects/superjara.jpg',
+      image: '/Super-jara.jpg',
       link: 'https://superjara-zeta.vercel.app/',
       caseStudy: '/case-studies'
     },
@@ -63,7 +64,7 @@ export default function PortfolioPage({ searchParams }) {
       category: 'Metal Scrap',
       description: 'Smart recycling platform that connects users with scrap buyers and nearby collection centers using AI matching.',
       result: '100% increase in monthly sales within 3 months',
-      image: '/projects/metal-scrap.jpg',
+      image: '/Metascrap.jpg',
       link: 'https://kata-kara.vercel.app/',
       caseStudy: '/case-studies'
     },
@@ -96,7 +97,7 @@ export default function PortfolioPage({ searchParams }) {
     },
     {
       title: 'Restaurant Website',
-      category: 'Hospitality',
+      category: 'Web Design',
       description: 'Beautiful restaurant website with online ordering',
       result: '200% more orders',
       image: '/projects/restaurant.jpg',
@@ -106,7 +107,7 @@ export default function PortfolioPage({ searchParams }) {
   ]
 
   // Pagination (server-side via searchParams)
-  const pageSize = 5
+  const pageSize = 6
   const currentPage = Math.max(1, parseInt(searchParams?.page || '1', 10) || 1)
   const totalPages = Math.max(1, Math.ceil(projects.length / pageSize))
   const startIndex = (currentPage - 1) * pageSize
@@ -137,11 +138,11 @@ export default function PortfolioPage({ searchParams }) {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {pagedProjects.map((project, index) => (
                 <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
-                  <div className="h-64 bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center">
-                    <div className="text-6xl">🚀</div>
+                  <div className="relative h-64 bg-neutral-100">
+                    <Image src={project.image || '/logo.webp'} alt={project.title} fill className="object-cover" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
                   </div>
                   <div className="p-6">
                     <div className="text-purple-600 text-sm font-semibold mb-2">{project.category}</div>
