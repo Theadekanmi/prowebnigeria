@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { MapPin, Phone, Mail, Clock, CheckCircle, Code2, ShoppingCart, Search, TrendingUp } from 'lucide-react'
 
 export const metadata = {
-  title: 'Web Design Services in Lagos | Professional Website Development Lagos Nigeria',
+  title: 'Web Design Lagos | ProWeb Nigeria',
   description: 'Expert web design services in Lagos, Nigeria. Custom websites, e-commerce development, SEO & digital marketing. Serving Lagos businesses with modern web solutions.',
   keywords: [
     'web design lagos',

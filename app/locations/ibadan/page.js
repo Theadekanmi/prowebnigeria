@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { MapPin, Phone, Mail, Clock, CheckCircle, Code2, ShoppingCart, Search, TrendingUp } from 'lucide-react'
 
 export const metadata = {
-  title: 'Web Design Services in Ibadan | Professional Website Development Oyo State Nigeria',
+  title: 'Web Design Ibadan | ProWeb Nigeria',
   description: 'Expert web design services in Ibadan, Oyo State, Nigeria. Custom websites, e-commerce development, SEO & digital marketing. Serving Ibadan businesses with modern web solutions.',
   keywords: [
     'web design ibadan',

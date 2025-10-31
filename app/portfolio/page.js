@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { ArrowRight, ExternalLink } from 'lucide-react'
 
 export const metadata = {
-  title: 'Our Portfolio | ProWeb Nigeria - Web Design & Development Projects',
+  title: 'Portfolio | ProWeb Nigeria',
   description: 'View our portfolio of successful web design and development projects. From e-commerce to corporate websites, see how we have helped Nigerian businesses grow online.',
   keywords: ['web design portfolio nigeria', 'prowebnigeria projects', 'website examples lagos', 'web development portfolio'],
   alternates: {
@@ -23,7 +23,7 @@ export default function PortfolioPage({ searchParams }) {
       description: 'Modern online store with secure payments and inventory synchronization for smooth operations.',
       result: '300% increase in monthly sales within 3 months',
       image: '/funmitan.png',
-      link: 'https://funmitanempire.uk',
+      link: '',
       caseStudy: '/case-studies'
     },
     {
@@ -32,7 +32,7 @@ export default function PortfolioPage({ searchParams }) {
       description: 'Infrastructure and civil works showcase with service pages, project highlights, and lead-capture CTAs.',
       result: '800% increase in monthly sales within 3 months',
       image: '/Hitech.png',
-      link: 'https://coastal-road.vercel.app/',
+      link: '',
       caseStudy: '/case-studies'
     },
     {
@@ -41,7 +41,7 @@ export default function PortfolioPage({ searchParams }) {
       description: 'A modern freelance marketplace connecting buyers and service providers with streamlined search and secure workflows.',
       result: '170% increase in monthly sales within 3 months',
       image: '/kata-kara.png',
-      link: 'https://kata-kara.vercel.app/',
+      link: '',
       caseStudy: '/case-studies'
     },
     {
@@ -50,7 +50,7 @@ export default function PortfolioPage({ searchParams }) {
       description: 'Responsive food delivery experience with intuitive ordering, reservations, and optimized checkout.',
       result: '400% increase in monthly sales within 3 months',
       image: '/Omnifood.jpg',
-      link: 'https://omnifood-dusky.vercel.app/',
+      link: '',
       caseStudy: '/case-studies'
     },
     {
@@ -59,7 +59,7 @@ export default function PortfolioPage({ searchParams }) {
       description: 'Airtime/data top‑ups, bill payments, and digital services—fast, reliable, and affordable.',
       result: '200% increase in monthly sales within 3 months',
       image: '/Super-jara.jpg',
-      link: 'https://superjara-zeta.vercel.app/',
+      link: '',
       caseStudy: '/case-studies'
     },
     {
@@ -68,7 +68,7 @@ export default function PortfolioPage({ searchParams }) {
       description: 'Smart recycling platform that connects users with scrap buyers and nearby collection centers using AI matching.',
       result: '100% increase in monthly sales within 3 months',
       image: '/Metascrap.jpg',
-      link: 'https://kata-kara.vercel.app/',
+      link: '',
       caseStudy: '/case-studies'
     },
     {

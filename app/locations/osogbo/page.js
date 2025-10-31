@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { MapPin, Phone, Mail, Clock, CheckCircle, Code2, ShoppingCart, Search, TrendingUp } from 'lucide-react'
 
 export const metadata = {
-  title: 'Web Design Services in Osogbo | Professional Website Development Osun State Nigeria',
+  title: 'Web Design Osogbo | ProWeb Nigeria',
   description: 'Expert web design services in Osogbo, Osun State, Nigeria. Custom websites, e-commerce development, SEO & digital marketing. Serving Osogbo businesses with modern web solutions.',
   keywords: [
     'web design osogbo',

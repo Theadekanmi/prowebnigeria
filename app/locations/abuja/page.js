@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { MapPin, Phone, Mail, Clock, CheckCircle, Code2, ShoppingCart, Search, TrendingUp } from 'lucide-react'
 
 export const metadata = {
-  title: 'Web Design Services in Abuja | Professional Website Development Abuja Nigeria',
+  title: 'Web Design Abuja | ProWeb Nigeria',
   description: 'Expert web design services in Abuja, Nigeria. Custom websites, e-commerce development, SEO & digital marketing. Serving Abuja businesses with modern web solutions.',
   keywords: [
     'web design abuja',

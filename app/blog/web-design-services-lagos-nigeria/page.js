@@ -22,7 +22,7 @@ import {
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Professional Web Design Services in Lagos Nigeria - ProWeb Nigeria',
+  title: 'Web Design Lagos Guide | ProWeb Nigeria',
   description: 'Get professional web design services in Lagos, Nigeria. Custom websites, e-commerce solutions, and digital marketing. Serving businesses across Lagos and Nigeria.',
   keywords: [
     'web design services lagos',
@@ -49,6 +49,9 @@ export const metadata = {
     ],
     locale: 'en_US',
     type: 'article',
+  },
+  alternates: {
+    canonical: '/blog/web-design-services-lagos-nigeria',
   },
 };
 

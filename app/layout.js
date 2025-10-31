@@ -198,7 +198,7 @@ export default function RootLayout({ children }) {
               "@type": "Organization",
               "name": "ProWeb Nigeria",
               "url": "https://prowebnigeria.ng",
-              "logo": "https://prowebnigeria.ng/logo.jpg",
+              "logo": "https://prowebnigeria.ng/logo.webp",
               "sameAs": [
                 "https://www.facebook.com/prowebnigeria",
                 "https://www.instagram.com/prowebnigeria",

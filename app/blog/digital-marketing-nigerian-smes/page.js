@@ -20,7 +20,7 @@ import {
 } from 'lucide-react';
 
 export const metadata = {
-  title: 'Digital Marketing Strategies for Nigerian SMEs - ProWeb Nigeria',
+  title: 'Digital Marketing for Nigerian SMEs | ProWeb Nigeria',
   description: 'Discover effective digital marketing strategies specifically designed for Nigerian small and medium enterprises. Boost your online presence and grow your business.',
   keywords: [
     'digital marketing nigeria',
@@ -46,6 +46,9 @@ export const metadata = {
     ],
     locale: 'en_US',
     type: 'article',
+  },
+  alternates: {
+    canonical: '/blog/digital-marketing-nigerian-smes',
   },
 };
 
