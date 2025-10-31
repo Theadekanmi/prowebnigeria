@@ -5,9 +5,12 @@ import Link from 'next/link'
 import { ArrowRight, Calendar, User } from 'lucide-react'
 
 export const metadata = {
-  title: 'Blog | ProWeb Nigeria - Web Development Tips & News',
+  title: 'Blog | ProWeb Nigeria',
   description: 'Read our blog for web development tips, digital marketing strategies, and tech news for Nigerian businesses.',
-  keywords: ['web development blog nigeria', 'digital marketing tips', 'tech news lagos', 'website tips']
+  keywords: ['web development blog nigeria', 'digital marketing tips', 'tech news lagos', 'website tips'],
+  alternates: {
+    canonical: '/blog',
+  }
 }
 
 export default function BlogPage() {

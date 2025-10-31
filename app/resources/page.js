@@ -5,9 +5,12 @@ import Link from 'next/link'
 import { ArrowRight, BookOpen, Wrench } from 'lucide-react'
 
 export const metadata = {
-  title: 'Resources | ProWeb Nigeria - Web Development Resources',
+  title: 'Resources | ProWeb Nigeria',
   description: 'Free web development resources, tech tips, and reviews for Nigerian developers and business owners.',
-  keywords: ['web development resources', 'tech tips nigeria', 'tech reviews', 'free resources']
+  keywords: ['web development resources', 'tech tips nigeria', 'tech reviews', 'free resources'],
+  alternates: {
+    canonical: '/resources',
+  }
 }
 
 export default function ResourcesPage() {

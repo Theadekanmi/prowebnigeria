@@ -1,7 +1,9 @@
 export const metadata = {
   title: 'Search - ProWeb Nigeria',
   description: 'Search for web design services, portfolio projects, and resources on ProWeb Nigeria.',
-  canonical: 'https://prowebnigeria.ng/search',
+  alternates: {
+    canonical: '/search',
+  },
 }
 
 export default function SearchPage() {

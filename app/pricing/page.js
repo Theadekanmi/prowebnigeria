@@ -5,9 +5,12 @@ import Link from 'next/link'
 import { ArrowRight, Check } from 'lucide-react'
 
 export const metadata = {
-  title: 'Pricing | ProWeb Nigeria - Affordable Web Development Packages',
+  title: 'Pricing | ProWeb Nigeria',
   description: 'Affordable web development pricing for Nigerian businesses. Get transparent pricing for websites, e-commerce, and mobile apps. Free consultation available.',
-  keywords: ['web development pricing nigeria', 'website cost lagos', 'affordable web design', 'ecommerce pricing nigeria']
+  keywords: ['web development pricing nigeria', 'website cost lagos', 'affordable web design', 'ecommerce pricing nigeria'],
+  alternates: {
+    canonical: '/pricing',
+  }
 }
 
 export default function PricingPage() {
