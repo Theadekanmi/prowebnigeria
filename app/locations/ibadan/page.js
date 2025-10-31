@@ -32,6 +32,9 @@ export const metadata = {
     description: 'Expert web design services in Ibadan, Oyo State, Nigeria. Custom websites, e-commerce development, SEO & digital marketing.',
     url: 'https://prowebnigeria.ng/locations/ibadan',
   },
+  alternates: {
+    canonical: '/locations/ibadan',
+  },
 }
 
 export default function IbadanPage() {

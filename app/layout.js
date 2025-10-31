@@ -17,7 +17,10 @@ const poppins = Poppins({
 })
 
 export const metadata = {
-  title: 'ProWeb Nigeria: High-Performance Web Solutions for Ambitious Businesses',
+  title: {
+    default: 'ProWeb Nigeria: High-Performance Web Solutions for Ambitious Businesses',
+    template: '%s | ProWeb Nigeria',
+  },
   description: 'We build high-performance websites that drive measurable growth. See how we delivered a 500% sales increase for a Lagos e-commerce store. Modern tech stack: React, Next.js, Node.js.',
   keywords: [
     'web design nigeria',
@@ -65,6 +68,9 @@ export const metadata = {
   creator: 'ProWeb Nigeria',
   publisher: 'ProWeb Nigeria',
   metadataBase: new URL('https://prowebnigeria.ng'),
+  alternates: {
+    canonical: '/',
+  },
   // Removed hreflang alternates for non-existent locales to avoid duplicate/canonical confusion
   openGraph: {
     title: 'ProWeb Nigeria: High-Performance Web Solutions for Ambitious Businesses',
@@ -93,6 +99,11 @@ export const metadata = {
     },
   },
 }
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
 
 export default function RootLayout({ children }) {
   return (
@@ -235,7 +246,6 @@ export default function RootLayout({ children }) {
         
         {/* Performance and security meta tags */}
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         
         {/* Bing Webmaster Tools Verification */}
         <meta name="msvalidate.01" content="2C29CA8949449057E7C9E452457058C1" />

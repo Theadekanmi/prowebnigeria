@@ -25,7 +25,10 @@ export const metadata = {
     'ecommerce success stories lagos',
     'fintech development nigeria',
     'website performance results'
-  ]
+  ],
+  alternates: {
+    canonical: '/case-studies',
+  }
 };
 
 const CaseStudiesPage = () => {

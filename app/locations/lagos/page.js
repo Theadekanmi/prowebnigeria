@@ -26,6 +26,9 @@ export const metadata = {
     description: 'Expert web design services in Lagos, Nigeria. Custom websites, e-commerce development, SEO & digital marketing.',
     url: 'https://prowebnigeria.ng/locations/lagos',
   },
+  alternates: {
+    canonical: '/locations/lagos',
+  },
 }
 
 export default function LagosPage() {

@@ -26,6 +26,9 @@ export const metadata = {
     description: 'Expert web design services in Abuja, Nigeria. Custom websites, e-commerce development, SEO & digital marketing.',
     url: 'https://prowebnigeria.ng/locations/abuja',
   },
+  alternates: {
+    canonical: '/locations/abuja',
+  },
 }
 
 export default function AbujaPage() {

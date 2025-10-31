@@ -22,7 +22,10 @@ export const metadata = {
     'e-commerce solutions',
     'mobile app development',
     'digital marketing nigeria'
-  ]
+  ],
+  alternates: {
+    canonical: '/services',
+  }
 }
 
 export default function ServicesPage() {

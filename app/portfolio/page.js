@@ -8,7 +8,10 @@ import { ArrowRight, ExternalLink } from 'lucide-react'
 export const metadata = {
   title: 'Our Portfolio | ProWeb Nigeria - Web Design & Development Projects',
   description: 'View our portfolio of successful web design and development projects. From e-commerce to corporate websites, see how we have helped Nigerian businesses grow online.',
-  keywords: ['web design portfolio nigeria', 'prowebnigeria projects', 'website examples lagos', 'web development portfolio']
+  keywords: ['web design portfolio nigeria', 'prowebnigeria projects', 'website examples lagos', 'web development portfolio'],
+  alternates: {
+    canonical: '/portfolio',
+  }
 }
 
 export default function PortfolioPage({ searchParams }) {

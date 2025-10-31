@@ -32,6 +32,9 @@ export const metadata = {
     description: 'Expert web design services in Osogbo, Osun State, Nigeria. Custom websites, e-commerce development, SEO & digital marketing.',
     url: 'https://prowebnigeria.ng/locations/osogbo',
   },
+  alternates: {
+    canonical: '/locations/osogbo',
+  },
 }
 
 export default function OsogboPage() {
