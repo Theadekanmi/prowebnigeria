@@ -12,7 +12,7 @@ export const metadata = {
     'website consultation lagos',
     'web development abuja',
     'free website quote nigeria'
-  ]
+  ],
   alternates: {
     canonical: '/contact',
   }
