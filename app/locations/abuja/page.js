@@ -123,6 +123,25 @@ export default function AbujaPage() {
         </div>
       </section>
 
+      {/* Local expertise copy */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-gray-700 leading-relaxed text-lg">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Web Experiences for Abuja Audiences</h2>
+            <p className="mb-6">
+              Abuja customers expect professionalism and clarity. We craft clean, credible websites that communicate value in seconds,
+              load quickly on mobile, and make it effortless to call, WhatsApp, or submit an enquiry. From Maitama and Asokoro to Jabi,
+              Gwarinpa and Wuse, our builds reflect the high standards Abuja businesses operate with.
+            </p>
+            <p className="mb-6">
+              We pay attention to the small things that move the needle: consistent branding, clear pricing tables, service pages that
+              answer real objections, and structured data that helps Google understand your offer. We’ll also set up analytics so you
+              can measure leads by channel and double down on what works.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Areas We Serve */}
       <section className="py-20">
         <div className="container mx-auto px-4">

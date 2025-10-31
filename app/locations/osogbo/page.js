@@ -129,6 +129,24 @@ export default function OsogboPage() {
         </div>
       </section>
 
+      {/* Local expertise copy */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-gray-700 leading-relaxed text-lg">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Websites that Work in Osogbo</h2>
+            <p className="mb-6">
+              We build for Osogbo’s realities: many users are on mobile, network speeds vary, and trust is everything. Your site will
+              load fast, speak clearly, and guide visitors to take action—call, WhatsApp, or request a quote. Whether you serve Oke Baale,
+              Oke Fia, Oja Oba or around Ilesa Road, we make sure your business looks credible and is easy to reach.
+            </p>
+            <p className="mb-6">
+              Need content help? We’ll help turn your services into simple, compelling copy. Already have a site? We’ll audit speed and
+              SEO, fix the blockers, and track results. The goal is simple: more enquiries from the right customers at a fair budget.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Areas We Serve */}
       <section className="py-20">
         <div className="container mx-auto px-4">

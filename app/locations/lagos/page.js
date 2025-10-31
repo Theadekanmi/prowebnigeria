@@ -123,6 +123,30 @@ export default function LagosPage() {
         </div>
       </section>
 
+      {/* Local expertise copy */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-gray-700 leading-relaxed text-lg">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Built for Lagos Businesses</h2>
+            <p className="mb-6">
+              Lagos moves fast—and your website should too. We design for the reality of Lagos traffic (both road and internet):
+              fast-loading pages on mobile networks, clear calls-to-action, and forms that don’t frustrate users. Whether you’re
+              serving Victoria Island, Lekki, Ikoyi, Surulere, Yaba or Ikeja, we build experiences that feel trustworthy, modern
+              and easy to use.
+            </p>
+            <p className="mb-6">
+              We focus on outcomes: more qualified enquiries for service businesses, more checkouts for e‑commerce, and better
+              analytics so you can see what’s working. Our Lagos clients value straight talk—no fluff, just a practical plan,
+              weekly updates, and a clean launch.
+            </p>
+            <p className="mb-6">
+              If you already have a website, we can audit speed, SEO, and conversion, then fix what matters most. If you’re just
+              starting, we’ll help with content, images, and a simple process that respects your time.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Areas We Serve */}
       <section className="py-20">
         <div className="container mx-auto px-4">

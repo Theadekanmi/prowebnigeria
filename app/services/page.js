@@ -188,6 +188,70 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Why businesses choose us (human, realistic copy) */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Why Nigerian Businesses Choose ProWeb Nigeria
+            </h2>
+            <div className="space-y-6 text-gray-700 leading-relaxed text-lg">
+              <p>
+                We don’t sell templates or buzzwords. We build websites that solve real problems—
+                from getting more qualified enquiries to improving checkout conversion. Before we write
+                a line of code, we make sure we understand your goals, market, and constraints. That’s
+                how we’ve been able to deliver results for startups, SMEs, and established brands across
+                Lagos, Abuja, Osogbo and Ibadan.
+              </p>
+              <p>
+                Our approach is practical: clear scope, honest timelines, no hidden fees. We optimise
+                for mobile first (because that’s where your customers are), keep pages fast on Nigerian
+                networks, and set up the analytics you need to measure what matters. When something isn’t
+                working, we say it plainly and fix it—no jargon.
+              </p>
+              <p>
+                You’ll work directly with a technical lead, not a sales rep. Weekly updates keep you in
+                the loop, and we handle everything from design to deployment and ongoing maintenance. If
+                you need a quick edit at 8pm before a campaign launches, we’re the team that actually picks
+                the call.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Process section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Project Process</h2>
+            <div className="grid md:grid-cols-3 gap-8 text-gray-700">
+              <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                <h3 className="text-xl font-semibold mb-3">1) Discovery & Scope</h3>
+                <p>
+                  We clarify business goals, audiences, content, integrations, and success metrics. You get a
+                  clear proposal with scope, timeline, and budget.
+                </p>
+              </div>
+              <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                <h3 className="text-xl font-semibold mb-3">2) Design & Build</h3>
+                <p>
+                  We prototype key pages, agree on a visual direction, then implement with Next.js, Tailwind,
+                  and best-practice SEO. We share a preview link for feedback.
+                </p>
+              </div>
+              <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                <h3 className="text-xl font-semibold mb-3">3) Launch & Grow</h3>
+                <p>
+                  We deploy, monitor performance, and iterate. Need content updates, A/B tests or feature
+                  expansions? We handle it under ongoing support.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Additional Services */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">

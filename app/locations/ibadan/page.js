@@ -129,6 +129,24 @@ export default function IbadanPage() {
         </div>
       </section>
 
+      {/* Local expertise copy */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-gray-700 leading-relaxed text-lg">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Made for Ibadan Businesses</h2>
+            <p className="mb-6">
+              From Bodija to Challenge and Ring Road, Ibadan businesses win online with clarity and speed. We design websites that
+              explain your offer in plain language, look great on mobile, and make it easy to contact you. No heavy pages, no
+              confusion—just a smooth path from visit to enquiry.
+            </p>
+            <p className="mb-6">
+              We’ll help you decide the right pages to launch with, structure your services, write conversion‑focused content, and
+              set up tracking so you know which channels bring real leads. As you grow, we’ll iterate with new pages and features.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Areas We Serve */}
       <section className="py-20">
         <div className="container mx-auto px-4">
