@@ -1,0 +1,10 @@
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Disallow admin and private areas (if any in future)
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://prowebnigeria.ng/sitemap.xml
+
