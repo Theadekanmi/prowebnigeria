@@ -109,6 +109,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        {/* Emergency styling fallback: Tailwind CDN to ensure styles render in production */}
+        <script src="https://cdn.tailwindcss.com"></script>
         {/* Preconnect to external domains for performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
