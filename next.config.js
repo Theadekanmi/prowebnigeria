@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Disable build tracing to prevent stack overflow errors
+  outputFileTracing: false,
+  
   // Performance optimizations
   swcMinify: true,
   compress: true,
