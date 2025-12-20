@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Search - ProWeb Nigeria',
+  title: 'Search ProWeb Nigeria | Find Web Design Services & Resources',
   description: 'Search for web design services, portfolio projects, and resources on ProWeb Nigeria.',
   alternates: {
     canonical: '/search',

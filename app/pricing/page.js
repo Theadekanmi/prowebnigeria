@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { ArrowRight, Check } from 'lucide-react'
 
 export const metadata = {
-  title: 'Pricing',
+  title: 'Web Design Pricing Nigeria | Affordable Website Costs Lagos',
   description: 'Affordable web development pricing for Nigerian businesses. Get transparent pricing for websites, e-commerce, and mobile apps. Free consultation available.',
   keywords: ['web development pricing nigeria', 'website cost lagos', 'affordable web design', 'ecommerce pricing nigeria'],
   alternates: {

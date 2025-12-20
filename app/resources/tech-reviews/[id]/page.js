@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 export async function generateMetadata({ params }) {
   return {
-    title: 'Tech Review - ProWeb Nigeria',
+    title: 'Tech Tool Review | Web Development Tools Comparison Guide',
     description: 'In-depth review of web development tools and technologies. Expert insights to help you choose the right tools for your project.',
     alternates: {
       canonical: `/resources/tech-reviews/${params.id}`,

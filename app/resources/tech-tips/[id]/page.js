@@ -5,6 +5,20 @@ import FloatingWhatsApp from '../../../components/FloatingWhatsApp'
 import { Clock, User, ArrowLeft, Share2, Bookmark } from 'lucide-react'
 import Link from 'next/link'
 
+export async function generateMetadata({ params }) {
+  return {
+    title: 'Tech Tip | Web Development Tutorial & Best Practices Guide',
+    description: 'Learn web development best practices and tips. Expert tutorials to improve your coding skills and build better websites.',
+    alternates: {
+      canonical: `/resources/tech-tips/${params.id}`,
+    },
+    robots: {
+      index: true,
+      follow: true,
+    }
+  }
+}
+
 export default function TechTipDetailPage({ params }) {
   // This would normally fetch data based on params.id
   const tip = {

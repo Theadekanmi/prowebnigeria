@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { ArrowRight, Calendar, User } from 'lucide-react'
 
 export const metadata = {
-  title: 'Blog',
+  title: 'Web Development Blog Nigeria | Digital Marketing & Tech Tips',
   description: 'Read our blog for web development tips, digital marketing strategies, and tech news for Nigerian businesses.',
   keywords: ['web development blog nigeria', 'digital marketing tips', 'tech news lagos', 'website tips'],
   alternates: {

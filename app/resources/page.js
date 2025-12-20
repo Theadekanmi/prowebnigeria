@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { ArrowRight, BookOpen, Wrench } from 'lucide-react'
 
 export const metadata = {
-  title: 'Resources',
+  title: 'Web Development Resources | Tech Tips & Reviews Nigeria',
   description: 'Free web development resources, tech tips, and reviews for Nigerian developers and business owners.',
   keywords: ['web development resources', 'tech tips nigeria', 'tech reviews', 'free resources'],
   alternates: {

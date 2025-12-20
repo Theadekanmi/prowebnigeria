@@ -4,7 +4,7 @@ import FloatingWhatsApp from '../components/FloatingWhatsApp';
 import ContactForm from '../components/ContactForm';
 
 export const metadata = {
-  title: 'Contact',
+  title: 'Contact ProWeb Nigeria | Free Website Consultation & Quote',
   description: 'Ready to transform your business with a high-performance website? Contact ProWeb Nigeria for a free consultation and quote. We serve Lagos, Abuja, and all of Nigeria.',
   keywords: [
     'contact proweb nigeria',

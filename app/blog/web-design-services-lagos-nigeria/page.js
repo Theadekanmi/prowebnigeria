@@ -22,7 +22,7 @@ import {
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Web Design Lagos Guide',
+  title: 'Web Design Services Lagos Nigeria | Complete Guide & Pricing',
   description: 'Get professional web design services in Lagos, Nigeria. Custom websites, e-commerce solutions, and digital marketing. Serving businesses across Lagos and Nigeria.',
   keywords: [
     'web design services lagos',

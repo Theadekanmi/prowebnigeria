@@ -24,7 +24,7 @@ import {
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Tech Reviews & Tool Comparisons - Web Development Tools',
+  title: 'Tech Reviews & Tool Comparisons | Web Development Tools Guide',
   description: 'In-depth reviews of web development tools, frameworks, and technologies. Compare the best tools for your next project with expert insights.',
   keywords: [
     'web development tools review',
@@ -36,7 +36,7 @@ export const metadata = {
     'programming tools'
   ],
   openGraph: {
-    title: 'Tech Reviews & Tool Comparisons - Web Development Tools',
+    title: 'Tech Reviews & Tool Comparisons | Web Development Tools Guide',
     description: 'In-depth reviews of web development tools, frameworks, and technologies. Expert insights to help you choose the right tools.',
     url: 'https://prowebnigeria.ng/resources/tech-reviews',
     siteName: 'ProWeb Nigeria',

@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { ArrowRight, Clock, Users, Award } from 'lucide-react'
 
 export const metadata = {
-  title: 'Courses',
+  title: 'Web Development Courses Nigeria | Learn Coding Lagos & Abuja',
   description: 'Learn web development in Nigeria. Professional training courses in HTML, CSS, JavaScript, React, Next.js and more. Join our classes in Lagos and Abuja.',
   keywords: ['web development courses nigeria', 'coding classes lagos', 'learn programming abuja', 'web design training'],
   alternates: {

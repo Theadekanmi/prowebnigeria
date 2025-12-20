@@ -21,7 +21,7 @@ import {
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Tech Tips & Tutorials - Web Development Best Practices',
+  title: 'Tech Tips & Tutorials | Web Development Best Practices Guide',
   description: 'Discover expert web development tips, tutorials, and best practices. Learn Next.js, JavaScript, TypeScript, and modern web technologies from industry professionals.',
   keywords: [
     'web development tips',
@@ -33,7 +33,7 @@ export const metadata = {
     'web development guide'
   ],
   openGraph: {
-    title: 'Tech Tips & Tutorials - Web Development Best Practices',
+    title: 'Tech Tips & Tutorials | Web Development Best Practices Guide',
     description: 'Discover expert web development tips, tutorials, and best practices. Learn from industry professionals.',
     url: 'https://prowebnigeria.ng/resources/tech-tips',
     siteName: 'ProWeb Nigeria',
