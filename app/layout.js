@@ -18,10 +18,10 @@ const poppins = Poppins({
 
 export const metadata = {
   title: {
-    default: 'ProWeb Nigeria: High-Performance Web Solutions for Ambitious Businesses',
+    default: 'Web Design Company Nigeria | Top Website Designer Lagos & Abuja',
     template: '%s | ProWeb Nigeria',
   },
-  description: 'We build high-performance websites that drive measurable growth. See how we delivered a 500% sales increase for a Lagos e-commerce store. Modern tech stack: React, Next.js, Node.js.',
+  description: 'Top web design company in Nigeria. We build fast, mobile-friendly websites that drive sales. See our 500% growth case study. Serving Lagos, Abuja & nationwide. Free quote.',
   keywords: [
     'web design nigeria',
     'website designer nigeria', 
@@ -73,8 +73,8 @@ export const metadata = {
   },
   // Removed hreflang alternates for non-existent locales to avoid duplicate/canonical confusion
   openGraph: {
-    title: 'ProWeb Nigeria: High-Performance Web Solutions for Ambitious Businesses',
-    description: 'We build high-performance websites that drive measurable growth. See how we delivered a 500% sales increase for a Lagos e-commerce store.',
+    title: 'Web Design Company Nigeria | Top Website Designer Lagos & Abuja',
+    description: 'Top web design company in Nigeria. We build fast, mobile-friendly websites that drive sales. See our 500% growth case study. Serving Lagos, Abuja & nationwide. Free quote.',
     url: 'https://prowebnigeria.ng',
     siteName: 'ProWeb Nigeria',
     locale: 'en_US',
@@ -82,8 +82,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ProWeb Nigeria: High-Performance Web Solutions for Ambitious Businesses',
-    description: 'We build high-performance websites that drive measurable growth. See how we delivered a 500% sales increase for a Lagos e-commerce store.',
+    title: 'Web Design Company Nigeria | Top Website Designer Lagos & Abuja',
+    description: 'Top web design company in Nigeria. We build fast, mobile-friendly websites that drive sales. See our 500% growth case study. Free quote.',
     creator: '@prowebnigeria',
     site: '@prowebnigeria',
   },
@@ -109,6 +109,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        {/* Preload critical resources */}
+        <link rel="preload" href="/logo.webp" as="image" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
         {/* Emergency styling fallback: Tailwind CDN to ensure styles render in production */}
         <script src="https://cdn.tailwindcss.com"></script>
         {/* Preconnect to external domains for performance */}
@@ -222,6 +227,74 @@ export default function RootLayout({ children }) {
                 "@type": "SearchAction",
                 "target": "https://prowebnigeria.ng/search?q={search_term_string}",
                 "query-input": "required name=search_term_string"
+              }
+            })
+          }}
+        />
+
+        {/* Service Schema for SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "serviceType": "Web Design and Development",
+              "provider": {
+                "@type": "LocalBusiness",
+                "name": "ProWeb Nigeria"
+              },
+              "areaServed": [
+                {
+                  "@type": "City",
+                  "name": "Lagos",
+                  "@id": "https://www.wikidata.org/wiki/Q43433"
+                },
+                {
+                  "@type": "City",
+                  "name": "Abuja",
+                  "@id": "https://www.wikidata.org/wiki/Q3787"
+                },
+                {
+                  "@type": "City",
+                  "name": "Osogbo",
+                  "@id": "https://www.wikidata.org/wiki/Q1014720"
+                },
+                {
+                  "@type": "City",
+                  "name": "Ibadan",
+                  "@id": "https://www.wikidata.org/wiki/Q376398"
+                }
+              ],
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Web Design Services",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Custom Web Development",
+                      "description": "High-performance websites built with React, Next.js, and modern technologies"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "E-commerce Solutions",
+                      "description": "Complete online stores that convert visitors into customers"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "SEO & Digital Marketing",
+                      "description": "Boost your online visibility and drive targeted traffic"
+                    }
+                  }
+                ]
               }
             })
           }}

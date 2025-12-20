@@ -5,8 +5,8 @@ import Link from 'next/link'
 import { MapPin, Phone, Mail, Clock, CheckCircle, Code2, ShoppingCart, Search, TrendingUp } from 'lucide-react'
 
 export const metadata = {
-  title: 'Web Design Lagos',
-  description: 'Expert web design services in Lagos, Nigeria. Custom websites, e-commerce development, SEO & digital marketing. Serving Lagos businesses with modern web solutions.',
+  title: 'Web Design Company in Lagos | Top Website Designer Lagos Nigeria',
+  description: 'Top-rated web design company in Lagos. We build fast, mobile-friendly websites that drive sales. 500% growth case study. Free quote. Serving Victoria Island, Lekki, Ikoyi & all Lagos.',
   keywords: [
     'web design lagos',
     'website designer lagos',
@@ -22,8 +22,8 @@ export const metadata = {
     'responsive web design lagos'
   ],
   openGraph: {
-    title: 'Web Design Services in Lagos | Professional Website Development Lagos Nigeria',
-    description: 'Expert web design services in Lagos, Nigeria. Custom websites, e-commerce development, SEO & digital marketing.',
+    title: 'Web Design Company in Lagos | Top Website Designer Lagos Nigeria',
+    description: 'Top-rated web design company in Lagos. We build fast, mobile-friendly websites that drive sales. 500% growth case study. Free quote.',
     url: 'https://prowebnigeria.ng/locations/lagos',
   },
   alternates: {
@@ -32,6 +32,74 @@ export const metadata = {
 }
 
 export default function LagosPage() {
+  // Breadcrumb Structured Data
+  const breadcrumbStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://prowebnigeria.ng"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Web Design Lagos",
+        "item": "https://prowebnigeria.ng/locations/lagos"
+      }
+    ]
+  }
+
+  // FAQ Structured Data for SEO
+  const faqStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much does a website cost in Lagos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Website costs in Lagos vary based on your needs. A simple business website starts from ₦150,000, while e-commerce sites range from ₦300,000-₦800,000. We provide transparent pricing with no hidden fees."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to build a website?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most Lagos websites are completed in 2-4 weeks. Simple sites can launch in 1-2 weeks, while complex e-commerce platforms may take 4-6 weeks. We provide weekly updates so you're always in the loop."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you serve businesses outside Victoria Island and Lekki?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! We serve businesses across all Lagos areas including Surulere, Yaba, Ikeja, Lagos Island, Apapa, Mushin, Oshodi, Agege, and Alaba. We work remotely and can meet in person when needed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will my website work on mobile phones?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely! All our websites are mobile-responsive and optimized for smartphones. Since most Lagos users browse on mobile, we design mobile-first to ensure fast loading and great user experience."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you provide SEO services for Lagos businesses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! We offer comprehensive SEO services to help your Lagos business rank higher on Google. This includes keyword research, on-page optimization, local SEO for Lagos, and content strategy."
+        }
+      }
+    ]
+  }
+
   const services = [
     {
       icon: Code2,
@@ -62,6 +130,14 @@ export default function LagosPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
+      />
       <Header />
       
       {/* Hero Section */}
@@ -73,7 +149,7 @@ export default function LagosPage() {
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Professional Web Design Services in Lagos
+              Web Design Company in Lagos | Top Website Designer Lagos Nigeria
             </h1>
             
             <p className="text-xl md:text-2xl mb-8 text-gray-200">
@@ -166,6 +242,103 @@ export default function LagosPage() {
                 <span className="font-semibold text-gray-800">{area}</span>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Why Lagos Businesses Choose ProWeb Nigeria
+              </h2>
+              <p className="text-xl text-gray-600">
+                We understand the unique needs of Lagos businesses and deliver results
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="bg-white p-6 rounded-xl shadow-lg">
+                <CheckCircle className="w-12 h-12 text-green-500 mb-4" />
+                <h3 className="text-xl font-semibold mb-3">Fast Loading Websites</h3>
+                <p className="text-gray-600">Optimized for Lagos mobile networks. Pages load in under 2 seconds.</p>
+              </div>
+              
+              <div className="bg-white p-6 rounded-xl shadow-lg">
+                <CheckCircle className="w-12 h-12 text-green-500 mb-4" />
+                <h3 className="text-xl font-semibold mb-3">Mobile-First Design</h3>
+                <p className="text-gray-600">80% of Lagos users browse on mobile. We design for mobile first.</p>
+              </div>
+              
+              <div className="bg-white p-6 rounded-xl shadow-lg">
+                <CheckCircle className="w-12 h-12 text-green-500 mb-4" />
+                <h3 className="text-xl font-semibold mb-3">SEO Optimized</h3>
+                <p className="text-gray-600">Rank higher on Google for "web design Lagos" and related searches.</p>
+              </div>
+              
+              <div className="bg-white p-6 rounded-xl shadow-lg">
+                <CheckCircle className="w-12 h-12 text-green-500 mb-4" />
+                <h3 className="text-xl font-semibold mb-3">24/7 Support</h3>
+                <p className="text-gray-600">Need help at 8pm? We answer calls and WhatsApp messages.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section with Structured Data */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+              Frequently Asked Questions About Web Design in Lagos
+            </h2>
+            
+            <div className="space-y-6">
+              <div className="bg-gray-50 rounded-xl p-6">
+                <h3 className="text-xl font-semibold mb-3">How much does a website cost in Lagos?</h3>
+                <p className="text-gray-700">
+                  Website costs in Lagos vary based on your needs. A simple business website starts from ₦150,000, 
+                  while e-commerce sites range from ₦300,000-₦800,000. We provide transparent pricing with no hidden fees. 
+                  <Link href="/pricing" className="text-purple-600 font-semibold ml-1">View our pricing →</Link>
+                </p>
+              </div>
+              
+              <div className="bg-gray-50 rounded-xl p-6">
+                <h3 className="text-xl font-semibold mb-3">How long does it take to build a website?</h3>
+                <p className="text-gray-700">
+                  Most Lagos websites are completed in 2-4 weeks. Simple sites can launch in 1-2 weeks, while complex 
+                  e-commerce platforms may take 4-6 weeks. We provide weekly updates so you're always in the loop.
+                </p>
+              </div>
+              
+              <div className="bg-gray-50 rounded-xl p-6">
+                <h3 className="text-xl font-semibold mb-3">Do you serve businesses outside Victoria Island and Lekki?</h3>
+                <p className="text-gray-700">
+                  Yes! We serve businesses across all Lagos areas including Surulere, Yaba, Ikeja, Lagos Island, Apapa, 
+                  Mushin, Oshodi, Agege, and Alaba. We work remotely and can meet in person when needed.
+                </p>
+              </div>
+              
+              <div className="bg-gray-50 rounded-xl p-6">
+                <h3 className="text-xl font-semibold mb-3">Will my website work on mobile phones?</h3>
+                <p className="text-gray-700">
+                  Absolutely! All our websites are mobile-responsive and optimized for smartphones. Since most Lagos users 
+                  browse on mobile, we design mobile-first to ensure fast loading and great user experience.
+                </p>
+              </div>
+              
+              <div className="bg-gray-50 rounded-xl p-6">
+                <h3 className="text-xl font-semibold mb-3">Do you provide SEO services for Lagos businesses?</h3>
+                <p className="text-gray-700">
+                  Yes! We offer comprehensive SEO services to help your Lagos business rank higher on Google. This includes 
+                  keyword research, on-page optimization, local SEO for Lagos, and content strategy. 
+                  <Link href="/services" className="text-purple-600 font-semibold ml-1">Learn more about our SEO services →</Link>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

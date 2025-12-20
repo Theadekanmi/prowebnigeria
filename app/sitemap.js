@@ -93,12 +93,6 @@ export default function sitemap() {
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/search`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.3,
-    },
-    {
       url: `${baseUrl}/advertise`,
       lastModified: new Date(),
       changeFrequency: 'yearly',
@@ -119,14 +113,14 @@ export default function sitemap() {
     {
       url: `${baseUrl}/locations/lagos`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
+      changeFrequency: 'weekly',
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/locations/abuja`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
+      changeFrequency: 'weekly',
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/locations/osogbo`,

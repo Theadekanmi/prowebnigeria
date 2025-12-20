@@ -5,8 +5,8 @@ import Link from 'next/link'
 import { MapPin, Phone, Mail, Clock, CheckCircle, Code2, ShoppingCart, Search, TrendingUp } from 'lucide-react'
 
 export const metadata = {
-  title: 'Web Design Osogbo',
-  description: 'Expert web design services in Osogbo, Osun State, Nigeria. Custom websites, e-commerce development, SEO & digital marketing. Serving Osogbo businesses with modern web solutions.',
+  title: 'Web Design Company in Osogbo | Website Designer Osun State',
+  description: 'Professional web design company in Osogbo, Osun State. Fast, mobile-friendly websites that drive business growth. Free quote. Serving Osogbo, Ile-Ife & all Osun State.',
   keywords: [
     'web design osogbo',
     'website designer osogbo',
@@ -28,8 +28,8 @@ export const metadata = {
     'affordable web design osogbo'
   ],
   openGraph: {
-    title: 'Web Design Services in Osogbo | Professional Website Development Osun State Nigeria',
-    description: 'Expert web design services in Osogbo, Osun State, Nigeria. Custom websites, e-commerce development, SEO & digital marketing.',
+    title: 'Web Design Company in Osogbo | Website Designer Osun State',
+    description: 'Professional web design company in Osogbo, Osun State. Fast, mobile-friendly websites that drive business growth. Free quote.',
     url: 'https://prowebnigeria.ng/locations/osogbo',
   },
   alternates: {

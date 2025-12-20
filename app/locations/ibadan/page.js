@@ -5,8 +5,8 @@ import Link from 'next/link'
 import { MapPin, Phone, Mail, Clock, CheckCircle, Code2, ShoppingCart, Search, TrendingUp } from 'lucide-react'
 
 export const metadata = {
-  title: 'Web Design Ibadan',
-  description: 'Expert web design services in Ibadan, Oyo State, Nigeria. Custom websites, e-commerce development, SEO & digital marketing. Serving Ibadan businesses with modern web solutions.',
+  title: 'Web Design Company in Ibadan | Top Website Designer Oyo State',
+  description: 'Leading web design company in Ibadan, Oyo State. Professional websites that convert. Fast, secure, mobile-optimized. Free consultation. Serving Bodija, Mokola & all Ibadan.',
   keywords: [
     'web design ibadan',
     'website designer ibadan',
@@ -28,8 +28,8 @@ export const metadata = {
     'affordable web design ibadan'
   ],
   openGraph: {
-    title: 'Web Design Services in Ibadan | Professional Website Development Oyo State Nigeria',
-    description: 'Expert web design services in Ibadan, Oyo State, Nigeria. Custom websites, e-commerce development, SEO & digital marketing.',
+    title: 'Web Design Company in Ibadan | Top Website Designer Oyo State',
+    description: 'Leading web design company in Ibadan, Oyo State. Professional websites that convert. Fast, secure, mobile-optimized. Free consultation.',
     url: 'https://prowebnigeria.ng/locations/ibadan',
   },
   alternates: {

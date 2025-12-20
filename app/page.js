@@ -64,7 +64,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80"
-            alt="Technology background"
+            alt="Professional web design and development services in Nigeria - Lagos, Abuja, Osogbo, Ibadan"
             className="w-full h-full object-cover"
           />
         </div>
@@ -85,7 +85,7 @@ export default function Home() {
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 min-h-[200px] md:min-h-[240px] flex items-center justify-center">
               <span className="transition-all duration-500">
-                {headlines[currentHeadline]}
+                Web Design Company Nigeria | Top Website Designer Lagos & Abuja
               </span>
             </h1>
             
@@ -213,6 +213,48 @@ export default function Home() {
                   </a>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Locations Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+                Web Design Services Across Nigeria
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                We serve businesses in major Nigerian cities with professional web design and development services
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Link href="/locations/lagos" className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-purple-200">
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Lagos</h3>
+                <p className="text-gray-600 mb-4">Web design services in Victoria Island, Lekki, Ikoyi, Surulere, Yaba, Ikeja & all Lagos areas</p>
+                <span className="text-purple-600 font-semibold">Learn more →</span>
+              </Link>
+              
+              <Link href="/locations/abuja" className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-purple-200">
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Abuja</h3>
+                <p className="text-gray-600 mb-4">Website design services in Maitama, Wuse, Garki, Asokoro, Jabi & all Abuja FCT areas</p>
+                <span className="text-purple-600 font-semibold">Learn more →</span>
+              </Link>
+              
+              <Link href="/locations/osogbo" className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-purple-200">
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Osogbo</h3>
+                <p className="text-gray-600 mb-4">Professional web design services in Osogbo and throughout Osun State</p>
+                <span className="text-purple-600 font-semibold">Learn more →</span>
+              </Link>
+              
+              <Link href="/locations/ibadan" className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-purple-200">
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Ibadan</h3>
+                <p className="text-gray-600 mb-4">Website development services in Bodija, Mokola, Sango & all Ibadan areas</p>
+                <span className="text-purple-600 font-semibold">Learn more →</span>
+              </Link>
             </div>
           </div>
         </div>

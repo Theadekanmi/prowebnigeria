@@ -5,6 +5,20 @@ import FloatingWhatsApp from '../../../components/FloatingWhatsApp'
 import { Clock, User, ArrowLeft, Share2, Bookmark, Star, ThumbsUp, ThumbsDown, ExternalLink } from 'lucide-react'
 import Link from 'next/link'
 
+export async function generateMetadata({ params }) {
+  return {
+    title: 'Tech Review - ProWeb Nigeria',
+    description: 'In-depth review of web development tools and technologies. Expert insights to help you choose the right tools for your project.',
+    alternates: {
+      canonical: `/resources/tech-reviews/${params.id}`,
+    },
+    robots: {
+      index: true,
+      follow: true,
+    }
+  }
+}
+
 export default function TechReviewDetailPage({ params }) {
   // This would normally fetch data based on params.id
   const review = {

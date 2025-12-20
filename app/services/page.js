@@ -14,8 +14,8 @@ import {
 } from 'lucide-react'
 
 export const metadata = {
-  title: 'Web Development Services',
-  description: 'Professional web development services including custom websites, e-commerce solutions, mobile apps, and digital marketing for Nigerian businesses.',
+  title: 'Web Design Services Nigeria | Custom Websites & E-commerce Solutions',
+  description: 'Professional web design services in Nigeria. Custom websites, e-commerce stores & mobile apps that drive sales. See our 500% growth case study. Free quote for Lagos, Abuja & nationwide.',
   keywords: [
     'web development services nigeria',
     'custom website development',
@@ -29,6 +29,74 @@ export const metadata = {
 }
 
 export default function ServicesPage() {
+  // Breadcrumb Structured Data
+  const breadcrumbStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://prowebnigeria.ng"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://prowebnigeria.ng/services"
+      }
+    ]
+  }
+
+  // FAQ Structured Data for SEO
+  const faqStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What technologies do you use for web development?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We use modern technologies including React, Next.js, Node.js, and Tailwind CSS. These ensure fast, secure, and scalable websites that rank well on Google. All our websites are mobile-responsive and optimized for Nigerian internet speeds."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you build e-commerce websites?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! We build complete e-commerce solutions with payment integration (Paystack, Flutterwave), inventory management, order tracking, and customer dashboards. We've helped Lagos e-commerce stores achieve 500% sales increases."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you provide SEO services?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely! SEO is built into every website we create. We optimize for keywords like 'web design company in Lagos', 'website designer in Abuja', and location-specific searches. We also offer ongoing SEO services including keyword research, content strategy, and link building."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you ensure websites load fast in Nigeria?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We optimize images, minimize code, use CDN services, and implement caching strategies. All websites are tested on Nigerian mobile networks to ensure fast loading times. Most of our sites load in under 2 seconds on 3G networks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What areas do you serve?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We serve businesses nationwide in Nigeria, with strong presence in Lagos, Abuja, Osogbo, and Ibadan. We work remotely and can meet clients in person when needed."
+        }
+      }
+    ]
+  }
+
   const services = [
     {
       id: 'web-development',
@@ -109,6 +177,14 @@ export default function ServicesPage() {
 
   return (
     <main className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
+      />
       <Header />
       
       {/* Hero Section */}
@@ -116,10 +192,7 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Professional Web Development{' '}
-              <span className="bg-gradient-to-r from-purple-600 to-pink-600 text-transparent bg-clip-text">
-                Services
-              </span>
+              Web Design Services Nigeria | Custom Websites & E-commerce Solutions
             </h1>
             <p className="text-xl text-gray-600 mb-8">
               From custom web development to e-commerce solutions, we provide comprehensive digital services that drive real business results for Nigerian companies.
@@ -273,6 +346,63 @@ export default function ServicesPage() {
                   <p className="text-gray-600">{service.description}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+              Frequently Asked Questions About Our Web Design Services
+            </h2>
+            
+            <div className="space-y-6">
+              <div className="bg-gray-50 rounded-xl p-6">
+                <h3 className="text-xl font-semibold mb-3">What technologies do you use for web development?</h3>
+                <p className="text-gray-700">
+                  We use modern technologies including React, Next.js, Node.js, and Tailwind CSS. These ensure fast, 
+                  secure, and scalable websites that rank well on Google. All our websites are mobile-responsive and 
+                  optimized for Nigerian internet speeds.
+                </p>
+              </div>
+              
+              <div className="bg-gray-50 rounded-xl p-6">
+                <h3 className="text-xl font-semibold mb-3">Do you build e-commerce websites?</h3>
+                <p className="text-gray-700">
+                  Yes! We build complete e-commerce solutions with payment integration (Paystack, Flutterwave), 
+                  inventory management, order tracking, and customer dashboards. We've helped Lagos e-commerce 
+                  stores achieve 500% sales increases. <Link href="/case-studies" className="text-purple-600 font-semibold ml-1">See case studies →</Link>
+                </p>
+              </div>
+              
+              <div className="bg-gray-50 rounded-xl p-6">
+                <h3 className="text-xl font-semibold mb-3">Do you provide SEO services?</h3>
+                <p className="text-gray-700">
+                  Absolutely! SEO is built into every website we create. We optimize for keywords like "web design 
+                  company in Lagos", "website designer in Abuja", and location-specific searches. We also offer ongoing 
+                  SEO services including keyword research, content strategy, and link building.
+                </p>
+              </div>
+              
+              <div className="bg-gray-50 rounded-xl p-6">
+                <h3 className="text-xl font-semibold mb-3">How do you ensure websites load fast in Nigeria?</h3>
+                <p className="text-gray-700">
+                  We optimize images, minimize code, use CDN services, and implement caching strategies. All websites 
+                  are tested on Nigerian mobile networks to ensure fast loading times. Most of our sites load in 
+                  under 2 seconds on 3G networks.
+                </p>
+              </div>
+              
+              <div className="bg-gray-50 rounded-xl p-6">
+                <h3 className="text-xl font-semibold mb-3">What areas do you serve?</h3>
+                <p className="text-gray-700">
+                  We serve businesses nationwide in Nigeria, with strong presence in Lagos, Abuja, Osogbo, and Ibadan. 
+                  We work remotely and can meet clients in person when needed. <Link href="/locations/lagos" className="text-purple-600 font-semibold ml-1">View our locations →</Link>
+                </p>
+              </div>
             </div>
           </div>
         </div>

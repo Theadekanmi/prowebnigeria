@@ -5,12 +5,23 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, ExternalLink } from 'lucide-react'
 
-export const metadata = {
-  title: 'Portfolio',
-  description: 'View our portfolio of successful web design and development projects. From e-commerce to corporate websites, see how we have helped Nigerian businesses grow online.',
-  keywords: ['web design portfolio nigeria', 'prowebnigeria projects', 'website examples lagos', 'web development portfolio'],
-  alternates: {
-    canonical: '/portfolio',
+export async function generateMetadata({ searchParams }) {
+  const currentPage = Math.max(1, parseInt(searchParams?.page || '1', 10) || 1)
+  
+  return {
+    title: 'Portfolio',
+    description: 'View our portfolio of successful web design and development projects. From e-commerce to corporate websites, see how we have helped Nigerian businesses grow online.',
+    keywords: ['web design portfolio nigeria', 'prowebnigeria projects', 'website examples lagos', 'web development portfolio'],
+    alternates: {
+      canonical: '/portfolio',
+    },
+    robots: currentPage === 1 ? {
+      index: true,
+      follow: true,
+    } : {
+      index: false,
+      follow: true,
+    }
   }
 }
 
