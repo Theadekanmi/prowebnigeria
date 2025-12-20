@@ -20,15 +20,6 @@ const nextConfig = {
     optimizePackageImports: ['lucide-react'],
   },
   
-  // Exclude problematic directories from build traces
-  outputFileTracingExcludes: {
-    '*': [
-      'typings/**/*',
-      'node_modules/**/*',
-      '.next/**/*',
-    ],
-  },
-  
   // Headers for caching and performance
   async headers() {
     return [
