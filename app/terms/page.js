@@ -2,6 +2,18 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
+export const metadata = {
+  title: 'Terms of Service | ProWeb Nigeria - Website Terms & Conditions',
+  description: 'Terms of service for ProWeb Nigeria web design and development services. Read our terms and conditions before using our services.',
+  alternates: {
+    canonical: '/terms',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  }
+}
+
 export default function TermsPage() {
   return (
     <main className="min-h-screen">

@@ -4,6 +4,18 @@ import Footer from '../components/Footer';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
 import { Megaphone, Users, TrendingUp, Target, BarChart3, Globe, Mail, Phone } from 'lucide-react';
 
+export const metadata = {
+  title: 'Advertise With ProWeb Nigeria | Digital Marketing Opportunities',
+  description: 'Reach our engaged audience of tech professionals and business owners. Promote your brand through banner ads, sponsored content, and strategic partnerships.',
+  alternates: {
+    canonical: '/advertise',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  }
+}
+
 export default function AdvertisePage() {
   const advertisingOptions = [
     {
