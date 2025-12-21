@@ -7,7 +7,7 @@ import { ArrowRight, ExternalLink } from 'lucide-react'
 
 export async function generateMetadata({ searchParams }) {
   const currentPage = Math.max(1, parseInt(searchParams?.page || '1', 10) || 1)
-  
+
   return {
     title: 'Web Design Portfolio Nigeria | Website Projects & Case Studies',
     description: 'View our portfolio of successful web design and development projects. From e-commerce to corporate websites, see how we have helped Nigerian businesses grow online.',

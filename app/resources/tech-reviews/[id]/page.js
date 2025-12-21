@@ -6,11 +6,12 @@ import { Clock, User, ArrowLeft, Share2, Bookmark, Star, ThumbsUp, ThumbsDown, E
 import Link from 'next/link'
 
 export async function generateMetadata({ params }) {
+  const id = await params.then(p => p.id).catch(() => params?.id || '1')
   return {
     title: 'Tech Tool Review | Web Development Tools Comparison Guide',
     description: 'In-depth review of web development tools and technologies. Expert insights to help you choose the right tools for your project.',
     alternates: {
-      canonical: `/resources/tech-reviews/${params.id}`,
+      canonical: `/resources/tech-reviews/${id}`,
     },
     robots: {
       index: true,
@@ -19,10 +20,12 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export default function TechReviewDetailPage({ params }) {
+export default async function TechReviewDetailPage({ params }) {
+  const resolvedParams = await params
+  const reviewId = resolvedParams.id
   // This would normally fetch data based on params.id
   const review = {
-    id: params.id,
+    id: reviewId,
     title: "Next.js 14 vs React 18: Complete Comparison",
     category: "Frameworks",
     rating: 4.8,

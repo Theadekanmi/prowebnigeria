@@ -71,21 +71,27 @@ export const metadata = {
   alternates: {
     canonical: '/',
   },
-  // Removed hreflang alternates for non-existent locales to avoid duplicate/canonical confusion
   openGraph: {
-    title: 'Web Design Company Nigeria | Top Website Designer Lagos & Abuja',
-    description: 'Top web design company in Nigeria. We build fast, mobile-friendly websites that drive sales. See our 500% growth case study. Serving Lagos, Abuja & nationwide. Free quote.',
+    type: 'website',
+    locale: 'en_NG',
     url: 'https://prowebnigeria.ng',
     siteName: 'ProWeb Nigeria',
-    locale: 'en_US',
-    type: 'website',
+    title: 'Web Design Company Nigeria | Top Website Designer Lagos & Abuja',
+    description: 'Top web design company in Nigeria. We build fast, mobile-friendly websites that drive sales. See our 500% growth case study. Serving Lagos, Abuja & nationwide. Free quote.',
+    images: [
+      {
+        url: '/logo.webp',
+        width: 1200,
+        height: 630,
+        alt: 'ProWeb Nigeria - Web Design Company',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Web Design Company Nigeria | Top Website Designer Lagos & Abuja',
-    description: 'Top web design company in Nigeria. We build fast, mobile-friendly websites that drive sales. See our 500% growth case study. Free quote.',
-    creator: '@prowebnigeria',
-    site: '@prowebnigeria',
+    description: 'Top web design company in Nigeria. We build fast, mobile-friendly websites that drive sales.',
+    images: ['/logo.webp'],
   },
   robots: {
     index: true,
@@ -98,38 +104,25 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
+  verification: {
+    google: 'your-google-verification-code',
+    yandex: 'your-yandex-verification-code',
+    bing: 'your-bing-verification-code',
+  },
 }
-
-export const viewport = {
-  width: 'device-width',
-  initialScale: 1,
-};
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
       <head>
         {/* Preload critical resources */}
         <link rel="preload" href="/logo.webp" as="image" />
+        
+        {/* DNS Prefetch for external domains */}
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-        <link rel="dns-prefetch" href="https://images.unsplash.com" />
-        {/* Emergency styling fallback: Tailwind CDN to ensure styles render in production */}
-        <script src="https://cdn.tailwindcss.com"></script>
-        {/* Preconnect to external domains for performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://wa.me" />
-        <link rel="dns-prefetch" href="https://the-adekanmi.vercel.app" />
         
-        {/* Favicon and app icons */}
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-32x32.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon-32x32.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-        <meta name="theme-color" content="#3b82f6" />
-        
-        {/* Structured Data for Local Business */}
+        {/* Structured Data - LocalBusiness */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -137,65 +130,46 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               "name": "ProWeb Nigeria",
-              "description": "High-Performance Web Solutions for Ambitious Businesses. We build custom websites using modern tech stack (React, Next.js, Node.js) that deliver measurable business results.",
+              "image": "https://prowebnigeria.ng/logo.webp",
+              "@id": "https://prowebnigeria.ng",
               "url": "https://prowebnigeria.ng",
               "telephone": "08100098339",
               "email": "prowebnigeria@gmail.com",
-              "sameAs": [
-                "https://www.facebook.com/prowebnigeria",
-                "https://www.instagram.com/prowebnigeria",
-                "https://x.com/prowebnigeria"
-              ],
-              "address": [
-                {
+              "address": {
                 "@type": "PostalAddress",
-                  "streetAddress": "Otta Road, Ijora Olopa",
-                  "addressLocality": "Lagos",
-                  "addressRegion": "Lagos State",
+                "streetAddress": "Otta Road, Ijora Olopa",
+                "addressLocality": "Lagos",
+                "addressRegion": "Lagos State",
+                "postalCode": "",
                 "addressCountry": "NG"
               },
-                {
-                  "@type": "PostalAddress",
-                  "streetAddress": "Jabi, Gwarinpa",
-                  "addressLocality": "Abuja",
-                  "addressRegion": "FCT",
-                  "addressCountry": "NG"
-                }
-              ],
-              "geo": [
-                {
+              "geo": {
                 "@type": "GeoCoordinates",
-                  "latitude": 6.5244,
-                  "longitude": 3.3792
-                },
-                {
-                  "@type": "GeoCoordinates",
-                  "latitude": 9.0820,
-                  "longitude": 8.6753
-                }
+                "latitude": 6.5244,
+                "longitude": 3.3792
+              },
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday"
+                ],
+                "opens": "09:00",
+                "closes": "18:00"
+              },
+              "sameAs": [
+                "https://www.facebook.com/prowebnigeria",
+                "https://www.twitter.com/prowebnigeria"
               ],
-              "openingHours": [
-                "Mo-Fr 08:00-18:00",
-                "Sa 09:00-16:00"
-              ],
-              "areaServed": [
-                { "@type": "Country", "name": "Nigeria" },
-                { "@type": "Country", "name": "Ghana" },
-                { "@type": "Country", "name": "Kenya" },
-                { "@type": "Country", "name": "South Africa" }
-              ],
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.9",
-                "reviewCount": "500",
-                "bestRating": "5",
-                "worstRating": "1"
-              }
+              "priceRange": "$$"
             }),
           }}
         />
         
-        {/* Organization Logo structured data */}
+        {/* Structured Data - Organization */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -205,16 +179,22 @@ export default function RootLayout({ children }) {
               "name": "ProWeb Nigeria",
               "url": "https://prowebnigeria.ng",
               "logo": "https://prowebnigeria.ng/logo.webp",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+234-810-009-8339",
+                "contactType": "customer service",
+                "areaServed": "NG",
+                "availableLanguage": ["en"]
+              },
               "sameAs": [
                 "https://www.facebook.com/prowebnigeria",
-                "https://www.instagram.com/prowebnigeria",
-                "https://x.com/prowebnigeria"
+                "https://www.twitter.com/prowebnigeria"
               ]
-            })
+            }),
           }}
         />
-
-        {/* WebSite structured data with SearchAction */}
+        
+        {/* Structured Data - WebSite */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -225,14 +205,17 @@ export default function RootLayout({ children }) {
               "url": "https://prowebnigeria.ng",
               "potentialAction": {
                 "@type": "SearchAction",
-                "target": "https://prowebnigeria.ng/search?q={search_term_string}",
+                "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": "https://prowebnigeria.ng/search?q={search_term_string}"
+                },
                 "query-input": "required name=search_term_string"
               }
-            })
+            }),
           }}
         />
-
-        {/* Service Schema for SEO */}
+        
+        {/* Structured Data - Service */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -242,91 +225,66 @@ export default function RootLayout({ children }) {
               "serviceType": "Web Design and Development",
               "provider": {
                 "@type": "LocalBusiness",
-                "name": "ProWeb Nigeria"
+                "name": "ProWeb Nigeria",
+                "url": "https://prowebnigeria.ng",
+                "telephone": "08100098339",
+                "email": "prowebnigeria@gmail.com",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Otta Road, Ijora Olopa",
+                  "addressLocality": "Lagos",
+                  "addressRegion": "Lagos State",
+                  "addressCountry": "NG"
+                }
               },
               "areaServed": [
-                {
-                  "@type": "City",
-                  "name": "Lagos",
-                  "@id": "https://www.wikidata.org/wiki/Q43433"
-                },
-                {
-                  "@type": "City",
-                  "name": "Abuja",
-                  "@id": "https://www.wikidata.org/wiki/Q3787"
-                },
-                {
-                  "@type": "City",
-                  "name": "Osogbo",
-                  "@id": "https://www.wikidata.org/wiki/Q1014720"
-                },
-                {
-                  "@type": "City",
-                  "name": "Ibadan",
-                  "@id": "https://www.wikidata.org/wiki/Q376398"
-                }
+                { "@type": "Country", "name": "Nigeria" },
+                { "@type": "State", "name": "Lagos State" },
+                { "@type": "State", "name": "FCT" },
+                { "@type": "State", "name": "Osun State" },
+                { "@type": "State", "name": "Oyo State" }
               ],
+              "description": "We offer high-performance web design, e-commerce solutions, mobile app development, and digital marketing services across Nigeria. Specializing in React, Next.js, and Node.js.",
+              "url": "https://prowebnigeria.ng/services",
               "hasOfferCatalog": {
                 "@type": "OfferCatalog",
-                "name": "Web Design Services",
+                "name": "ProWeb Nigeria Services",
                 "itemListElement": [
                   {
                     "@type": "Offer",
                     "itemOffered": {
                       "@type": "Service",
-                      "name": "Custom Web Development",
-                      "description": "High-performance websites built with React, Next.js, and modern technologies"
+                      "name": "Custom Web Development"
                     }
                   },
                   {
                     "@type": "Offer",
                     "itemOffered": {
                       "@type": "Service",
-                      "name": "E-commerce Solutions",
-                      "description": "Complete online stores that convert visitors into customers"
+                      "name": "E-commerce Solutions"
                     }
                   },
                   {
                     "@type": "Offer",
                     "itemOffered": {
                       "@type": "Service",
-                      "name": "SEO & Digital Marketing",
-                      "description": "Boost your online visibility and drive targeted traffic"
+                      "name": "SEO & Digital Marketing"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Website Maintenance"
                     }
                   }
                 ]
               }
-            })
+            }),
           }}
         />
-        
-        {/* Additional meta tags for Nigeria/Africa targeting */}
-        <meta name="geo.region" content="NG" />
-        <meta name="geo.placename" content="Lagos, Abuja, Nigeria" />
-        <meta name="geo.position" content="6.5244;3.3792" />
-        <meta name="ICBM" content="6.5244, 3.3792" />
-        
-        {/* Language and region targeting */}
-        <meta name="language" content="English" />
-        <meta name="country" content="Nigeria" />
-        <meta name="region" content="West Africa" />
-        
-        {/* Business specific meta tags */}
-        <meta name="business:contact:phone" content="08100098339" />
-        <meta name="business:contact:email" content="prowebnigeria@gmail.com" />
-        <meta name="business:contact:address" content="Lagos & Abuja, Nigeria" />
-        <meta name="business:contact:website" content="https://prowebnigeria.ng" />
-        
-        {/* Performance and security meta tags */}
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        
-        {/* Bing Webmaster Tools Verification */}
-        <meta name="msvalidate.01" content="2C29CA8949449057E7C9E452457058C1" />
-        
-        {/* Google Search Console Verification */}
-        <meta name="google-site-verification" content="7KH4o_a3Nl5DSZOu4hUD_mE4fwcKQhs2xxPRBArwl-0" />
       </head>
-      <body className={`${inter.variable} ${poppins.variable} font-sans`}>
+      <body className="font-inter antialiased">
         {children}
       </body>
     </html>

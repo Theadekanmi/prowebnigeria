@@ -6,11 +6,13 @@ import { Clock, User, ArrowLeft, Share2, Bookmark } from 'lucide-react'
 import Link from 'next/link'
 
 export async function generateMetadata({ params }) {
+  const resolvedParams = await params
+  const id = resolvedParams.id
   return {
     title: 'Tech Tip | Web Development Tutorial & Best Practices Guide',
     description: 'Learn web development best practices and tips. Expert tutorials to improve your coding skills and build better websites.',
     alternates: {
-      canonical: `/resources/tech-tips/${params.id}`,
+      canonical: `/resources/tech-tips/${id}`,
     },
     robots: {
       index: true,
@@ -19,10 +21,12 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export default function TechTipDetailPage({ params }) {
+export default async function TechTipDetailPage({ params }) {
+  const resolvedParams = await params
+  const tipId = resolvedParams.id
   // This would normally fetch data based on params.id
   const tip = {
-    id: params.id,
+    id: tipId,
     title: "10 Next.js Performance Optimization Techniques",
     category: "Next.js",
     readTime: "8 min read",
