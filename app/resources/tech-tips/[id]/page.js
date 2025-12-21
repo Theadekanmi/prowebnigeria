@@ -249,6 +249,70 @@ export default function MyComponent() {
       <h2>Conclusion</h2>
       <p>Mastering debugging tools and techniques will significantly improve your productivity and code quality.</p>
     `
+  },
+  '8': {
+    title: "Mobile-First Development Strategy",
+    category: "Mobile",
+    readTime: "6 min read",
+    author: "ProWeb Team",
+    date: "Sep 28, 2025",
+    content: `
+      <h2>Introduction</h2>
+      <p>Mobile-first development is an approach where you design and develop for mobile devices first, then progressively enhance the experience for larger screens. This strategy is crucial in today's mobile-dominated world.</p>
+      
+      <h2>Why Mobile-First?</h2>
+      <p>With over 60% of web traffic coming from mobile devices, starting with mobile ensures your site works well for the majority of users. It also forces you to prioritize content and features.</p>
+      
+      <h2>1. Start with the Smallest Screen</h2>
+      <p>Begin your design process with the smallest screen size. This constraint helps you focus on the most essential content and functionality.</p>
+      
+      <h2>2. Use Responsive Breakpoints</h2>
+      <p>Use CSS media queries to add complexity as screen size increases. Start with base mobile styles and add min-width queries for larger screens.</p>
+      
+      <h2>3. Touch-Friendly Design</h2>
+      <p>Ensure buttons and interactive elements are at least 44x44 pixels for easy tapping. Add adequate spacing between clickable elements.</p>
+      
+      <h2>4. Performance Optimization</h2>
+      <p>Mobile users often have slower connections. Optimize images, minimize JavaScript, and use lazy loading to improve performance.</p>
+      
+      <h2>5. Test on Real Devices</h2>
+      <p>Emulators are useful but nothing beats testing on actual mobile devices to understand the real user experience.</p>
+      
+      <h2>Conclusion</h2>
+      <p>Mobile-first development leads to better user experiences across all devices and forces you to make smart decisions about content and features.</p>
+    `
+  },
+  '9': {
+    title: "Git Workflow for Development Teams",
+    category: "DevOps",
+    readTime: "11 min read",
+    author: "ProWeb Team",
+    date: "Sep 25, 2025",
+    content: `
+      <h2>Introduction</h2>
+      <p>A well-defined Git workflow is essential for team collaboration. It ensures code quality, reduces conflicts, and streamlines the development process.</p>
+      
+      <h2>1. Git Flow</h2>
+      <p>Git Flow uses multiple branches for features, releases, and hotfixes. It's ideal for projects with scheduled releases and multiple versions in production.</p>
+      
+      <h2>2. GitHub Flow</h2>
+      <p>A simpler alternative where you branch from main, make changes, open a pull request, and merge after review. Perfect for continuous deployment.</p>
+      
+      <h2>3. Trunk-Based Development</h2>
+      <p>Developers work on short-lived feature branches and merge frequently to the main branch. Requires good CI/CD and feature flags.</p>
+      
+      <h2>4. Commit Message Best Practices</h2>
+      <p>Write clear, descriptive commit messages. Use conventional commits format: type(scope): description. Example: feat(auth): add password reset flow.</p>
+      
+      <h2>5. Code Review Process</h2>
+      <p>All code should be reviewed before merging. Use pull request templates, require approvals, and run automated tests on every PR.</p>
+      
+      <h2>6. Branch Naming Conventions</h2>
+      <p>Use consistent naming: feature/description, bugfix/description, hotfix/description. Include ticket numbers if applicable.</p>
+      
+      <h2>Conclusion</h2>
+      <p>Choose a Git workflow that fits your team size and release cadence. Consistency is more important than which specific workflow you choose.</p>
+    `
   }
 }
 
@@ -266,6 +330,8 @@ export function generateStaticParams() {
     { id: '5' },
     { id: '6' },
     { id: '7' },
+    { id: '8' },
+    { id: '9' },
   ]
 }
 
