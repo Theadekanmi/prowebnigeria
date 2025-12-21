@@ -339,8 +339,12 @@ const techReviewsData = {
   }
 }
 
+// Force static generation - no server rendering needed
+export const dynamic = 'force-static'
+export const dynamicParams = false
+
 // Generate static params for all tech reviews at build time
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return [
     { id: '1' },
     { id: '2' },

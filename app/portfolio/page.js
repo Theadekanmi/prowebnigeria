@@ -5,30 +5,23 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, ExternalLink } from 'lucide-react'
 
-// Force dynamic rendering for searchParams
-export const dynamic = 'force-dynamic'
+// Force static generation - no server rendering needed
+export const dynamic = 'force-static'
 
-export function generateMetadata({ searchParams }) {
-  const currentPage = Math.max(1, parseInt(searchParams?.page || '1', 10) || 1)
-
-  return {
-    title: 'Web Design Portfolio Nigeria | Website Projects & Case Studies',
-    description: 'View our portfolio of successful web design and development projects. From e-commerce to corporate websites, see how we have helped Nigerian businesses grow online.',
-    keywords: ['web design portfolio nigeria', 'prowebnigeria projects', 'website examples lagos', 'web development portfolio'],
-    alternates: {
-      canonical: '/portfolio',
-    },
-    robots: currentPage === 1 ? {
-      index: true,
-      follow: true,
-    } : {
-      index: false,
-      follow: true,
-    }
+export const metadata = {
+  title: 'Web Design Portfolio Nigeria | Website Projects & Case Studies',
+  description: 'View our portfolio of successful web design and development projects. From e-commerce to corporate websites, see how we have helped Nigerian businesses grow online.',
+  keywords: ['web design portfolio nigeria', 'prowebnigeria projects', 'website examples lagos', 'web development portfolio'],
+  alternates: {
+    canonical: '/portfolio',
+  },
+  robots: {
+    index: true,
+    follow: true,
   }
 }
 
-export default function PortfolioPage({ searchParams }) {
+export default function PortfolioPage() {
   const projects = [
     // New projects to appear first
     {
@@ -123,13 +116,6 @@ export default function PortfolioPage({ searchParams }) {
     }
   ]
 
-  // Pagination (server-side via searchParams)
-  const pageSize = 6
-  const currentPage = Math.max(1, parseInt(searchParams?.page || '1', 10) || 1)
-  const totalPages = Math.max(1, Math.ceil(projects.length / pageSize))
-  const startIndex = (currentPage - 1) * pageSize
-  const pagedProjects = projects.slice(startIndex, startIndex + pageSize)
-
   return (
     <main className="min-h-screen">
       <Header />
@@ -156,7 +142,7 @@ export default function PortfolioPage({ searchParams }) {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {pagedProjects.map((project, index) => (
+              {projects.map((project, index) => (
                 <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
                   <div className="relative h-64 bg-neutral-100">
                     <Image src={project.image || '/logo.webp'} alt={project.title} fill className="object-cover" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
@@ -197,40 +183,6 @@ export default function PortfolioPage({ searchParams }) {
               ))}
             </div>
 
-            {/* Pagination Controls */}
-            <div className="mt-10 flex items-center justify-center gap-2">
-              {currentPage > 1 && (
-                <Link
-                  href={`/portfolio?page=${currentPage - 1}`}
-                  className="px-4 py-2 rounded-md border text-sm font-semibold hover:bg-gray-50"
-                >
-                  Previous
-                </Link>
-              )}
-              {Array.from({ length: totalPages }).map((_, i) => {
-                const pageNum = i + 1
-                const isActive = pageNum === currentPage
-                return (
-                  <Link
-                    key={pageNum}
-                    href={`/portfolio?page=${pageNum}`}
-                    className={`px-4 py-2 rounded-md border text-sm font-semibold ${
-                      isActive ? 'bg-purple-600 text-white border-purple-600' : 'hover:bg-gray-50'
-                    }`}
-                  >
-                    {pageNum}
-                  </Link>
-                )
-              })}
-              {currentPage < totalPages && (
-                <Link
-                  href={`/portfolio?page=${currentPage + 1}`}
-                  className="px-4 py-2 rounded-md border text-sm font-semibold hover:bg-gray-50"
-                >
-                  Next
-                </Link>
-              )}
-            </div>
           </div>
         </div>
       </section>
