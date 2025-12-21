@@ -5,6 +5,9 @@ import FloatingWhatsApp from '../../../components/FloatingWhatsApp'
 import { Clock, User, ArrowLeft, Share2, Bookmark, Star, ThumbsUp, ThumbsDown, ExternalLink } from 'lucide-react'
 import Link from 'next/link'
 
+// Force dynamic rendering - routes are rendered on-demand
+export const dynamic = 'force-dynamic'
+
 // Content data for each tech review ID
 const techReviewsData = {
   '1': {

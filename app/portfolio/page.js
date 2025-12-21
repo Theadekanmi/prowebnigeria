@@ -5,6 +5,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, ExternalLink } from 'lucide-react'
 
+// Force dynamic rendering for searchParams
+export const dynamic = 'force-dynamic'
+
 export function generateMetadata({ searchParams }) {
   const currentPage = Math.max(1, parseInt(searchParams?.page || '1', 10) || 1)
 
