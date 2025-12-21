@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 export const metadata = {
-  title: 'Terms of Service | ProWeb Nigeria - Website Terms & Conditions',
+  title: 'Terms of Service | Terms & Conditions',
   description: 'Terms of service for ProWeb Nigeria web design and development services. Read our terms and conditions before using our services.',
   alternates: {
     canonical: '/terms',

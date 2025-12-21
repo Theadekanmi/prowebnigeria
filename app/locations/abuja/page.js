@@ -5,8 +5,8 @@ import Link from 'next/link'
 import { MapPin, Phone, Mail, Clock, CheckCircle, Code2, ShoppingCart, Search, TrendingUp } from 'lucide-react'
 
 export const metadata = {
-  title: 'Web Design Company in Abuja | Best Website Designer Abuja FCT',
-  description: 'Leading web design company in Abuja. Professional websites that convert visitors to customers. Fast, secure, mobile-optimized. Free consultation. Serving Maitama, Wuse, Garki & all Abuja.',
+  title: 'Web Design Abuja | Best Website Designer Abuja FCT',
+  description: 'Top web design company in Abuja. Websites that convert visitors to customers. Fast, secure, mobile-optimized. Serving Maitama, Wuse, Garki & all Abuja.',
   keywords: [
     'web design abuja',
     'website designer abuja',
@@ -22,7 +22,7 @@ export const metadata = {
     'responsive web design abuja'
   ],
   openGraph: {
-    title: 'Web Design Company in Abuja | Best Website Designer Abuja FCT',
+    title: 'Web Design Abuja | Best Website Designer Abuja FCT',
     description: 'Leading web design company in Abuja. Professional websites that convert visitors to customers. Fast, secure, mobile-optimized. Free consultation.',
     url: 'https://prowebnigeria.ng/locations/abuja',
   },

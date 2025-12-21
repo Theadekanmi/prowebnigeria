@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 export const metadata = {
-  title: 'Privacy Policy | ProWeb Nigeria - Data Protection & Privacy',
+  title: 'Privacy Policy | Data Protection',
   description: 'Privacy policy for ProWeb Nigeria. Learn how we collect, use, and protect your personal information when you use our web design services.',
   alternates: {
     canonical: '/privacy',

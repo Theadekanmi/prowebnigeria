@@ -21,7 +21,7 @@ export const metadata = {
     default: 'Web Design Company Nigeria | Top Website Designer Lagos & Abuja',
     template: '%s | ProWeb Nigeria',
   },
-  description: 'Top web design company in Nigeria. We build fast, mobile-friendly websites that drive sales. See our 500% growth case study. Serving Lagos, Abuja & nationwide. Free quote.',
+  description: 'Top web design company in Nigeria. Fast, mobile-friendly websites that drive sales. 500% growth case study. Serving Lagos, Abuja & nationwide.',
   keywords: [
     'web design nigeria',
     'website designer nigeria', 
@@ -77,7 +77,7 @@ export const metadata = {
     url: 'https://prowebnigeria.ng',
     siteName: 'ProWeb Nigeria',
     title: 'Web Design Company Nigeria | Top Website Designer Lagos & Abuja',
-    description: 'Top web design company in Nigeria. We build fast, mobile-friendly websites that drive sales. See our 500% growth case study. Serving Lagos, Abuja & nationwide. Free quote.',
+    description: 'Top web design company in Nigeria. Fast, mobile-friendly websites that drive sales. 500% growth case study. Serving Lagos, Abuja & nationwide.',
     images: [
       {
         url: '/logo.webp',

@@ -24,8 +24,8 @@ import {
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Tech Reviews & Tool Comparisons | Web Development Tools Guide',
-  description: 'In-depth reviews of web development tools, frameworks, and technologies. Compare the best tools for your next project with expert insights.',
+  title: 'Tech Reviews | Web Development Tools',
+  description: 'In-depth reviews of web development tools, frameworks, and technologies. Compare the best tools for your next project.',
   keywords: [
     'web development tools review',
     'nextjs vs react comparison',

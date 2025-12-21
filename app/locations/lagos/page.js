@@ -5,8 +5,8 @@ import Link from 'next/link'
 import { MapPin, Phone, Mail, Clock, CheckCircle, Code2, ShoppingCart, Search, TrendingUp } from 'lucide-react'
 
 export const metadata = {
-  title: 'Web Design Company in Lagos | Top Website Designer Lagos Nigeria',
-  description: 'Top-rated web design company in Lagos. We build fast, mobile-friendly websites that drive sales. 500% growth case study. Free quote. Serving Victoria Island, Lekki, Ikoyi & all Lagos.',
+  title: 'Web Design Lagos | Top Website Designer Lagos Nigeria',
+  description: 'Top web design company in Lagos. Fast, mobile-friendly websites that drive sales. Free quote. Serving Victoria Island, Lekki, Ikoyi & all Lagos.',
   keywords: [
     'web design lagos',
     'website designer lagos',
@@ -22,7 +22,7 @@ export const metadata = {
     'responsive web design lagos'
   ],
   openGraph: {
-    title: 'Web Design Company in Lagos | Top Website Designer Lagos Nigeria',
+    title: 'Web Design Lagos | Top Website Designer Lagos Nigeria',
     description: 'Top-rated web design company in Lagos. We build fast, mobile-friendly websites that drive sales. 500% growth case study. Free quote.',
     url: 'https://prowebnigeria.ng/locations/lagos',
   },

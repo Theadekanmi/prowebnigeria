@@ -14,8 +14,8 @@ import {
 } from 'lucide-react'
 
 export const metadata = {
-  title: 'Web Design Services Nigeria | Custom Websites & E-commerce Solutions',
-  description: 'Professional web design services in Nigeria. Custom websites, e-commerce stores & mobile apps that drive sales. See our 500% growth case study. Free quote for Lagos, Abuja & nationwide.',
+  title: 'Web Design Services Nigeria | E-commerce & Apps',
+  description: 'Professional web design in Nigeria. Custom websites, e-commerce & mobile apps that drive sales. Free quote for Lagos, Abuja & nationwide.',
   keywords: [
     'web development services nigeria',
     'custom website development',

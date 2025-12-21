@@ -20,8 +20,8 @@ import {
 } from 'lucide-react';
 
 export const metadata = {
-  title: 'Digital Marketing for Nigerian SMEs | Complete Guide & Strategies',
-  description: 'Discover effective digital marketing strategies specifically designed for Nigerian small and medium enterprises. Boost your online presence and grow your business.',
+  title: 'Digital Marketing for Nigerian SMEs | Guide',
+  description: 'Effective digital marketing strategies for Nigerian SMEs. Boost your online presence and grow your business with proven tactics.',
   keywords: [
     'digital marketing nigeria',
     'sme marketing strategies',

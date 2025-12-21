@@ -21,8 +21,8 @@ import {
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Tech Tips & Tutorials | Web Development Best Practices Guide',
-  description: 'Discover expert web development tips, tutorials, and best practices. Learn Next.js, JavaScript, TypeScript, and modern web technologies from industry professionals.',
+  title: 'Tech Tips & Tutorials | Web Development',
+  description: 'Expert web development tips and tutorials. Learn Next.js, JavaScript, TypeScript, and modern web technologies from professionals.',
   keywords: [
     'web development tips',
     'nextjs tutorials',

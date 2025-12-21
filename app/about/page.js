@@ -6,7 +6,7 @@ import Counter from '../components/Counter'
 import { Users, Target, Award, TrendingUp } from 'lucide-react'
 
 export const metadata = {
-  title: 'About ProWeb Nigeria | Top Web Design Company Lagos & Abuja',
+  title: 'About ProWeb Nigeria | Web Design Company',
   description: 'Learn about ProWeb Nigeria - a leading web design company in Nigeria. We build high-performance websites for businesses in Lagos, Abuja, and nationwide.',
   keywords: ['about proweb nigeria', 'web design company nigeria', 'website developers lagos', 'about us'],
   alternates: {

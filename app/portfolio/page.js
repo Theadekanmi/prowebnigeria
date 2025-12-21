@@ -9,8 +9,8 @@ import { ArrowRight, ExternalLink } from 'lucide-react'
 export const dynamic = 'force-static'
 
 export const metadata = {
-  title: 'Web Design Portfolio Nigeria | Website Projects & Case Studies',
-  description: 'View our portfolio of successful web design and development projects. From e-commerce to corporate websites, see how we have helped Nigerian businesses grow online.',
+  title: 'Web Design Portfolio Nigeria | Our Projects',
+  description: 'View our portfolio of successful web design projects. From e-commerce to corporate websites, see how we help Nigerian businesses grow online.',
   keywords: ['web design portfolio nigeria', 'prowebnigeria projects', 'website examples lagos', 'web development portfolio'],
   alternates: {
     canonical: '/portfolio',

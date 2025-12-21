@@ -17,7 +17,7 @@ import {
 } from 'lucide-react';
 
 export const metadata = {
-  title: 'Case Studies - ProWeb Nigeria: Real Results for Real Businesses',
+  title: 'Case Studies | Real Results for Businesses',
   description: 'See how ProWeb Nigeria delivered measurable results: 500% sales increase for Lagos e-commerce, 300% user engagement for fintech, and more success stories.',
   keywords: [
     'prowebnigeria case studies',
