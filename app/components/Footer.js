@@ -176,7 +176,7 @@ export default function Footer() {
       </div>
 
             <div className="flex flex-col md:flex-row items-center gap-4 text-sm">
-              <p>&copy; {currentYear} ProWeb Nigeria. All rights reserved.</p>
+              <p>&copy; {currentYear} ProWeb Nigeria. All rights reserved. Powered by <a href="https://prowebnigeria.ng" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-purple-400 to-pink-400 text-transparent bg-clip-text hover:from-purple-300 hover:to-pink-300 font-semibold transition-all">ProWeb Nigeria</a></p>
               <div className="flex items-center gap-4">
                 <Link href="/privacy" className="hover:text-white transition-colors">
                 Privacy Policy
