@@ -5,9 +5,6 @@ import FloatingWhatsApp from '../../../components/FloatingWhatsApp'
 import { Clock, User, ArrowLeft, Share2, Bookmark } from 'lucide-react'
 import Link from 'next/link'
 
-// Force dynamic rendering - routes are rendered on-demand
-export const dynamic = 'force-dynamic'
-
 // Content data for each tech tip ID
 const techTipsData = {
   '1': {
@@ -253,6 +250,19 @@ export default function MyComponent() {
       <p>Mastering debugging tools and techniques will significantly improve your productivity and code quality.</p>
     `
   }
+}
+
+// Generate static params for all tech tips at build time
+export async function generateStaticParams() {
+  return [
+    { id: '1' },
+    { id: '2' },
+    { id: '3' },
+    { id: '4' },
+    { id: '5' },
+    { id: '6' },
+    { id: '7' },
+  ]
 }
 
 export function generateMetadata({ params }) {

@@ -5,9 +5,6 @@ import FloatingWhatsApp from '../../../components/FloatingWhatsApp'
 import { Clock, User, ArrowLeft, Share2, Bookmark, Star, ThumbsUp, ThumbsDown, ExternalLink } from 'lucide-react'
 import Link from 'next/link'
 
-// Force dynamic rendering - routes are rendered on-demand
-export const dynamic = 'force-dynamic'
-
 // Content data for each tech review ID
 const techReviewsData = {
   '1': {
@@ -340,6 +337,20 @@ const techReviewsData = {
       <p>Choose React Native if you're a web developer familiar with React. Choose Flutter if you want maximum performance and don't mind learning Dart.</p>
     `
   }
+}
+
+// Generate static params for all tech reviews at build time
+export async function generateStaticParams() {
+  return [
+    { id: '1' },
+    { id: '2' },
+    { id: '3' },
+    { id: '4' },
+    { id: '5' },
+    { id: '6' },
+    { id: '7' },
+    { id: '8' },
+  ]
 }
 
 export function generateMetadata({ params }) {
