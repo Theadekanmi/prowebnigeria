@@ -5,28 +5,9 @@ import FloatingWhatsApp from '../../../components/FloatingWhatsApp'
 import { Clock, User, ArrowLeft, Share2, Bookmark } from 'lucide-react'
 import Link from 'next/link'
 
-export async function generateMetadata({ params }) {
-  const resolvedParams = await params
-  const id = resolvedParams.id
-  return {
-    title: 'Tech Tip | Web Development Tutorial & Best Practices Guide',
-    description: 'Learn web development best practices and tips. Expert tutorials to improve your coding skills and build better websites.',
-    alternates: {
-      canonical: `/resources/tech-tips/${id}`,
-    },
-    robots: {
-      index: true,
-      follow: true,
-    }
-  }
-}
-
-export default async function TechTipDetailPage({ params }) {
-  const resolvedParams = await params
-  const tipId = resolvedParams.id
-  // This would normally fetch data based on params.id
-  const tip = {
-    id: tipId,
+// Content data for each tech tip ID
+const techTipsData = {
+  '1': {
     title: "10 Next.js Performance Optimization Techniques",
     category: "Next.js",
     readTime: "8 min read",
@@ -82,7 +63,217 @@ export default function MyComponent() {
       <h2>Conclusion</h2>
       <p>By implementing these optimization techniques, you can significantly improve your Next.js application's performance, providing a better experience for your users and improving your search engine rankings.</p>
     `
+  },
+  '2': {
+    title: "JavaScript ES2024 Features You Should Know",
+    category: "JavaScript",
+    readTime: "6 min read",
+    author: "ProWeb Team",
+    date: "Oct 12, 2025",
+    content: `
+      <h2>Introduction</h2>
+      <p>JavaScript continues to evolve with exciting new features in ES2024. Let's explore the latest additions that will make your code more expressive and maintainable.</p>
+      
+      <h2>1. Array.prototype.findLast() and findLastIndex()</h2>
+      <p>These methods allow you to find the last element in an array that matches a condition, making reverse searches more intuitive.</p>
+      
+      <h2>2. Promise.withResolvers()</h2>
+      <p>A new utility for creating promises with external resolve/reject control, useful for complex async patterns.</p>
+      
+      <h2>3. Object.groupBy() and Map.groupBy()</h2>
+      <p>Convenient methods for grouping array elements by a key function, eliminating the need for manual reduce operations.</p>
+      
+      <h2>4. Hashbang Grammar</h2>
+      <p>Improved support for shebang (#!) syntax in JavaScript files, enhancing Node.js script execution.</p>
+      
+      <h2>5. Symbols as WeakMap Keys</h2>
+      <p>You can now use Symbols as keys in WeakMaps, providing more flexible memory management patterns.</p>
+      
+      <h2>Conclusion</h2>
+      <p>These new features bring JavaScript closer to being a more expressive and developer-friendly language. Start incorporating them into your projects today!</p>
+    `
+  },
+  '3': {
+    title: "Building Secure Web Applications: A Complete Guide",
+    category: "Security",
+    readTime: "12 min read",
+    author: "ProWeb Team",
+    date: "Oct 10, 2025",
+    content: `
+      <h2>Introduction</h2>
+      <p>Security is not optional when building web applications. This comprehensive guide covers essential security practices every developer should implement.</p>
+      
+      <h2>1. Input Validation and Sanitization</h2>
+      <p>Always validate and sanitize user input on both client and server sides. Never trust user-provided data.</p>
+      
+      <h2>2. Authentication and Authorization</h2>
+      <p>Implement robust authentication using industry-standard libraries. Use JWT tokens securely and implement proper session management.</p>
+      
+      <h2>3. HTTPS Everywhere</h2>
+      <p>Always use HTTPS in production to encrypt data in transit. Configure proper SSL/TLS certificates.</p>
+      
+      <h2>4. SQL Injection Prevention</h2>
+      <p>Use parameterized queries or ORMs to prevent SQL injection attacks. Never concatenate user input into SQL queries.</p>
+      
+      <h2>5. Cross-Site Scripting (XSS) Prevention</h2>
+      <p>Sanitize output, use Content Security Policy (CSP) headers, and escape user-generated content.</p>
+      
+      <h2>6. Cross-Site Request Forgery (CSRF) Protection</h2>
+      <p>Implement CSRF tokens and use SameSite cookies to protect against CSRF attacks.</p>
+      
+      <h2>7. Dependency Security</h2>
+      <p>Regularly update dependencies and use tools like npm audit to identify known vulnerabilities.</p>
+      
+      <h2>Conclusion</h2>
+      <p>Security is an ongoing process. Regular audits, updates, and following security best practices are essential for protecting your applications and users.</p>
+    `
+  },
+  '4': {
+    title: "TypeScript Best Practices for Large Applications",
+    category: "TypeScript",
+    readTime: "10 min read",
+    author: "ProWeb Team",
+    date: "Oct 8, 2025",
+    content: `
+      <h2>Introduction</h2>
+      <p>TypeScript can significantly improve code quality in large applications. Here are essential patterns and practices for maintaining large-scale TypeScript projects.</p>
+      
+      <h2>1. Strict Type Checking</h2>
+      <p>Enable strict mode in tsconfig.json to catch more errors at compile time. This includes strictNullChecks, strictFunctionTypes, and more.</p>
+      
+      <h2>2. Use Type Aliases and Interfaces Wisely</h2>
+      <p>Create reusable types for common data structures. Use interfaces for object shapes and type aliases for unions and intersections.</p>
+      
+      <h2>3. Modular Type Definitions</h2>
+      <p>Organize types in separate files and modules. Use index files to re-export commonly used types.</p>
+      
+      <h2>4. Generic Constraints</h2>
+      <p>Use generic constraints to create flexible yet type-safe functions and components.</p>
+      
+      <h2>5. Utility Types</h2>
+      <p>Leverage TypeScript's utility types (Partial, Pick, Omit, etc.) to create new types from existing ones.</p>
+      
+      <h2>Conclusion</h2>
+      <p>Following these practices will help you build maintainable, scalable TypeScript applications that stand the test of time.</p>
+    `
+  },
+  '5': {
+    title: "Responsive Design with Tailwind CSS",
+    category: "UI/UX",
+    readTime: "7 min read",
+    author: "ProWeb Team",
+    date: "Oct 5, 2025",
+    content: `
+      <h2>Introduction</h2>
+      <p>Tailwind CSS makes responsive design intuitive with its mobile-first utility classes. Learn how to create beautiful, responsive layouts efficiently.</p>
+      
+      <h2>1. Mobile-First Approach</h2>
+      <p>Start with mobile styles (default) and use breakpoint prefixes (sm:, md:, lg:, xl:, 2xl:) to add styles for larger screens.</p>
+      
+      <h2>2. Breakpoint Strategy</h2>
+      <p>Understand Tailwind's default breakpoints: sm (640px), md (768px), lg (1024px), xl (1280px), 2xl (1536px).</p>
+      
+      <h2>3. Responsive Typography</h2>
+      <p>Use responsive text sizes: text-sm md:text-base lg:text-lg for scalable typography.</p>
+      
+      <h2>4. Flexible Grid Layouts</h2>
+      <p>Use grid-cols-1 md:grid-cols-2 lg:grid-cols-3 for responsive grid systems that adapt to screen sizes.</p>
+      
+      <h2>5. Spacing and Padding</h2>
+      <p>Apply responsive spacing: p-4 md:p-6 lg:p-8 to adjust padding based on screen size.</p>
+      
+      <h2>Conclusion</h2>
+      <p>Tailwind's responsive utilities make it easy to create designs that work beautifully on all devices without writing custom media queries.</p>
+    `
+  },
+  '6': {
+    title: "API Design Best Practices for Modern Web Apps",
+    category: "Backend",
+    readTime: "9 min read",
+    author: "ProWeb Team",
+    date: "Oct 3, 2025",
+    content: `
+      <h2>Introduction</h2>
+      <p>Well-designed APIs are the backbone of modern web applications. Follow these best practices to create robust, scalable APIs.</p>
+      
+      <h2>1. RESTful Design Principles</h2>
+      <p>Follow REST conventions: use proper HTTP methods (GET, POST, PUT, DELETE), meaningful URLs, and status codes.</p>
+      
+      <h2>2. Versioning</h2>
+      <p>Implement API versioning from the start. Use URL versioning (/api/v1/) or header-based versioning.</p>
+      
+      <h2>3. Error Handling</h2>
+      <p>Return consistent error responses with appropriate HTTP status codes and clear error messages.</p>
+      
+      <h2>4. Pagination</h2>
+      <p>Always implement pagination for list endpoints to improve performance and user experience.</p>
+      
+      <h2>5. Rate Limiting</h2>
+      <p>Protect your API with rate limiting to prevent abuse and ensure fair usage.</p>
+      
+      <h2>6. Documentation</h2>
+      <p>Maintain comprehensive API documentation using tools like OpenAPI/Swagger.</p>
+      
+      <h2>Conclusion</h2>
+      <p>Good API design makes integration easier, improves developer experience, and sets your application up for long-term success.</p>
+    `
+  },
+  '7': {
+    title: "Debugging JavaScript Like a Pro",
+    category: "JavaScript",
+    readTime: "8 min read",
+    author: "ProWeb Team",
+    date: "Oct 1, 2025",
+    content: `
+      <h2>Introduction</h2>
+      <p>Effective debugging is a crucial skill for every JavaScript developer. Master these techniques to identify and fix issues quickly.</p>
+      
+      <h2>1. Browser DevTools Mastery</h2>
+      <p>Learn to use breakpoints, step through code, inspect variables, and use the console effectively in Chrome DevTools or Firefox Developer Tools.</p>
+      
+      <h2>2. Console Methods</h2>
+      <p>Use console.log(), console.table(), console.group(), and console.time() strategically for better debugging output.</p>
+      
+      <h2>3. Source Maps</h2>
+      <p>Enable source maps in your build process to debug minified/transpiled code as if it were the original source.</p>
+      
+      <h2>4. Network Tab</h2>
+      <p>Use the Network tab to inspect API calls, identify failed requests, and analyze response times.</p>
+      
+      <h2>5. React DevTools</h2>
+      <p>For React applications, use React DevTools to inspect component state, props, and hooks.</p>
+      
+      <h2>6. Error Tracking</h2>
+      <p>Implement error tracking tools like Sentry in production to catch and monitor errors in real-time.</p>
+      
+      <h2>Conclusion</h2>
+      <p>Mastering debugging tools and techniques will significantly improve your productivity and code quality.</p>
+    `
   }
+}
+
+export async function generateMetadata({ params }) {
+  const resolvedParams = await params
+  const id = resolvedParams.id
+  const tip = techTipsData[id] || techTipsData['1']
+  
+  return {
+    title: `${tip.title} | ProWeb Nigeria`,
+    description: tip.content.replace(/<[^>]*>/g, '').substring(0, 160),
+    alternates: {
+      canonical: `/resources/tech-tips/${id}`,
+    },
+    robots: {
+      index: true,
+      follow: true,
+    }
+  }
+}
+
+export default async function TechTipDetailPage({ params }) {
+  const resolvedParams = await params
+  const tipId = resolvedParams.id
+  const tip = techTipsData[tipId] || techTipsData['1']
 
   return (
     <main className="min-h-screen bg-gray-50">
@@ -143,9 +334,9 @@ export default function MyComponent() {
 
             {/* CTA */}
             <div className="mt-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl p-8 md:p-12 text-center text-white">
-              <h2 className="text-3xl font-bold mb-4">Need Help with Next.js?</h2>
+              <h2 className="text-3xl font-bold mb-4">Need Help with Web Development?</h2>
               <p className="text-xl mb-6 text-white/90">
-                Our team specializes in building high-performance Next.js applications.
+                Our team specializes in building high-performance web applications.
               </p>
               <Link
                 href="/contact"
@@ -163,4 +354,3 @@ export default function MyComponent() {
     </main>
   )
 }
-

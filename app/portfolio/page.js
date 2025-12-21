@@ -25,7 +25,8 @@ export async function generateMetadata({ searchParams }) {
   }
 }
 
-export default function PortfolioPage({ searchParams }) {
+export default async function PortfolioPage({ searchParams }) {
+  const resolvedSearchParams = await searchParams
   const projects = [
     // New projects to appear first
     {
@@ -122,7 +123,7 @@ export default function PortfolioPage({ searchParams }) {
 
   // Pagination (server-side via searchParams)
   const pageSize = 6
-  const currentPage = Math.max(1, parseInt(searchParams?.page || '1', 10) || 1)
+  const currentPage = Math.max(1, parseInt(resolvedSearchParams?.page || '1', 10) || 1)
   const totalPages = Math.max(1, Math.ceil(projects.length / pageSize))
   const startIndex = (currentPage - 1) * pageSize
   const pagedProjects = projects.slice(startIndex, startIndex + pageSize)
