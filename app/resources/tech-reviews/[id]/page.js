@@ -339,9 +339,8 @@ const techReviewsData = {
   }
 }
 
-export async function generateMetadata({ params }) {
-  const resolvedParams = await params
-  const id = resolvedParams.id
+export function generateMetadata({ params }) {
+  const id = params.id
   const review = techReviewsData[id] || techReviewsData['1']
   
   return {
@@ -357,9 +356,8 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export default async function TechReviewDetailPage({ params }) {
-  const resolvedParams = await params
-  const reviewId = resolvedParams.id
+export default function TechReviewDetailPage({ params }) {
+  const reviewId = params.id
   const review = techReviewsData[reviewId] || techReviewsData['1']
 
   const renderStars = (rating) => {

@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, ExternalLink } from 'lucide-react'
 
-export async function generateMetadata({ searchParams }) {
+export function generateMetadata({ searchParams }) {
   const currentPage = Math.max(1, parseInt(searchParams?.page || '1', 10) || 1)
 
   return {
@@ -25,8 +25,7 @@ export async function generateMetadata({ searchParams }) {
   }
 }
 
-export default async function PortfolioPage({ searchParams }) {
-  const resolvedSearchParams = await searchParams
+export default function PortfolioPage({ searchParams }) {
   const projects = [
     // New projects to appear first
     {
@@ -123,7 +122,7 @@ export default async function PortfolioPage({ searchParams }) {
 
   // Pagination (server-side via searchParams)
   const pageSize = 6
-  const currentPage = Math.max(1, parseInt(resolvedSearchParams?.page || '1', 10) || 1)
+  const currentPage = Math.max(1, parseInt(searchParams?.page || '1', 10) || 1)
   const totalPages = Math.max(1, Math.ceil(projects.length / pageSize))
   const startIndex = (currentPage - 1) * pageSize
   const pagedProjects = projects.slice(startIndex, startIndex + pageSize)

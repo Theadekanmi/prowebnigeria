@@ -252,9 +252,8 @@ export default function MyComponent() {
   }
 }
 
-export async function generateMetadata({ params }) {
-  const resolvedParams = await params
-  const id = resolvedParams.id
+export function generateMetadata({ params }) {
+  const id = params.id
   const tip = techTipsData[id] || techTipsData['1']
   
   return {
@@ -270,9 +269,8 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export default async function TechTipDetailPage({ params }) {
-  const resolvedParams = await params
-  const tipId = resolvedParams.id
+export default function TechTipDetailPage({ params }) {
+  const tipId = params.id
   const tip = techTipsData[tipId] || techTipsData['1']
 
   return (
