@@ -1,3 +1,281 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --color-brand: #0066FF;
+    --color-brand-dark: #0052CC;
+    --color-brand-light: #E6F0FF;
+    --color-accent: #00C853;
+    --color-accent-dark: #00A844;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply text-neutral-800 antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold tracking-tight text-neutral-900;
+  }
+}
+
+@layer components {
+  /* Container */
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Section spacing */
+  .section {
+    @apply py-16 md:py-24;
+  }
+  
+  /* Professional Button Styles */
+  .btn {
+    @apply inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply btn bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500 px-6 py-3;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-white text-neutral-900 border-2 border-neutral-200 hover:border-neutral-300 hover:bg-neutral-50 focus:ring-neutral-500 px-6 py-3;
+  }
+  
+  .btn-outline {
+    @apply btn bg-transparent text-primary-600 border-2 border-primary-600 hover:bg-primary-600 hover:text-white focus:ring-primary-500 px-6 py-3;
+  }
+  
+  /* Card Styles */
+  .card {
+    @apply bg-white rounded-2xl border border-neutral-200 transition-all duration-300;
+  }
+  
+  .card-hover {
+    @apply card hover:shadow-lg hover:border-neutral-300 hover:-translate-y-1;
+  }
+  
+  .card-elevated {
+    @apply card shadow-sm hover:shadow-xl;
+  }
+  
+  /* Badge Styles */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+  }
+  
+  .badge-primary {
+    @apply badge bg-primary-100 text-primary-700;
+  }
+  
+  .badge-success {
+    @apply badge bg-success-100 text-success-700;
+  }
+  
+  .badge-warning {
+    @apply badge bg-warning-100 text-warning-700;
+  }
+  
+  .badge-neutral {
+    @apply badge bg-neutral-100 text-neutral-700;
+  }
+  
+  /* Blog Article Styles */
+  .prose-blog {
+    @apply text-neutral-700 leading-relaxed;
+  }
+  
+  .prose-blog h2 {
+    @apply text-2xl md:text-3xl font-bold text-neutral-900 mt-12 mb-6;
+  }
+  
+  .prose-blog h3 {
+    @apply text-xl md:text-2xl font-bold text-neutral-900 mt-8 mb-4;
+  }
+  
+  .prose-blog p {
+    @apply mb-6 text-lg leading-8;
+  }
+  
+  .prose-blog ul, .prose-blog ol {
+    @apply mb-6 pl-6 space-y-2;
+  }
+  
+  .prose-blog li {
+    @apply text-lg;
+  }
+  
+  .prose-blog a {
+    @apply text-primary-600 hover:text-primary-700 underline underline-offset-2;
+  }
+  
+  /* Table of Contents */
+  .toc {
+    @apply bg-neutral-50 rounded-xl p-6 border border-neutral-200;
+  }
+  
+  .toc-link {
+    @apply block py-2 text-neutral-600 hover:text-primary-600 transition-colors text-sm border-l-2 border-transparent hover:border-primary-600 pl-4 -ml-px;
+  }
+  
+  .toc-link.active {
+    @apply text-primary-600 border-primary-600 font-medium;
+  }
+  
+  /* Stats Card */
+  .stat-card {
+    @apply bg-white rounded-xl p-6 text-center border border-neutral-200;
+  }
+  
+  .stat-number {
+    @apply text-3xl md:text-4xl font-bold text-neutral-900 mb-1;
+  }
+  
+  .stat-label {
+    @apply text-sm text-neutral-600;
+  }
+  
+  /* Feature Card */
+  .feature-card {
+    @apply bg-white rounded-xl p-6 border border-neutral-200 hover:shadow-md transition-all duration-300;
+  }
+  
+  .feature-icon {
+    @apply w-12 h-12 rounded-xl flex items-center justify-center mb-4;
+  }
+  
+  /* CTA Section */
+  .cta-section {
+    @apply bg-neutral-900 text-white rounded-2xl p-8 md:p-12;
+  }
+  
+  /* Author Card */
+  .author-card {
+    @apply flex items-center gap-4 p-4 bg-neutral-50 rounded-xl;
+  }
+  
+  .author-avatar {
+    @apply w-12 h-12 rounded-full bg-neutral-200 flex items-center justify-center text-xl;
+  }
+  
+  /* Breadcrumb */
+  .breadcrumb {
+    @apply flex items-center gap-2 text-sm text-neutral-500;
+  }
+  
+  .breadcrumb a {
+    @apply hover:text-primary-600 transition-colors;
+  }
+  
+  .breadcrumb-separator {
+    @apply text-neutral-300;
+  }
+  
+  /* Blog Card */
+  .blog-card {
+    @apply bg-white rounded-xl overflow-hidden border border-neutral-200 hover:shadow-lg transition-all duration-300;
+  }
+  
+  .blog-card-image {
+    @apply h-48 bg-neutral-100 overflow-hidden;
+  }
+  
+  .blog-card-content {
+    @apply p-6;
+  }
+  
+  .blog-card-title {
+    @apply text-xl font-bold text-neutral-900 mb-3 group-hover:text-primary-600 transition-colors line-clamp-2;
+  }
+  
+  .blog-card-excerpt {
+    @apply text-neutral-600 mb-4 line-clamp-3;
+  }
+  
+  .blog-card-meta {
+    @apply flex items-center gap-4 text-sm text-neutral-500;
+  }
+  
+  /* Ranking List */
+  .ranking-item {
+    @apply flex gap-6 p-6 bg-white rounded-xl border border-neutral-200 hover:shadow-md transition-all duration-300;
+  }
+  
+  .ranking-number {
+    @apply w-12 h-12 rounded-full bg-primary-600 text-white flex items-center justify-center font-bold text-xl flex-shrink-0;
+  }
+  
+  .ranking-number.gold {
+    @apply bg-yellow-500;
+  }
+  
+  .ranking-number.silver {
+    @apply bg-neutral-400;
+  }
+  
+  .ranking-number.bronze {
+    @apply bg-amber-600;
+  }
+}
+
+@layer utilities {
+  /* Animation delays */
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+  
+  .animation-delay-2000 {
+    animation-delay: 2000ms;
+  }
+  
+  .animation-delay-4000 {
+    animation-delay: 4000ms;
+  }
+  
+  /* Line clamp */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  /* Gradient text */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-primary-800;
+  }
+  
+  /* Subtle background patterns */
+  .bg-dots {
+    background-image: radial-gradient(circle, #e5e7eb 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  .bg-grid {
+    background-image: linear-gradient(to right, #f1f5f9 1px, transparent 1px),
+                      linear-gradient(to bottom, #f1f5f9 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
