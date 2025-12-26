@@ -5,8 +5,8 @@ import Link from 'next/link'
 import { Calendar, User, Clock, ArrowRight, CheckCircle, TrendingUp, Users, Globe, Shield, Zap, BarChart3 } from 'lucide-react'
 
 export const metadata = {
-  title: 'Why Your Nigerian Business Needs a Professional Website in 2025',
-  description: 'Learn why having a professional website is crucial for business success in Nigeria. Discover how a website can increase sales, build trust, and grow your business.',
+  title: 'Why Your Nigerian Business Needs a Professional Website 2025',
+  description: 'Learn why a professional website is crucial for business success in Nigeria. Discover how a website can increase sales and grow your business.',
   keywords: ['why need website nigeria', 'business website nigeria', 'importance of website', 'nigerian business online', 'website benefits nigeria'],
   openGraph: {
     title: 'Why Your Nigerian Business Needs a Professional Website',

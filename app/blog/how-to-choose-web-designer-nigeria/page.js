@@ -5,8 +5,8 @@ import Link from 'next/link'
 import { Calendar, User, Clock, ArrowRight, CheckCircle, AlertCircle, XCircle } from 'lucide-react'
 
 export const metadata = {
-  title: 'How to Choose a Web Designer in Nigeria | Complete Guide',
-  description: 'Learn how to choose the right web designer for your Nigerian business. Avoid scams, evaluate portfolios, and find the perfect partner for your website project.',
+  title: 'How to Choose a Web Designer in Nigeria | Guide',
+  description: 'Learn how to choose the right web designer for your Nigerian business. Avoid scams, evaluate portfolios, and find the perfect partner.',
   keywords: ['choose web designer nigeria', 'hire web developer nigeria', 'find web designer lagos', 'web design company selection', 'best web designer nigeria'],
   openGraph: {
     title: 'How to Choose a Web Designer in Nigeria',

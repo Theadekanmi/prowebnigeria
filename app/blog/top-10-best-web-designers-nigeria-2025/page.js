@@ -9,8 +9,8 @@ import {
 } from 'lucide-react'
 
 export const metadata = {
-  title: 'Top 10 Best Web Designers in Nigeria 2025 | Complete Rankings',
-  description: 'Discover the best web designers in Nigeria for 2025. We rank the top 10 web design companies based on portfolio, reviews, pricing & expertise. Find your perfect web designer.',
+  title: 'Top 10 Best Web Designers in Nigeria 2025 | Rankings',
+  description: 'Discover the best web designers in Nigeria for 2025. Top 10 web design companies ranked by portfolio, reviews, pricing & expertise.',
   keywords: [
     'best web designers in nigeria',
     'top web designers nigeria',
