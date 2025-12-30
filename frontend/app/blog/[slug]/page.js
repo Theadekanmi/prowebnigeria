@@ -36,10 +36,16 @@ export default function BlogPostPage() {
   const fetchPost = async (slug) => {
     try {
       const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://prowebnaija.pythonanywhere.com/api'
+      const controller = new AbortController()
+      const timeoutId = setTimeout(() => controller.abort(), 10000) // 10s timeout
+      
       const res = await fetch(`${API_URL}/blog/posts/${slug}/`, { 
         cache: 'no-store',
-        headers: { 'Accept': 'application/json' }
+        headers: { 'Accept': 'application/json' },
+        signal: controller.signal
       })
+      clearTimeout(timeoutId)
+      
       if (res.ok) {
         const data = await res.json()
         setPost(data)
@@ -151,10 +157,10 @@ export default function BlogPostPage() {
             <div dangerouslySetInnerHTML={{ __html: post.content || '' }} />
           </article>
           
-          {post.keywords && (
+          {post.keywords && post.keywords.trim() && (
             <div className="mt-12 pt-8 border-t border-neutral-200">
               <div className="flex items-center gap-2 flex-wrap">
-                {post.keywords.split(',').map((keyword, i) => (
+                {post.keywords.split(',').filter(k => k.trim()).map((keyword, i) => (
                   <span key={i} className="px-3 py-1 bg-neutral-100 text-neutral-600 rounded-full text-sm">
                     {keyword.trim()}
                   </span>

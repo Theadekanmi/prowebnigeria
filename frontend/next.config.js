@@ -1,4 +1,4 @@
-const withPWA = require('next-pwa')({
+const withPWA = require('@ducanh2912/next-pwa').default({
   dest: 'public',
   disable: process.env.NODE_ENV === 'development',
   register: true,
@@ -8,7 +8,6 @@ const withPWA = require('next-pwa')({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  outputFileTracing: false,
   swcMinify: true,
   compress: true,
   images: {
