@@ -1,27 +1,8 @@
 const withPWA = require('next-pwa')({
   dest: 'public',
+  disable: process.env.NODE_ENV === 'development',
   register: true,
   skipWaiting: true,
-  disable: true, // Disabled temporarily to fix 500 errors
-  runtimeCaching: [
-    {
-      urlPattern: /^https:\/\/images\.unsplash\.com\/.*/i,
-      handler: 'CacheFirst',
-      options: {
-        cacheName: 'unsplash-images',
-        expiration: { maxEntries: 50, maxAgeSeconds: 60 * 60 * 24 * 30 },
-      },
-    },
-    {
-      urlPattern: /^https:\/\/prowebnaija\.pythonanywhere\.com\/api\/.*/i,
-      handler: 'NetworkFirst',
-      options: {
-        cacheName: 'api-cache',
-        expiration: { maxEntries: 50, maxAgeSeconds: 60 * 60 },
-        networkTimeoutSeconds: 10,
-      },
-    },
-  ],
 })
 
 /** @type {import('next').NextConfig} */
