@@ -34,7 +34,18 @@ export default function PortfolioPage() {
       .then(res => res.ok ? res.json() : null)
       .then(data => {
         const projectList = data?.results || data
-        if (projectList?.length > 0) setProjects(projectList)
+        if (projectList?.length > 0) {
+          // Process projects to ensure proper image URLs
+          const processedProjects = projectList.map(project => {
+            let imageUrl = project.thumbnail
+            // If thumbnail exists and is a relative path, prepend the API base URL
+            if (imageUrl && !imageUrl.startsWith('http')) {
+              imageUrl = `https://prowebnaija.pythonanywhere.com${imageUrl.startsWith('/') ? '' : '/'}${imageUrl}`
+            }
+            return { ...project, thumbnail: imageUrl }
+          })
+          setProjects(processedProjects)
+        }
       })
       .catch(() => {})
       .finally(() => setLoading(false))
@@ -94,7 +105,8 @@ export default function PortfolioPage() {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {currentProjects.map((project, index) => {
                   const categoryName = project.category?.name || project.category || 'Project'
-                  const imageUrl = project.thumbnail || project.featured_image || project.image || 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80'
+                  // Use thumbnail from API, fallback to local images, then placeholder
+                  const imageUrl = project.thumbnail || `/${project.title.toLowerCase().replace(/\s+/g, '-')}.png` || 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80'
                   const techList = Array.isArray(project.technologies) 
                     ? project.technologies 
                     : typeof project.technologies === 'string' 
