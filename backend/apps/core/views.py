@@ -1,11 +1,16 @@
 from rest_framework import generics, status
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
+from django.core.mail import EmailMessage
+from django.conf import settings
+import logging
 from .models import SiteSettings, Testimonial, TeamMember, FAQ, Service
 from .serializers import (
     SiteSettingsSerializer, ContactSubmissionSerializer,
     TestimonialSerializer, TeamMemberSerializer, FAQSerializer, ServiceSerializer
 )
+
+logger = logging.getLogger(__name__)
 
 
 class SiteSettingsView(generics.RetrieveAPIView):
@@ -23,7 +28,42 @@ class ContactSubmissionCreateView(generics.CreateAPIView):
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        self.perform_create(serializer)
+        submission = serializer.save()
+        
+        # Send email notification
+        try:
+            subject = f"New Contact Form: {submission.subject}"
+            message = f"""
+New contact form submission from ProWeb Nigeria website:
+
+Name: {submission.name}
+Email: {submission.email}
+Phone: {submission.phone or 'Not provided'}
+Company: {submission.company or 'Not provided'}
+Project Type: {submission.project_type or 'Not specified'}
+Budget: {submission.budget or 'Not specified'}
+
+Subject: {submission.subject}
+
+Message:
+{submission.message}
+
+---
+Reply directly to this email to respond to the client.
+            """
+            
+            email = EmailMessage(
+                subject=subject,
+                body=message,
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                to=[settings.CONTACT_EMAIL],
+                reply_to=[submission.email],
+            )
+            email.send(fail_silently=False)
+            logger.info(f"Email sent successfully for contact: {submission.email}")
+        except Exception as e:
+            logger.error(f"Failed to send email: {str(e)}")
+        
         return Response({'message': 'Thank you! We will get back to you soon.'}, status=status.HTTP_201_CREATED)
 
 
