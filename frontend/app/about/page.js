@@ -113,8 +113,8 @@ export default function AboutPage() {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12" data-aos="fade-up">Our Mission & Vision</h2>
           <div className="grid md:grid-cols-2 gap-6 md:gap-8">
             <div className="bg-white rounded-2xl p-6 md:p-8 shadow-xl shadow-neutral-200/50 border border-neutral-100 hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
-              <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-purple-500/30">
-                <Target className="w-7 h-7 text-white" />
+              <div className="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center mb-6">
+                <Target className="w-7 h-7 text-purple-600" />
               </div>
               <h3 className="text-xl md:text-2xl font-bold text-neutral-900 mb-4">Our Mission</h3>
               <p className="text-neutral-600 leading-relaxed">
@@ -122,8 +122,8 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="bg-white rounded-2xl p-6 md:p-8 shadow-xl shadow-neutral-200/50 border border-neutral-100 hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-              <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-purple-500/30">
-                <TrendingUp className="w-7 h-7 text-white" />
+              <div className="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center mb-6">
+                <TrendingUp className="w-7 h-7 text-purple-600" />
               </div>
               <h3 className="text-xl md:text-2xl font-bold text-neutral-900 mb-4">Our Vision</h3>
               <p className="text-neutral-600 leading-relaxed">
@@ -149,8 +149,8 @@ export default function AboutPage() {
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-purple-500/30">
-                  <value.icon className="w-6 h-6 text-white" />
+                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                  <value.icon className="w-6 h-6 text-purple-600" />
                 </div>
                 <h3 className="text-lg font-bold text-neutral-900 mb-2">{value.title}</h3>
                 <p className="text-neutral-600 text-sm leading-relaxed">{value.description}</p>
@@ -225,7 +225,7 @@ export default function AboutPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               href="/contact" 
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold rounded-xl hover:shadow-xl hover:shadow-purple-500/25 transition-all"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-purple-600 text-white font-bold rounded-xl hover:bg-purple-700 hover:shadow-xl transition-all"
             >
               Get Free Quote
               <ArrowRight className="w-5 h-5" />
