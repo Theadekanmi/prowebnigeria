@@ -9,13 +9,23 @@ import Image from 'next/image'
 import { ArrowRight, ExternalLink, Eye, X, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const fallbackProjects = [
-  { title: 'UK E-commerce Store', category: { name: 'E-commerce' }, description: 'Modern online store with secure payments and inventory synchronization.', result: '300% increase in monthly sales', thumbnail: '/funmitan.png', technologies: ['Next.js', 'React', 'Stripe', 'Tailwind CSS'], client: 'Fashion Retailer UK', year: '2024' },
-  { title: 'Hitech Construction', category: { name: 'Construction' }, description: 'Infrastructure showcase with service pages and lead-capture CTAs.', result: '800% increase in leads', thumbnail: '/Hitech.png', technologies: ['Next.js', 'React', 'Tailwind CSS', 'Vercel'], client: 'Hitech Construction', year: '2024' },
-  { title: 'Kata-Kara', category: { name: 'Marketplace' }, description: 'Freelance marketplace connecting buyers and service providers.', result: '170% user growth', thumbnail: '/kata-kara.png', technologies: ['React', 'Node.js', 'MongoDB', 'Paystack'], client: 'Kata-Kara Platform', year: '2024' },
-  { title: 'Omnifood', category: { name: 'Food & Delivery' }, description: 'Food delivery app with intuitive ordering and reservations.', result: '400% increase in orders', thumbnail: '/Omnifood.jpg', technologies: ['HTML', 'CSS', 'JavaScript'], client: 'Omnifood', year: '2023' },
-  { title: 'Super-Jara', category: { name: 'Fintech' }, description: 'Airtime, data top-ups, and bill payments platform.', result: '200% transaction growth', thumbnail: '/Super-jara.jpg', technologies: ['React', 'Node.js', 'Paystack API'], client: 'Super Jara', year: '2023' },
-  { title: 'MetaScrap', category: { name: 'Recycling' }, description: 'Smart recycling platform with AI-powered matching.', result: '100% efficiency improvement', thumbnail: '/Metascrap.jpg', technologies: ['React', 'Python', 'AI/ML', 'Google Maps'], client: 'MetaScrap', year: '2023' },
+  { title: 'UK E-commerce Store', slug: 'uk-ecommerce-store', category: { name: 'E-commerce' }, description: 'Modern online store with secure payments and inventory synchronization.', result: '300% increase in monthly sales', thumbnail: '/funmitan.png', technologies: ['Next.js', 'React', 'Stripe', 'Tailwind CSS'], client: 'Fashion Retailer UK', year: '2024' },
+  { title: 'Hitech Construction', slug: 'hitech-construction', category: { name: 'Construction' }, description: 'Infrastructure showcase with service pages and lead-capture CTAs.', result: '800% increase in leads', thumbnail: '/Hitech.png', technologies: ['Next.js', 'React', 'Tailwind CSS', 'Vercel'], client: 'Hitech Construction', year: '2024' },
+  { title: 'Kata-Kara Marketplace', slug: 'kata-kara-marketplace', category: { name: 'Freelancing' }, description: 'Freelance marketplace connecting buyers and service providers.', result: '170% user growth', thumbnail: '/kata-kara.png', technologies: ['React', 'Node.js', 'MongoDB', 'Paystack'], client: 'Kata-Kara Platform', year: '2024' },
+  { title: 'Omnifood Web App', slug: 'omnifood-web-app', category: { name: 'Hospitality' }, description: 'Food delivery app with intuitive ordering and reservations.', result: '400% increase in orders', thumbnail: '/Omnifood.jpg', technologies: ['HTML', 'CSS', 'JavaScript'], client: 'Omnifood', year: '2023' },
+  { title: 'Super-Jara Web App', slug: 'super-jara-web-app', category: { name: 'Utilities & Payments' }, description: 'Airtime, data top-ups, and bill payments platform.', result: '200% transaction growth', thumbnail: '/Super-jara.jpg', technologies: ['React', 'Node.js', 'Paystack API'], client: 'Super Jara', year: '2023' },
+  { title: 'MetaScrap Web App', slug: 'metascrap-web-app', category: { name: 'Metal Scrap' }, description: 'Smart recycling platform with AI-powered matching.', result: '100% efficiency improvement', thumbnail: '/Metascrap.jpg', technologies: ['React', 'Python', 'AI/ML', 'Google Maps'], client: 'MetaScrap', year: '2023' },
 ]
+
+// Map API slugs to local images
+const localImageMap = {
+  'uk-ecommerce-store': '/funmitan.png',
+  'hitech-construction': '/Hitech.png',
+  'kata-kara-marketplace': '/kata-kara.png',
+  'omnifood-web-app': '/Omnifood.jpg',
+  'super-jara-web-app': '/Super-jara.jpg',
+  'metascrap-web-app': '/Metascrap.jpg',
+}
 
 const ITEMS_PER_PAGE = 9
 
@@ -94,8 +104,8 @@ export default function PortfolioPage() {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {currentProjects.map((project, index) => {
                   const categoryName = project.category?.name || project.category || 'Project'
-                  // Use thumbnail from API directly, or fallback to placeholder
-                  const imageUrl = project.thumbnail || 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80'
+                  // Use API thumbnail, then local fallback, then placeholder
+                  const imageUrl = project.thumbnail || localImageMap[project.slug] || 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80'
                   const techList = Array.isArray(project.technologies) 
                     ? project.technologies 
                     : typeof project.technologies === 'string' 
@@ -169,7 +179,7 @@ export default function PortfolioPage() {
           <div className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-white rounded-2xl" style={{ boxShadow: '0 25px 50px rgba(0,0,0,0.25)' }} onClick={(e) => e.stopPropagation()}>
             <button onClick={() => setSelectedProject(null)} className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-neutral-100 flex items-center justify-center hover:bg-neutral-200"><X className="w-5 h-5" /></button>
             <div className="relative aspect-video bg-neutral-100">
-              <img src={selectedProject.imageUrl || selectedProject.thumbnail || 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80'} alt={selectedProject.title} className="w-full h-full object-cover" />
+              <img src={selectedProject.imageUrl || selectedProject.thumbnail || localImageMap[selectedProject.slug] || 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80'} alt={selectedProject.title} className="w-full h-full object-cover" />
             </div>
             <div className="p-6 md:p-8">
               <p className="text-purple-600 text-sm font-medium mb-2">{selectedProject.categoryName || selectedProject.category?.name || selectedProject.category}</p>
