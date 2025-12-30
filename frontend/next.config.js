@@ -2,7 +2,7 @@ const withPWA = require('next-pwa')({
   dest: 'public',
   register: true,
   skipWaiting: true,
-  disable: process.env.NODE_ENV === 'development',
+  disable: true, // Disabled temporarily to fix 500 errors
   runtimeCaching: [
     {
       urlPattern: /^https:\/\/images\.unsplash\.com\/.*/i,
