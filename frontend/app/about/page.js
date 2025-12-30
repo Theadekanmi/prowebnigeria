@@ -11,82 +11,68 @@ export const metadata = {
 }
 
 const values = [
-  { icon: Users, title: 'Client-Focused', description: 'We put our clients first, understanding their unique needs and delivering tailored solutions' },
-  { icon: Target, title: 'Results-Driven', description: 'Every project is focused on delivering measurable business results and ROI' },
-  { icon: Award, title: 'Quality Excellence', description: 'We maintain the highest standards in code quality, design, and user experience' },
-  { icon: TrendingUp, title: 'Continuous Innovation', description: 'We stay ahead with the latest technologies and best practices in web development' }
+  { icon: Users, title: 'Client-Focused', description: 'We put our clients first, understanding their unique needs' },
+  { icon: Target, title: 'Results-Driven', description: 'Every project focuses on delivering measurable results' },
+  { icon: Award, title: 'Quality Excellence', description: 'Highest standards in code quality and design' },
+  { icon: TrendingUp, title: 'Innovation', description: 'Latest technologies and best practices' }
 ]
 
 const stats = [
   { value: '22+', label: 'Happy Clients' },
-  { value: '20+', label: 'Projects Completed' },
-  { value: '3+', label: 'Years Experience' },
-  { value: '24/7', label: 'Support Available' }
+  { value: '20+', label: 'Projects' },
+  { value: '3+', label: 'Years' },
+  { value: '24/7', label: 'Support' }
 ]
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen overflow-x-hidden">
       <Header />
       
-          {/* Hero Section with Purple Gradient */}
-      <section className="relative pt-28 pb-16 md:pt-32 md:pb-20 overflow-hidden bg-gradient-to-br from-purple-50 via-white to-pink-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6">
-              About <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">ProWeb Nigeria</span>
-            </h1>
-            <p className="text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto px-2">
-              Building high-performance web solutions that drive measurable growth for ambitious Nigerian businesses.
-            </p>
-          </div>
+      {/* Hero */}
+      <section className="pt-28 pb-12 md:pt-32 md:pb-20 bg-gradient-to-br from-purple-50 via-white to-pink-50">
+        <div className="px-4 sm:px-6 max-w-6xl mx-auto text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+            About <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">ProWeb Nigeria</span>
+          </h1>
+          <p className="text-base md:text-lg text-neutral-600 max-w-2xl mx-auto">
+            Building high-performance web solutions that drive measurable growth for ambitious Nigerian businesses.
+          </p>
         </div>
       </section>
 
-      {/* Our Story Section */}
+      {/* Our Story */}
       <section className="py-12 md:py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center max-w-6xl mx-auto">
-            <div data-aos="fade-right">
+        <div className="px-4 sm:px-6 max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            <div>
               <h2 className="text-2xl md:text-3xl font-bold mb-4">
                 Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Story</span>
               </h2>
-              <div className="space-y-4 text-neutral-600 leading-relaxed text-sm md:text-base">
-                <p>
-                  ProWeb Nigeria is a leading web design and development company specializing in creating high-performance websites, e-commerce solutions, and mobile applications that help businesses achieve their digital goals and drive real revenue growth.
-                </p>
-                <p>
-                  With over 3 years of experience and 20+ successful projects delivered, we have helped businesses across Nigeria and beyond establish a powerful online presence that converts visitors into customers.
-                </p>
-                <p>
-                  We are proud to have helped a Lagos-based e-commerce store achieve a 500% increase in sales through strategic web development and digital marketing. We have worked with businesses ranging from ambitious startups to established enterprises across various industries including fintech, healthcare, education, real estate, and retail.
-                </p>
-                <p>
-                  Our approach combines cutting-edge technology with deep business understanding. We do not just build websites, we build digital assets that grow with your business, scale effortlessly, and deliver exceptional user experiences across all devices.
-                </p>
+              <div className="space-y-3 text-neutral-600 text-sm md:text-base">
+                <p>ProWeb Nigeria is a leading web design and development company specializing in high-performance websites, e-commerce solutions, and mobile applications.</p>
+                <p>With over 3 years of experience and 20+ successful projects, we help businesses across Nigeria establish a powerful online presence.</p>
+                <p>We helped a Lagos-based e-commerce store achieve a 500% increase in sales through strategic web development and digital marketing.</p>
               </div>
             </div>
             
-            <div className="relative" data-aos="fade-left">
-              <div className="relative rounded-2xl overflow-hidden" style={{ boxShadow: '0 25px 50px rgba(147, 51, 234, 0.15)' }}>
-                <Image
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
-                  alt="ProWeb Nigeria Team"
-                  width={600}
-                  height={400}
-                  className="w-full h-auto object-cover"
-                />
-                {/* Stats Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-purple-900/90 to-transparent p-6">
-                  <div className="grid grid-cols-2 gap-4 text-white">
-                    <div className="text-center">
-                      <div className="text-3xl font-bold">3+</div>
-                      <div className="text-sm text-purple-200">Years of Excellence</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-3xl font-bold">20+</div>
-                      <div className="text-sm text-purple-200">Successful Projects</div>
-                    </div>
+            <div className="relative rounded-2xl overflow-hidden" style={{ boxShadow: '0 20px 40px rgba(147, 51, 234, 0.15)' }}>
+              <Image
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
+                alt="ProWeb Nigeria Team"
+                width={600}
+                height={400}
+                className="w-full h-auto object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-purple-900/90 to-transparent p-4">
+                <div className="grid grid-cols-2 gap-4 text-white text-center">
+                  <div>
+                    <div className="text-2xl font-bold">3+</div>
+                    <div className="text-xs text-purple-200">Years</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold">20+</div>
+                    <div className="text-xs text-purple-200">Projects</div>
                   </div>
                 </div>
               </div>
@@ -97,30 +83,26 @@ export default function AboutPage() {
 
       {/* Mission & Vision */}
       <section className="py-12 md:py-20 bg-neutral-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-8 md:mb-12">
-              <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-4">Our Mission & Vision</h2>
+        <div className="px-4 sm:px-6 max-w-6xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">Our Mission & Vision</h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="bg-white rounded-2xl p-5 md:p-6 border border-neutral-200">
+              <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                <Target className="w-5 h-5 text-purple-600" />
+              </div>
+              <h3 className="text-lg font-bold text-neutral-900 mb-2">Our Mission</h3>
+              <p className="text-neutral-600 text-sm">
+                To empower businesses across Nigeria and Africa with cutting-edge digital solutions that drive growth and establish a commanding online presence.
+              </p>
             </div>
-            <div className="grid md:grid-cols-2 gap-4 md:gap-6">
-              <div className="bg-white rounded-2xl p-6 md:p-8 border border-neutral-200" data-aos="fade-up" style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.08)' }}>
-                <div className="w-12 h-12 md:w-14 md:h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-4 md:mb-6">
-                  <Target className="w-6 h-6 md:w-7 md:h-7 text-purple-600" />
-                </div>
-                <h3 className="text-xl md:text-2xl font-bold text-neutral-900 mb-3 md:mb-4">Our Mission</h3>
-                <p className="text-neutral-600 leading-relaxed text-sm md:text-base">
-                  To empower businesses across Nigeria and Africa with cutting-edge digital solutions that drive exponential growth, enhance customer engagement, and establish a commanding online presence in the digital marketplace.
-                </p>
+            <div className="bg-white rounded-2xl p-5 md:p-6 border border-neutral-200">
+              <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                <TrendingUp className="w-5 h-5 text-purple-600" />
               </div>
-              <div className="bg-white rounded-2xl p-6 md:p-8 border border-neutral-200" data-aos="fade-up" data-aos-delay="100" style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.08)' }}>
-                <div className="w-12 h-12 md:w-14 md:h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-4 md:mb-6">
-                  <TrendingUp className="w-6 h-6 md:w-7 md:h-7 text-purple-600" />
-                </div>
-                <h3 className="text-xl md:text-2xl font-bold text-neutral-900 mb-3 md:mb-4">Our Vision</h3>
-                <p className="text-neutral-600 leading-relaxed text-sm md:text-base">
-                  To be recognized as the leading digital transformation partner for businesses across Africa, renowned for innovation, uncompromising quality, and exceptional customer service.
-                </p>
-              </div>
+              <h3 className="text-lg font-bold text-neutral-900 mb-2">Our Vision</h3>
+              <p className="text-neutral-600 text-sm">
+                To be recognized as the leading digital transformation partner for businesses across Africa, renowned for innovation and quality.
+              </p>
             </div>
           </div>
         </div>
@@ -128,25 +110,49 @@ export default function AboutPage() {
 
       {/* Core Values */}
       <section className="py-12 md:py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-8 md:mb-12">
-              <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-4">Our Core Values</h2>
-            </div>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-              {values.map((value, index) => (
-                <div 
-                  key={index} 
-                  className="bg-white rounded-2xl p-4 md:p-6 border border-neutral-200" 
-                  data-aos="fade-up" 
-                  data-aos-delay={index * 100}
-                  style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.08)' }}
-                >
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-3 md:mb-4">
-                    <value.icon className="w-5 h-5 md:w-6 md:h-6 text-purple-600" />
+        <div className="px-4 sm:px-6 max-w-6xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">Our Core Values</h2>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+            {values.map((value, index) => (
+              <div key={index} className="bg-white rounded-xl p-4 border border-neutral-200">
+                <div className="w-9 h-9 bg-purple-100 rounded-lg flex items-center justify-center mb-3">
+                  <value.icon className="w-4 h-4 text-purple-600" />
+                </div>
+                <h3 className="text-sm font-bold text-neutral-900 mb-1">{value.title}</h3>
+                <p className="text-neutral-600 text-xs">{value.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-12 md:py-20 bg-neutral-50">
+        <div className="px-4 sm:px-6 max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-4">Why Choose Us?</h2>
+              <div className="space-y-3">
+                {[
+                  'Modern tech: React, Next.js, Node.js',
+                  'Mobile-first, responsive designs',
+                  'SEO optimized from day one',
+                  'Fast loading on Nigerian networks',
+                  'Ongoing support & maintenance',
+                  'Transparent pricing'
+                ].map((item, index) => (
+                  <div key={index} className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span className="text-neutral-700 text-sm">{item}</span>
                   </div>
-                  <h3 className="text-base md:text-lg font-bold text-neutral-900 mb-2">{value.title}</h3>
-                  <p className="text-neutral-600 text-xs md:text-sm">{value.description}</p>
+                ))}
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              {stats.map((stat, index) => (
+                <div key={index} className="bg-white rounded-xl p-4 text-center border border-neutral-200">
+                  <div className="text-2xl font-bold text-purple-600">{stat.value}</div>
+                  <div className="text-neutral-600 text-xs">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -154,54 +160,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-12 md:py-20 bg-neutral-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-              <div data-aos="fade-right">
-                <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-4 md:mb-6">Why Choose ProWeb Nigeria?</h2>
-                <div className="space-y-4">
-                  {[
-                    'Modern tech stack: React, Next.js, Node.js',
-                    'Mobile-first, responsive designs',
-                    'SEO optimized from day one',
-                    'Fast loading speeds on Nigerian networks',
-                    'Ongoing support and maintenance',
-                    'Transparent pricing, no hidden fees'
-                  ].map((item, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-neutral-700">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="grid grid-cols-2 gap-3 md:gap-4" data-aos="fade-left">
-                {stats.map((stat, index) => (
-                  <div 
-                    key={index} 
-                    className="bg-white rounded-2xl p-4 md:p-6 text-center border border-neutral-200"
-                    style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.08)' }}
-                  >
-                    <div className="text-2xl md:text-3xl font-bold text-purple-600 mb-1">{stat.value}</div>
-                    <div className="text-neutral-600 text-xs md:text-sm">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Stats Banner */}
-      <section className="py-12 md:py-16 bg-gradient-to-r from-purple-600 to-pink-600">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center text-white">
+      <section className="py-10 md:py-14 bg-gradient-to-r from-purple-600 to-pink-600">
+        <div className="px-4 sm:px-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
             {stats.map((stat, index) => (
-              <div key={index} data-aos="zoom-in" data-aos-delay={index * 100}>
-                <div className="text-3xl md:text-4xl font-bold mb-1 md:mb-2">{stat.value}</div>
-                <div className="text-purple-200 text-sm md:text-base">{stat.label}</div>
+              <div key={index}>
+                <div className="text-2xl md:text-3xl font-bold">{stat.value}</div>
+                <div className="text-purple-200 text-xs md:text-sm">{stat.label}</div>
               </div>
             ))}
           </div>

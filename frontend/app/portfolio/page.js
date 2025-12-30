@@ -9,12 +9,12 @@ import Image from 'next/image'
 import { ArrowRight, ExternalLink, Eye, X, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const fallbackProjects = [
-  { title: 'UK E-commerce Store', category: { name: 'E-commerce' }, description: 'Modern online store with secure payments and inventory synchronization.', result: '300% increase in monthly sales', featured_image: '/funmitan.png', technologies: 'Next.js, React, Stripe, Tailwind CSS', client: 'Fashion Retailer UK', year: '2024' },
-  { title: 'Hitech Construction', category: { name: 'Construction' }, description: 'Infrastructure showcase with service pages and lead-capture CTAs.', result: '800% increase in leads', featured_image: '/Hitech.png', technologies: 'Next.js, React, Tailwind CSS, Vercel', client: 'Hitech Construction', year: '2024' },
-  { title: 'Kata-Kara', category: { name: 'Marketplace' }, description: 'Freelance marketplace connecting buyers and service providers.', result: '170% user growth', featured_image: '/kata-kara.png', technologies: 'React, Node.js, MongoDB, Paystack', client: 'Kata-Kara Platform', year: '2024' },
-  { title: 'Omnifood', category: { name: 'Food & Delivery' }, description: 'Food delivery app with intuitive ordering and reservations.', result: '400% increase in orders', featured_image: '/Omnifood.jpg', technologies: 'HTML, CSS, JavaScript', client: 'Omnifood', year: '2023' },
-  { title: 'Super-Jara', category: { name: 'Fintech' }, description: 'Airtime, data top-ups, and bill payments platform.', result: '200% transaction growth', featured_image: '/Super-jara.jpg', technologies: 'React, Node.js, Paystack API', client: 'Super Jara', year: '2023' },
-  { title: 'MetaScrap', category: { name: 'Recycling' }, description: 'Smart recycling platform with AI-powered matching.', result: '100% efficiency improvement', featured_image: '/Metascrap.jpg', technologies: 'React, Python, AI/ML, Google Maps', client: 'MetaScrap', year: '2023' },
+  { title: 'UK E-commerce Store', category: { name: 'E-commerce' }, description: 'Modern online store with secure payments and inventory synchronization.', result: '300% increase in monthly sales', thumbnail: '/funmitan.png', technologies: ['Next.js', 'React', 'Stripe', 'Tailwind CSS'], client: 'Fashion Retailer UK', year: '2024' },
+  { title: 'Hitech Construction', category: { name: 'Construction' }, description: 'Infrastructure showcase with service pages and lead-capture CTAs.', result: '800% increase in leads', thumbnail: '/Hitech.png', technologies: ['Next.js', 'React', 'Tailwind CSS', 'Vercel'], client: 'Hitech Construction', year: '2024' },
+  { title: 'Kata-Kara', category: { name: 'Marketplace' }, description: 'Freelance marketplace connecting buyers and service providers.', result: '170% user growth', thumbnail: '/kata-kara.png', technologies: ['React', 'Node.js', 'MongoDB', 'Paystack'], client: 'Kata-Kara Platform', year: '2024' },
+  { title: 'Omnifood', category: { name: 'Food & Delivery' }, description: 'Food delivery app with intuitive ordering and reservations.', result: '400% increase in orders', thumbnail: '/Omnifood.jpg', technologies: ['HTML', 'CSS', 'JavaScript'], client: 'Omnifood', year: '2023' },
+  { title: 'Super-Jara', category: { name: 'Fintech' }, description: 'Airtime, data top-ups, and bill payments platform.', result: '200% transaction growth', thumbnail: '/Super-jara.jpg', technologies: ['React', 'Node.js', 'Paystack API'], client: 'Super Jara', year: '2023' },
+  { title: 'MetaScrap', category: { name: 'Recycling' }, description: 'Smart recycling platform with AI-powered matching.', result: '100% efficiency improvement', thumbnail: '/Metascrap.jpg', technologies: ['React', 'Python', 'AI/ML', 'Google Maps'], client: 'MetaScrap', year: '2023' },
 ]
 
 const ITEMS_PER_PAGE = 9
@@ -94,10 +94,12 @@ export default function PortfolioPage() {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {currentProjects.map((project, index) => {
                   const categoryName = project.category?.name || project.category || 'Project'
-                  const imageUrl = project.featured_image || project.image || '/placeholder.jpg'
-                  const techList = typeof project.technologies === 'string' 
-                    ? project.technologies.split(',').map(t => t.trim()) 
-                    : project.technologies || []
+                  const imageUrl = project.thumbnail || project.featured_image || project.image || 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80'
+                  const techList = Array.isArray(project.technologies) 
+                    ? project.technologies 
+                    : typeof project.technologies === 'string' 
+                      ? project.technologies.split(',').map(t => t.trim()) 
+                      : []
                   
                   return (
                   <div 
@@ -166,7 +168,7 @@ export default function PortfolioPage() {
           <div className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-white rounded-2xl" style={{ boxShadow: '0 25px 50px rgba(0,0,0,0.25)' }} onClick={(e) => e.stopPropagation()}>
             <button onClick={() => setSelectedProject(null)} className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-neutral-100 flex items-center justify-center hover:bg-neutral-200"><X className="w-5 h-5" /></button>
             <div className="relative aspect-video bg-neutral-100">
-              <Image src={selectedProject.imageUrl || selectedProject.featured_image || selectedProject.image} alt={selectedProject.title} fill className="object-cover" />
+              <Image src={selectedProject.imageUrl || selectedProject.thumbnail || selectedProject.featured_image || selectedProject.image || 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80'} alt={selectedProject.title} fill className="object-cover" />
             </div>
             <div className="p-6 md:p-8">
               <p className="text-purple-600 text-sm font-medium mb-2">{selectedProject.categoryName || selectedProject.category?.name || selectedProject.category}</p>
@@ -181,7 +183,7 @@ export default function PortfolioPage() {
                 <div className="mb-6">
                   <h4 className="text-sm font-semibold text-neutral-500 uppercase mb-3">Tech Stack</h4>
                   <div className="flex flex-wrap gap-2">
-                    {(selectedProject.techList || (typeof selectedProject.technologies === 'string' ? selectedProject.technologies.split(',') : selectedProject.technologies) || []).map((tech, i) => (
+                    {(selectedProject.techList || (Array.isArray(selectedProject.technologies) ? selectedProject.technologies : typeof selectedProject.technologies === 'string' ? selectedProject.technologies.split(',') : []) || []).map((tech, i) => (
                       <span key={i} className="px-3 py-1 bg-neutral-100 text-neutral-700 text-sm rounded-full">{typeof tech === 'string' ? tech.trim() : tech}</span>
                     ))}
                   </div>
