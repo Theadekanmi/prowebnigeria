@@ -1,5 +1,5 @@
 {
-  "_comment": "Force new deployment with latest fixes",
+  "_comment": "v2 - Dynamic blog posts with backend API",
   "name": "prowebnigeria",
   "version": "0.1.0",
   "private": true,
