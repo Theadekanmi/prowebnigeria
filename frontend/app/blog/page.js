@@ -6,6 +6,8 @@ import Footer from '../components/Footer'
 import FloatingWhatsApp from '../components/FloatingWhatsApp'
 import Link from 'next/link'
 import { ArrowRight, Calendar, TrendingUp, ChevronLeft, ChevronRight, Search, X, Clock, Sparkles } from 'lucide-react'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const blogImages = {
   'Rankings': 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
@@ -49,6 +51,7 @@ export default function BlogPage() {
   useEffect(() => {
     setMounted(true)
     fetchData()
+    AOS.init({ duration: 800, once: true, easing: 'ease-out-cubic' })
   }, [])
 
   const fetchData = async () => {
@@ -210,8 +213,8 @@ export default function BlogPage() {
           {featuredPost && (
             <section className="py-8 md:py-12 bg-white">
               <div className="w-full max-w-6xl mx-auto px-4 sm:px-6">
-                <Link href={`/blog/${featuredPost.slug}`} className="group block">
-                  <div className="relative bg-gradient-to-br from-purple-900 via-purple-800 to-pink-900 rounded-3xl overflow-hidden shadow-2xl">
+                <Link href={`/blog/${featuredPost.slug}`} className="group block" data-aos="fade-up">
+                  <div className="relative bg-gradient-to-br from-purple-900 via-purple-800 to-pink-900 rounded-3xl overflow-hidden shadow-2xl shadow-purple-900/30">
                     {/* Background Image with Overlay */}
                     <div className="absolute inset-0">
                       <img 
@@ -285,8 +288,9 @@ export default function BlogPage() {
                   <Link 
                     key={post.slug} 
                     href={`/blog/${post.slug}`} 
-                    className="group bg-white rounded-2xl overflow-hidden border border-neutral-200/50 hover:border-purple-300 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300"
-                    style={{ animationDelay: `${index * 50}ms` }}
+                    className="group bg-white rounded-2xl overflow-hidden shadow-lg shadow-neutral-200/60 hover:shadow-2xl hover:shadow-purple-500/20 border border-neutral-100 hover:border-purple-200 transition-all duration-300 hover:-translate-y-1"
+                    data-aos="fade-up"
+                    data-aos-delay={index * 100}
                   >
                     {/* Image */}
                     <div className="aspect-[16/10] overflow-hidden bg-neutral-100 relative">
@@ -297,14 +301,16 @@ export default function BlogPage() {
                       />
                       {/* Category Badge */}
                       <div className="absolute top-3 left-3">
-                        <span className="px-2.5 py-1 bg-white/90 backdrop-blur-sm text-neutral-700 rounded-lg text-xs font-medium shadow-sm">
+                        <span className="px-3 py-1.5 bg-white/95 backdrop-blur-sm text-purple-700 rounded-full text-xs font-semibold shadow-lg">
                           {post.category?.name}
                         </span>
                       </div>
+                      {/* Gradient Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                     </div>
                     
                     {/* Content */}
-                    <div className="p-5">
+                    <div className="p-5 md:p-6">
                       {/* Meta */}
                       <div className="flex items-center gap-3 mb-3 text-xs text-neutral-500">
                         <span className="flex items-center gap-1">
@@ -329,8 +335,8 @@ export default function BlogPage() {
                       </p>
                       
                       {/* Read More */}
-                      <span className="inline-flex items-center gap-1 text-sm font-semibold text-purple-600 group-hover:gap-2 transition-all">
-                        Read more
+                      <span className="inline-flex items-center gap-1.5 text-sm font-bold text-purple-600 group-hover:gap-3 transition-all">
+                        Read Article
                         <ArrowRight className="w-4 h-4" />
                       </span>
                     </div>
@@ -381,7 +387,7 @@ export default function BlogPage() {
 
       {/* Newsletter Section */}
       <section className="py-16 md:py-20 bg-white border-t border-neutral-100">
-        <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 text-center" data-aos="fade-up">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium mb-4">
             <TrendingUp className="w-4 h-4" />
             Stay Updated
@@ -392,11 +398,11 @@ export default function BlogPage() {
             <input 
               type="email" 
               placeholder="Enter your email" 
-              className="flex-1 px-5 py-3 border-2 border-neutral-200 rounded-xl text-base focus:outline-none focus:border-purple-500 focus:ring-4 focus:ring-purple-100"
+              className="flex-1 px-5 py-3 border-2 border-neutral-200 rounded-xl text-base focus:outline-none focus:border-purple-500 focus:ring-4 focus:ring-purple-100 shadow-sm"
             />
             <button 
               type="submit" 
-              className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-purple-500/25 transition-all whitespace-nowrap"
+              className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-purple-500/25 transition-all whitespace-nowrap shadow-lg shadow-purple-500/20"
             >
               Subscribe
             </button>

@@ -7,6 +7,8 @@ import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import FloatingWhatsApp from '../../components/FloatingWhatsApp'
 import { ArrowLeft, ArrowRight, Calendar, Clock, User, Share2, Twitter, Facebook, Linkedin, Copy, Check, BookOpen } from 'lucide-react'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const blogImages = {
   'Rankings': 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
@@ -34,6 +36,7 @@ export default function BlogPostPage() {
     if (params?.slug) {
       fetchPost(params.slug)
     }
+    AOS.init({ duration: 800, once: true, easing: 'ease-out-cubic' })
   }, [params?.slug])
 
   const fetchPost = async (slug) => {
@@ -242,8 +245,8 @@ export default function BlogPostPage() {
         </header>
 
         {/* Featured Image */}
-        <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 -mt-8 md:-mt-12 mb-10 md:mb-16 relative z-10">
-          <div className="aspect-video rounded-2xl overflow-hidden bg-neutral-100 shadow-2xl ring-1 ring-black/5">
+        <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 -mt-8 md:-mt-12 mb-10 md:mb-16 relative z-10" data-aos="fade-up">
+          <div className="aspect-video rounded-2xl overflow-hidden bg-neutral-100 shadow-2xl shadow-purple-900/20 ring-1 ring-black/5">
             <img 
               src={getPostImage()} 
               alt={post.title} 
@@ -253,7 +256,7 @@ export default function BlogPostPage() {
         </div>
 
         {/* Article Content */}
-        <div className="w-full max-w-3xl mx-auto px-4 sm:px-6 pb-16 md:pb-24">
+        <div className="w-full max-w-3xl mx-auto px-4 sm:px-6 pb-16 md:pb-24" data-aos="fade-up" data-aos-delay="100">
           <div 
             className="prose prose-lg prose-neutral max-w-none
               prose-headings:font-bold prose-headings:text-neutral-900 prose-headings:scroll-mt-24
@@ -321,17 +324,19 @@ export default function BlogPostPage() {
       {relatedPosts.length > 0 && (
         <section className="py-16 md:py-20 bg-neutral-50 border-t border-neutral-200">
           <div className="w-full max-w-6xl mx-auto px-4 sm:px-6">
-            <div className="text-center mb-10">
+            <div className="text-center mb-10" data-aos="fade-up">
               <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-2">Continue Reading</h2>
               <p className="text-neutral-600">More articles you might enjoy</p>
             </div>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {relatedPosts.map((relatedPost) => (
+              {relatedPosts.map((relatedPost, index) => (
                 <Link 
                   key={relatedPost.slug} 
                   href={`/blog/${relatedPost.slug}`} 
-                  className="group bg-white rounded-2xl overflow-hidden border border-neutral-200 hover:border-purple-300 hover:shadow-xl hover:shadow-purple-500/10 transition-all"
+                  className="group bg-white rounded-2xl overflow-hidden shadow-lg shadow-neutral-200/60 hover:shadow-2xl hover:shadow-purple-500/20 border border-neutral-100 hover:border-purple-200 transition-all duration-300 hover:-translate-y-1"
+                  data-aos="fade-up"
+                  data-aos-delay={index * 100}
                 >
                   <div className="aspect-[16/10] overflow-hidden bg-neutral-100">
                     <img 
@@ -342,7 +347,7 @@ export default function BlogPostPage() {
                   </div>
                   <div className="p-5">
                     <div className="flex items-center gap-2 mb-2 text-xs text-neutral-500">
-                      <span className="px-2 py-0.5 bg-neutral-100 rounded text-neutral-600 font-medium">{relatedPost.category?.name}</span>
+                      <span className="px-2.5 py-1 bg-purple-100 rounded-full text-purple-700 font-medium">{relatedPost.category?.name}</span>
                       <span>{relatedPost.read_time} min read</span>
                     </div>
                     <h3 className="font-bold text-neutral-900 leading-snug group-hover:text-purple-600 transition-colors line-clamp-2">
