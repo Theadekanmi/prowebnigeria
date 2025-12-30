@@ -29,14 +29,14 @@ export default function AboutPage() {
     <main className="min-h-screen">
       <Header />
       
-      {/* Hero Section with Purple Gradient */}
-      <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-br from-purple-50 via-white to-pink-50">
+          {/* Hero Section with Purple Gradient */}
+      <section className="relative pt-28 pb-16 md:pt-32 md:pb-20 overflow-hidden bg-gradient-to-br from-purple-50 via-white to-pink-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6">
               About <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">ProWeb Nigeria</span>
             </h1>
-            <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto px-2">
               Building high-performance web solutions that drive measurable growth for ambitious Nigerian businesses.
             </p>
           </div>
@@ -44,14 +44,14 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center max-w-6xl mx-auto">
             <div data-aos="fade-right">
-              <h2 className="text-3xl font-bold mb-2">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4">
                 Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Story</span>
               </h2>
-              <div className="space-y-4 text-neutral-600 leading-relaxed">
+              <div className="space-y-4 text-neutral-600 leading-relaxed text-sm md:text-base">
                 <p>
                   ProWeb Nigeria is a leading web design and development company specializing in creating high-performance websites, e-commerce solutions, and mobile applications that help businesses achieve their digital goals and drive real revenue growth.
                 </p>
@@ -96,28 +96,28 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-neutral-50">
+      <section className="py-12 md:py-20 bg-neutral-50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-neutral-900 mb-4">Our Mission & Vision</h2>
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-4">Our Mission & Vision</h2>
             </div>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-white rounded-2xl p-8 border border-neutral-200" data-aos="fade-up" style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.08)' }}>
-                <div className="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
-                  <Target className="w-7 h-7 text-purple-600" />
+            <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+              <div className="bg-white rounded-2xl p-6 md:p-8 border border-neutral-200" data-aos="fade-up" style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.08)' }}>
+                <div className="w-12 h-12 md:w-14 md:h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-4 md:mb-6">
+                  <Target className="w-6 h-6 md:w-7 md:h-7 text-purple-600" />
                 </div>
-                <h3 className="text-2xl font-bold text-neutral-900 mb-4">Our Mission</h3>
-                <p className="text-neutral-600 leading-relaxed">
+                <h3 className="text-xl md:text-2xl font-bold text-neutral-900 mb-3 md:mb-4">Our Mission</h3>
+                <p className="text-neutral-600 leading-relaxed text-sm md:text-base">
                   To empower businesses across Nigeria and Africa with cutting-edge digital solutions that drive exponential growth, enhance customer engagement, and establish a commanding online presence in the digital marketplace.
                 </p>
               </div>
-              <div className="bg-white rounded-2xl p-8 border border-neutral-200" data-aos="fade-up" data-aos-delay="100" style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.08)' }}>
-                <div className="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
-                  <TrendingUp className="w-7 h-7 text-purple-600" />
+              <div className="bg-white rounded-2xl p-6 md:p-8 border border-neutral-200" data-aos="fade-up" data-aos-delay="100" style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.08)' }}>
+                <div className="w-12 h-12 md:w-14 md:h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-4 md:mb-6">
+                  <TrendingUp className="w-6 h-6 md:w-7 md:h-7 text-purple-600" />
                 </div>
-                <h3 className="text-2xl font-bold text-neutral-900 mb-4">Our Vision</h3>
-                <p className="text-neutral-600 leading-relaxed">
+                <h3 className="text-xl md:text-2xl font-bold text-neutral-900 mb-3 md:mb-4">Our Vision</h3>
+                <p className="text-neutral-600 leading-relaxed text-sm md:text-base">
                   To be recognized as the leading digital transformation partner for businesses across Africa, renowned for innovation, uncompromising quality, and exceptional customer service.
                 </p>
               </div>
@@ -127,26 +127,26 @@ export default function AboutPage() {
       </section>
 
       {/* Core Values */}
-      <section className="py-20 bg-white">
+      <section className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-neutral-900 mb-4">Our Core Values</h2>
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-4">Our Core Values</h2>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
               {values.map((value, index) => (
                 <div 
                   key={index} 
-                  className="bg-white rounded-2xl p-6 border border-neutral-200" 
+                  className="bg-white rounded-2xl p-4 md:p-6 border border-neutral-200" 
                   data-aos="fade-up" 
                   data-aos-delay={index * 100}
                   style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.08)' }}
                 >
-                  <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
-                    <value.icon className="w-6 h-6 text-purple-600" />
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-3 md:mb-4">
+                    <value.icon className="w-5 h-5 md:w-6 md:h-6 text-purple-600" />
                   </div>
-                  <h3 className="text-lg font-bold text-neutral-900 mb-2">{value.title}</h3>
-                  <p className="text-neutral-600 text-sm">{value.description}</p>
+                  <h3 className="text-base md:text-lg font-bold text-neutral-900 mb-2">{value.title}</h3>
+                  <p className="text-neutral-600 text-xs md:text-sm">{value.description}</p>
                 </div>
               ))}
             </div>
@@ -155,12 +155,12 @@ export default function AboutPage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-neutral-50">
+      <section className="py-12 md:py-20 bg-neutral-50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
               <div data-aos="fade-right">
-                <h2 className="text-3xl font-bold text-neutral-900 mb-6">Why Choose ProWeb Nigeria?</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-4 md:mb-6">Why Choose ProWeb Nigeria?</h2>
                 <div className="space-y-4">
                   {[
                     'Modern tech stack: React, Next.js, Node.js',
@@ -177,15 +177,15 @@ export default function AboutPage() {
                   ))}
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4" data-aos="fade-left">
+              <div className="grid grid-cols-2 gap-3 md:gap-4" data-aos="fade-left">
                 {stats.map((stat, index) => (
                   <div 
                     key={index} 
-                    className="bg-white rounded-2xl p-6 text-center border border-neutral-200"
+                    className="bg-white rounded-2xl p-4 md:p-6 text-center border border-neutral-200"
                     style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.08)' }}
                   >
-                    <div className="text-3xl font-bold text-purple-600 mb-1">{stat.value}</div>
-                    <div className="text-neutral-600 text-sm">{stat.label}</div>
+                    <div className="text-2xl md:text-3xl font-bold text-purple-600 mb-1">{stat.value}</div>
+                    <div className="text-neutral-600 text-xs md:text-sm">{stat.label}</div>
                   </div>
                 ))}
               </div>
@@ -195,13 +195,13 @@ export default function AboutPage() {
       </section>
 
       {/* Stats Banner */}
-      <section className="py-16 bg-gradient-to-r from-purple-600 to-pink-600">
+      <section className="py-12 md:py-16 bg-gradient-to-r from-purple-600 to-pink-600">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
+          <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center text-white">
             {stats.map((stat, index) => (
               <div key={index} data-aos="zoom-in" data-aos-delay={index * 100}>
-                <div className="text-4xl font-bold mb-2">{stat.value}</div>
-                <div className="text-purple-200">{stat.label}</div>
+                <div className="text-3xl md:text-4xl font-bold mb-1 md:mb-2">{stat.value}</div>
+                <div className="text-purple-200 text-sm md:text-base">{stat.label}</div>
               </div>
             ))}
           </div>

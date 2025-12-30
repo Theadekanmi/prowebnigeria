@@ -210,8 +210,8 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">What Our Clients Say</h2>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-6">
-              {testimonials.slice(0, 3).map((testimonial, index) => (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {testimonials.map((testimonial, index) => (
                 <div key={index} className="p-6 bg-white rounded-xl border border-neutral-200" style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.06)' }}>
                   <div className="flex items-center gap-1 mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (<Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />))}

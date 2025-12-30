@@ -64,9 +64,9 @@ export default function Footer() {
     <footer className="bg-gray-900 text-gray-300">
       <div className="container mx-auto px-4 py-12">
       {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-6 gap-6 mb-8">
           {/* Brand Column */}
-          <div className="lg:col-span-2">
+          <div className="col-span-2 lg:col-span-2">
             <Link href="/" className="flex items-center space-x-3 mb-4">
               <div className="relative w-12 h-12">
                 <Image
