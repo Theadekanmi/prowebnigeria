@@ -1,12 +1,14 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useParams } from 'next/navigation'
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
-import FloatingWhatsApp from '../../components/FloatingWhatsApp'
+import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { ArrowLeft, Calendar, Clock, User, Tag } from 'lucide-react'
+
+const Header = dynamic(() => import('../../components/Header'), { ssr: false })
+const Footer = dynamic(() => import('../../components/Footer'), { ssr: false })
+const FloatingWhatsApp = dynamic(() => import('../../components/FloatingWhatsApp'), { ssr: false })
 
 const blogImages = {
   'Rankings': 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80',
