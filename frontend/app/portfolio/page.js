@@ -34,18 +34,7 @@ export default function PortfolioPage() {
       .then(res => res.ok ? res.json() : null)
       .then(data => {
         const projectList = data?.results || data
-        if (projectList?.length > 0) {
-          // Process projects to ensure proper image URLs
-          const processedProjects = projectList.map(project => {
-            let imageUrl = project.thumbnail
-            // If thumbnail exists and is a relative path, prepend the API base URL
-            if (imageUrl && !imageUrl.startsWith('http')) {
-              imageUrl = `https://prowebnaija.pythonanywhere.com${imageUrl.startsWith('/') ? '' : '/'}${imageUrl}`
-            }
-            return { ...project, thumbnail: imageUrl }
-          })
-          setProjects(processedProjects)
-        }
+        if (projectList?.length > 0) setProjects(projectList)
       })
       .catch(() => {})
       .finally(() => setLoading(false))
@@ -105,8 +94,8 @@ export default function PortfolioPage() {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {currentProjects.map((project, index) => {
                   const categoryName = project.category?.name || project.category || 'Project'
-                  // Use thumbnail from API, fallback to local images, then placeholder
-                  const imageUrl = project.thumbnail || `/${project.title.toLowerCase().replace(/\s+/g, '-')}.png` || 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80'
+                  // Use thumbnail from API directly, or fallback to placeholder
+                  const imageUrl = project.thumbnail || 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80'
                   const techList = Array.isArray(project.technologies) 
                     ? project.technologies 
                     : typeof project.technologies === 'string' 
@@ -123,7 +112,7 @@ export default function PortfolioPage() {
                     data-aos-delay={index * 100}
                   >
                     <div className="relative aspect-[4/3] bg-neutral-100 overflow-hidden">
-                      <Image src={imageUrl} alt={project.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" />
+                      <img src={imageUrl} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                       <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                         <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center">
                           <Eye className="w-6 h-6 text-neutral-900" />
@@ -180,7 +169,7 @@ export default function PortfolioPage() {
           <div className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-white rounded-2xl" style={{ boxShadow: '0 25px 50px rgba(0,0,0,0.25)' }} onClick={(e) => e.stopPropagation()}>
             <button onClick={() => setSelectedProject(null)} className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-neutral-100 flex items-center justify-center hover:bg-neutral-200"><X className="w-5 h-5" /></button>
             <div className="relative aspect-video bg-neutral-100">
-              <Image src={selectedProject.imageUrl || selectedProject.thumbnail || selectedProject.featured_image || selectedProject.image || 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80'} alt={selectedProject.title} fill className="object-cover" />
+              <img src={selectedProject.imageUrl || selectedProject.thumbnail || 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80'} alt={selectedProject.title} className="w-full h-full object-cover" />
             </div>
             <div className="p-6 md:p-8">
               <p className="text-purple-600 text-sm font-medium mb-2">{selectedProject.categoryName || selectedProject.category?.name || selectedProject.category}</p>
