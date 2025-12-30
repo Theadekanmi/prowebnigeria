@@ -2,6 +2,8 @@
 frontend/node_modules/
 frontend/.next/
 frontend/typings/
+frontend/public/sw.js
+frontend/public/workbox-*.js
 
 # Backend
 backend/venv/

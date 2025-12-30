@@ -24,6 +24,15 @@ export const metadata = {
     template: '%s | ProWeb Nigeria',
   },
   description: 'Top web design company in Nigeria. Fast, mobile-friendly websites that drive sales. 500% growth case study. Serving Lagos, Abuja & nationwide.',
+  manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'ProWeb Nigeria',
+  },
+  formatDetection: {
+    telephone: true,
+  },
   keywords: [
     'web design nigeria',
     'website designer nigeria', 
@@ -117,6 +126,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
       <head>
+        {/* PWA */}
+        <meta name="application-name" content="ProWeb Nigeria" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="ProWeb Nigeria" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="theme-color" content="#9333ea" />
+        <link rel="apple-touch-icon" href="/icon-192.png" />
+        
         {/* Preload critical resources */}
         <link rel="preload" href="/logo.webp" as="image" />
         
