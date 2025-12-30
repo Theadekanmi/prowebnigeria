@@ -5,7 +5,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import FloatingWhatsApp from '../components/FloatingWhatsApp'
 import Link from 'next/link'
-import { ArrowRight, Calendar, TrendingUp, ChevronLeft, ChevronRight, Search, X } from 'lucide-react'
+import { ArrowRight, Calendar, TrendingUp, ChevronLeft, ChevronRight, Search, X, Clock, Sparkles } from 'lucide-react'
 
 const blogImages = {
   'Rankings': 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
@@ -32,28 +32,9 @@ const FALLBACK_POSTS = [
   { title: 'Digital Marketing for Nigerian SMEs', excerpt: 'Effective digital marketing strategies for small businesses.', slug: 'digital-marketing-nigerian-smes', category: { name: 'Digital Marketing' }, read_time: 12, created_at: '2025-12-19' },
   { title: 'Best E-commerce Platforms Nigeria 2025', excerpt: 'Compare the best e-commerce platforms for Nigerian businesses.', slug: 'best-ecommerce-platforms-nigeria-2025', category: { name: 'E-commerce' }, read_time: 10, created_at: '2025-12-18' },
   { title: 'Web Design Services in Lagos Nigeria', excerpt: 'Complete guide to web design services in Lagos.', slug: 'web-design-services-lagos-nigeria', category: { name: 'Web Design' }, read_time: 8, created_at: '2025-12-17' },
-  { title: 'Why Your Business Needs a Professional Website', excerpt: 'Discover why having a professional website is essential.', slug: 'why-nigerian-business-needs-professional-website', category: { name: 'Guide' }, read_time: 7, created_at: '2025-12-16' },
-  { title: '10 Next.js Performance Optimization Techniques', excerpt: 'Learn advanced techniques to make your Next.js apps fast.', slug: 'nextjs-performance-optimization-techniques', category: { name: 'Tech Tips' }, read_time: 8, created_at: '2025-12-15' },
-  { title: 'JavaScript ES2024 Features You Should Know', excerpt: 'Explore the latest JavaScript features for better code.', slug: 'javascript-es2024-features', category: { name: 'Tech Tips' }, read_time: 6, created_at: '2025-12-14' },
-  { title: 'Building Secure Web Applications', excerpt: 'Comprehensive security practices for web developers.', slug: 'building-secure-web-applications-guide', category: { name: 'Tech Tips' }, read_time: 12, created_at: '2025-12-13' },
-  { title: 'TypeScript Best Practices', excerpt: 'Essential TypeScript patterns for large applications.', slug: 'typescript-best-practices-large-applications', category: { name: 'Tech Tips' }, read_time: 10, created_at: '2025-12-12' },
-  { title: 'Responsive Design with Tailwind CSS', excerpt: 'Master responsive design with Tailwind CSS.', slug: 'responsive-design-tailwind-css', category: { name: 'Tech Tips' }, read_time: 7, created_at: '2025-12-11' },
-  { title: 'API Design Best Practices', excerpt: 'Learn how to design robust, scalable APIs.', slug: 'api-design-best-practices', category: { name: 'Tech Tips' }, read_time: 9, created_at: '2025-12-10' },
-  { title: 'Debugging JavaScript Like a Pro', excerpt: 'Advanced debugging techniques and tools.', slug: 'debugging-javascript-like-pro', category: { name: 'Tech Tips' }, read_time: 8, created_at: '2025-12-09' },
-  { title: 'Mobile-First Development Strategy', excerpt: 'Why mobile-first approach is crucial.', slug: 'mobile-first-development-strategy', category: { name: 'Tech Tips' }, read_time: 6, created_at: '2025-12-08' },
-  { title: 'Git Workflow for Development Teams', excerpt: 'Establish efficient Git workflows for your team.', slug: 'git-workflow-development-teams', category: { name: 'Tech Tips' }, read_time: 11, created_at: '2025-12-07' },
-  { title: 'Next.js 14 vs React 18: Complete Comparison', excerpt: 'Comprehensive comparison of Next.js 14 and React 18.', slug: 'nextjs-14-vs-react-18-comparison', category: { name: 'Tech Reviews' }, read_time: 12, created_at: '2025-12-06' },
-  { title: 'Vercel vs Netlify vs AWS: Hosting Showdown', excerpt: 'Detailed comparison of popular hosting platforms.', slug: 'vercel-vs-netlify-vs-aws-hosting', category: { name: 'Tech Reviews' }, read_time: 10, created_at: '2025-12-05' },
-  { title: 'Tailwind CSS vs Styled Components', excerpt: 'In-depth analysis of two popular CSS solutions.', slug: 'tailwind-css-vs-styled-components-review', category: { name: 'Tech Reviews' }, read_time: 8, created_at: '2025-12-04' },
-  { title: 'TypeScript vs JavaScript: When to Switch', excerpt: 'Guide on when and why to adopt TypeScript.', slug: 'typescript-vs-javascript-when-to-switch', category: { name: 'Tech Reviews' }, read_time: 9, created_at: '2025-12-03' },
-  { title: 'Figma vs Adobe XD: Design Tool Comparison', excerpt: 'Comparison of two leading design tools.', slug: 'figma-vs-adobe-xd-comparison', category: { name: 'Tech Reviews' }, read_time: 7, created_at: '2025-12-02' },
-  { title: 'MongoDB vs PostgreSQL: Database Showdown', excerpt: 'Compare NoSQL vs SQL databases.', slug: 'mongodb-vs-postgresql-database-showdown', category: { name: 'Tech Reviews' }, read_time: 11, created_at: '2025-12-01' },
-  { title: 'VS Code Extensions: Top 20 for Developers', excerpt: 'Essential VS Code extensions for productivity.', slug: 'vs-code-extensions-top-20-web-developers', category: { name: 'Tech Reviews' }, read_time: 6, created_at: '2025-11-30' },
-  { title: 'React Native vs Flutter', excerpt: 'Cross-platform mobile development comparison.', slug: 'react-native-vs-flutter-mobile-development', category: { name: 'Tech Reviews' }, read_time: 13, created_at: '2025-11-29' },
-  { title: 'GitHub vs GitLab vs Bitbucket', excerpt: 'Compare the top Git hosting platforms.', slug: 'github-vs-gitlab-vs-bitbucket-git-hosting', category: { name: 'Tech Reviews' }, read_time: 8, created_at: '2025-11-28' },
 ]
 
-const ITEMS_PER_PAGE = 6
+const ITEMS_PER_PAGE = 9
 
 export default function BlogPage() {
   const [posts, setPosts] = useState(FALLBACK_POSTS)
@@ -91,7 +72,10 @@ export default function BlogPage() {
 
   const filteredPosts = posts.filter(post => {
     const catName = post.category?.name || ''
-    const matchSearch = searchQuery === '' || post.title.toLowerCase().includes(searchQuery.toLowerCase()) || post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) || catName.toLowerCase().includes(searchQuery.toLowerCase())
+    const matchSearch = searchQuery === '' || 
+      post.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+      post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) || 
+      catName.toLowerCase().includes(searchQuery.toLowerCase())
     const matchCat = activeCategory === 'All' || catName === activeCategory
     return matchSearch && matchCat
   })
@@ -102,50 +86,351 @@ export default function BlogPage() {
   const currentPosts = displayPosts.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE)
 
   const getPostImage = (post) => post.featured_image || blogImages[post.category?.name] || blogImages['default']
-  const formatDate = (d) => !mounted || !d ? '' : new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+  const formatDate = (d) => !mounted || !d ? '' : new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
 
   useEffect(() => { setCurrentPage(1) }, [searchQuery, activeCategory])
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-neutral-50 overflow-x-hidden">
       <Header />
-      <section className="relative pt-32 pb-16 overflow-hidden bg-gradient-to-br from-purple-50 via-white to-pink-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-1 px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium mb-4"><TrendingUp className="w-4 h-4" />Latest Insights</div>
-            <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">Web Development &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">SEO Blog</span></h1>
-            <p className="text-xl text-neutral-600 mb-8">Expert insights on web development, SEO strategies, and digital marketing for Nigerian businesses.</p>
-            <div className="max-w-xl mx-auto relative">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-neutral-400" />
-              <input type="text" placeholder="Search articles..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="w-full pl-12 pr-12 py-4 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none text-lg bg-white" style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.08)' }} />
-              {searchQuery && <button onClick={() => setSearchQuery('')} className="absolute right-4 top-1/2 transform -translate-y-1/2 w-6 h-6 bg-neutral-200 rounded-full flex items-center justify-center hover:bg-neutral-300"><X className="w-4 h-4 text-neutral-600" /></button>}
+      
+      {/* Hero Section - Modern Gradient */}
+      <section className="relative pt-24 pb-12 md:pt-32 md:pb-16 bg-white overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%239C92AC\' fill-opacity=\'0.4\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }} />
+        
+        <div className="relative w-full max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center max-w-3xl mx-auto">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 rounded-full text-sm font-medium mb-6 shadow-sm">
+              <Sparkles className="w-4 h-4" />
+              <span>Insights & Resources</span>
+            </div>
+            
+            {/* Title */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-4 leading-tight">
+              The ProWeb <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600">Blog</span>
+            </h1>
+            
+            {/* Subtitle */}
+            <p className="text-neutral-600 text-base sm:text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+              Expert insights on web development, SEO strategies, and digital marketing to grow your business online.
+            </p>
+            
+            {/* Search Bar */}
+            <div className="relative max-w-lg mx-auto">
+              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <Search className="w-5 h-5 text-neutral-400" />
+              </div>
+              <input 
+                type="text" 
+                placeholder="Search articles, topics, or keywords..." 
+                value={searchQuery} 
+                onChange={(e) => setSearchQuery(e.target.value)} 
+                className="w-full pl-12 pr-12 py-4 bg-white border-2 border-neutral-200 rounded-2xl text-base focus:outline-none focus:border-purple-500 focus:ring-4 focus:ring-purple-100 transition-all shadow-lg shadow-neutral-200/50"
+              />
+              {searchQuery && (
+                <button 
+                  onClick={() => setSearchQuery('')} 
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-6 h-6 bg-neutral-200 rounded-full flex items-center justify-center hover:bg-neutral-300 transition-colors"
+                >
+                  <X className="w-4 h-4 text-neutral-600" />
+                </button>
+              )}
             </div>
           </div>
         </div>
       </section>
-      <section className="py-6 border-b border-neutral-200 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-3">
-            {categories.map((cat) => <button key={cat} onClick={() => setActiveCategory(cat)} className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${activeCategory === cat ? 'bg-purple-600 text-white' : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200'}`}>{cat}</button>)}
+
+      {/* Categories - Pill Style */}
+      <section className="sticky top-16 z-20 bg-white/80 backdrop-blur-lg border-b border-neutral-200/50 shadow-sm">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="flex gap-2 py-4 overflow-x-auto scrollbar-hide -mx-4 px-4">
+            {categories.map((cat) => (
+              <button 
+                key={cat} 
+                onClick={() => setActiveCategory(cat)} 
+                className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200 ${
+                  activeCategory === cat 
+                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/25' 
+                    : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 hover:text-neutral-900'
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
           </div>
         </div>
       </section>
-      {/* Hidden offline indicator for devs only */}
+
       {isOffline && <div data-offline="true" className="hidden" />}
+
+      {/* Loading State */}
       {loading ? (
-        <section className="py-20"><div className="container mx-auto px-4 text-center"><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600 mx-auto"></div><p className="text-neutral-500 mt-4">Loading articles...</p></div></section>
+        <section className="py-20">
+          <div className="text-center">
+            <div className="relative w-16 h-16 mx-auto mb-4">
+              <div className="absolute inset-0 rounded-full border-4 border-purple-200"></div>
+              <div className="absolute inset-0 rounded-full border-4 border-purple-600 border-t-transparent animate-spin"></div>
+            </div>
+            <p className="text-neutral-500">Loading amazing content...</p>
+          </div>
+        </section>
       ) : filteredPosts.length === 0 ? (
-        <section className="py-20"><div className="container mx-auto px-4 text-center"><Search className="w-16 h-16 text-neutral-300 mx-auto mb-4" /><h2 className="text-2xl font-bold text-neutral-900 mb-2">No articles found</h2><p className="text-neutral-600 mb-6">Try adjusting your search or filter.</p><button onClick={() => { setSearchQuery(''); setActiveCategory('All'); }} className="px-6 py-3 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition-colors">Clear Filters</button></div></section>
+        /* No Results */
+        <section className="py-20">
+          <div className="text-center px-4">
+            <div className="w-20 h-20 bg-neutral-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Search className="w-8 h-8 text-neutral-400" />
+            </div>
+            <h2 className="text-xl font-bold text-neutral-900 mb-2">No articles found</h2>
+            <p className="text-neutral-600 mb-6 max-w-md mx-auto">We couldn't find any articles matching your search. Try different keywords or browse all categories.</p>
+            <button 
+              onClick={() => { setSearchQuery(''); setActiveCategory('All'); }} 
+              className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium rounded-xl hover:shadow-lg hover:shadow-purple-500/25 transition-all"
+            >
+              View All Articles
+            </button>
+          </div>
+        </section>
       ) : (
         <>
-          {(searchQuery || activeCategory !== 'All') && <section className="py-4 bg-neutral-50 border-b border-neutral-200"><div className="container mx-auto px-4"><p className="text-neutral-600">Found <span className="font-semibold text-neutral-900">{filteredPosts.length}</span> article{filteredPosts.length !== 1 ? 's' : ''}{searchQuery && <> for &quot;<span className="font-semibold text-purple-600">{searchQuery}</span>&quot;</>}{activeCategory !== 'All' && <> in <span className="font-semibold text-purple-600">{activeCategory}</span></>}</p></div></section>}
-          {featuredPost && (
-            <section className="py-12 border-b border-neutral-200 bg-white"><div className="container mx-auto px-4"><Link href={`/blog/${featuredPost.slug}`} className="block group"><div className="grid md:grid-cols-2 gap-8 items-center"><div className="aspect-video bg-neutral-100 rounded-2xl overflow-hidden relative" style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.08)' }}><img src={getPostImage(featuredPost)} alt={featuredPost.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" /><div className="absolute top-4 left-4"><span className="bg-yellow-500 text-yellow-900 px-3 py-1 rounded-full text-sm font-bold">Featured</span></div></div><div><div className="flex items-center gap-3 mb-4"><span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">{featuredPost.category?.name}</span><span className="text-sm text-neutral-500">{featuredPost.read_time} min read</span></div><h2 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-4 group-hover:text-purple-600 transition-colors">{featuredPost.title}</h2><p className="text-lg text-neutral-600 mb-6">{featuredPost.excerpt}</p><div className="flex items-center gap-2 text-sm text-neutral-500"><Calendar className="w-4 h-4" /><span suppressHydrationWarning>{formatDate(featuredPost.created_at)}</span></div></div></div></Link></div></section>
+          {/* Search Results Count */}
+          {(searchQuery || activeCategory !== 'All') && (
+            <div className="bg-purple-50 py-3 px-4">
+              <p className="text-sm text-purple-700 max-w-6xl mx-auto font-medium">
+                Found {filteredPosts.length} article{filteredPosts.length !== 1 ? 's' : ''}
+                {searchQuery && <> matching "<span className="font-bold">{searchQuery}</span>"</>}
+                {activeCategory !== 'All' && <> in <span className="font-bold">{activeCategory}</span></>}
+              </p>
+            </div>
           )}
-          <section className="py-16 bg-neutral-50"><div className="container mx-auto px-4"><h2 className="text-2xl font-bold text-neutral-900 mb-8">{searchQuery || activeCategory !== 'All' ? 'Search Results' : 'Latest Articles'}</h2><div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">{currentPosts.map((post, i) => <Link key={post.slug} href={`/blog/${post.slug}`} className="group block bg-white rounded-2xl border border-neutral-200 overflow-hidden hover:border-purple-300 transition-all" style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.08)' }} data-aos="fade-up" data-aos-delay={i * 100}><div className="aspect-video bg-neutral-100 overflow-hidden"><img src={getPostImage(post)} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" /></div><div className="p-5"><div className="flex items-center gap-3 mb-3"><span className="px-2 py-1 bg-neutral-100 text-neutral-600 rounded text-xs font-medium">{post.category?.name}</span><span className="text-xs text-neutral-500">{post.read_time} min read</span></div><h3 className="font-bold text-neutral-900 mb-2 group-hover:text-purple-600 transition-colors line-clamp-2">{post.title}</h3><p className="text-sm text-neutral-600 line-clamp-2 mb-3">{post.excerpt}</p><div className="flex items-center gap-1 text-xs text-neutral-500"><Calendar className="w-3 h-3" /><span suppressHydrationWarning>{formatDate(post.created_at)}</span></div></div></Link>)}</div>{totalPages > 1 && <div className="flex items-center justify-center gap-2 mt-12"><button onClick={() => setCurrentPage(p => Math.max(1, p - 1))} disabled={currentPage === 1} className="p-2 rounded-lg border border-neutral-200 bg-white hover:bg-neutral-50 disabled:opacity-50"><ChevronLeft className="w-5 h-5" /></button>{[...Array(totalPages)].map((_, i) => <button key={i} onClick={() => setCurrentPage(i + 1)} className={`w-10 h-10 rounded-lg font-medium transition-colors ${currentPage === i + 1 ? 'bg-purple-600 text-white' : 'border border-neutral-200 bg-white hover:bg-neutral-50'}`}>{i + 1}</button>)}<button onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))} disabled={currentPage === totalPages} className="p-2 rounded-lg border border-neutral-200 bg-white hover:bg-neutral-50 disabled:opacity-50"><ChevronRight className="w-5 h-5" /></button></div>}</div></section>
+
+          {/* Featured Post - Hero Card */}
+          {featuredPost && (
+            <section className="py-8 md:py-12 bg-white">
+              <div className="w-full max-w-6xl mx-auto px-4 sm:px-6">
+                <Link href={`/blog/${featuredPost.slug}`} className="group block">
+                  <div className="relative bg-gradient-to-br from-purple-900 via-purple-800 to-pink-900 rounded-3xl overflow-hidden shadow-2xl">
+                    {/* Background Image with Overlay */}
+                    <div className="absolute inset-0">
+                      <img 
+                        src={getPostImage(featuredPost)} 
+                        alt={featuredPost.title} 
+                        className="w-full h-full object-cover opacity-30 group-hover:scale-105 transition-transform duration-700" 
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-purple-900/90 via-purple-900/50 to-transparent" />
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="relative p-6 sm:p-8 md:p-12 lg:p-16">
+                      <div className="max-w-2xl">
+                        {/* Badge */}
+                        <div className="flex items-center gap-3 mb-4">
+                          <span className="px-3 py-1 bg-yellow-400 text-yellow-900 rounded-full text-xs font-bold uppercase tracking-wide">
+                            Featured
+                          </span>
+                          <span className="px-3 py-1 bg-white/20 text-white rounded-full text-xs font-medium backdrop-blur-sm">
+                            {featuredPost.category?.name}
+                          </span>
+                        </div>
+                        
+                        {/* Title */}
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight group-hover:text-purple-200 transition-colors">
+                          {featuredPost.title}
+                        </h2>
+                        
+                        {/* Excerpt */}
+                        <p className="text-purple-200 text-base sm:text-lg mb-6 line-clamp-2 max-w-xl">
+                          {featuredPost.excerpt}
+                        </p>
+                        
+                        {/* Meta */}
+                        <div className="flex flex-wrap items-center gap-4 text-sm text-purple-300">
+                          <span className="flex items-center gap-1.5">
+                            <Calendar className="w-4 h-4" />
+                            <span suppressHydrationWarning>{formatDate(featuredPost.created_at)}</span>
+                          </span>
+                          <span className="flex items-center gap-1.5">
+                            <Clock className="w-4 h-4" />
+                            {featuredPost.read_time} min read
+                          </span>
+                        </div>
+                        
+                        {/* Read More */}
+                        <div className="mt-6 inline-flex items-center gap-2 text-white font-semibold group-hover:gap-3 transition-all">
+                          Read Article
+                          <ArrowRight className="w-5 h-5" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            </section>
+          )}
+
+          {/* Articles Grid */}
+          <section className="py-10 md:py-16">
+            <div className="w-full max-w-6xl mx-auto px-4 sm:px-6">
+              <div className="flex items-center justify-between mb-8">
+                <h2 className="text-2xl md:text-3xl font-bold text-neutral-900">
+                  {searchQuery || activeCategory !== 'All' ? 'Results' : 'Latest Articles'}
+                </h2>
+                <span className="text-sm text-neutral-500">{displayPosts.length} articles</span>
+              </div>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                {currentPosts.map((post, index) => (
+                  <Link 
+                    key={post.slug} 
+                    href={`/blog/${post.slug}`} 
+                    className="group bg-white rounded-2xl overflow-hidden border border-neutral-200/50 hover:border-purple-300 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300"
+                    style={{ animationDelay: `${index * 50}ms` }}
+                  >
+                    {/* Image */}
+                    <div className="aspect-[16/10] overflow-hidden bg-neutral-100 relative">
+                      <img 
+                        src={getPostImage(post)} 
+                        alt={post.title} 
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                      />
+                      {/* Category Badge */}
+                      <div className="absolute top-3 left-3">
+                        <span className="px-2.5 py-1 bg-white/90 backdrop-blur-sm text-neutral-700 rounded-lg text-xs font-medium shadow-sm">
+                          {post.category?.name}
+                        </span>
+                      </div>
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="p-5">
+                      {/* Meta */}
+                      <div className="flex items-center gap-3 mb-3 text-xs text-neutral-500">
+                        <span className="flex items-center gap-1">
+                          <Calendar className="w-3.5 h-3.5" />
+                          <span suppressHydrationWarning>{formatDate(post.created_at)}</span>
+                        </span>
+                        <span className="w-1 h-1 bg-neutral-300 rounded-full"></span>
+                        <span className="flex items-center gap-1">
+                          <Clock className="w-3.5 h-3.5" />
+                          {post.read_time} min
+                        </span>
+                      </div>
+                      
+                      {/* Title */}
+                      <h3 className="font-bold text-neutral-900 text-lg leading-snug mb-2 group-hover:text-purple-600 transition-colors line-clamp-2">
+                        {post.title}
+                      </h3>
+                      
+                      {/* Excerpt */}
+                      <p className="text-sm text-neutral-600 line-clamp-2 mb-4">
+                        {post.excerpt}
+                      </p>
+                      
+                      {/* Read More */}
+                      <span className="inline-flex items-center gap-1 text-sm font-semibold text-purple-600 group-hover:gap-2 transition-all">
+                        Read more
+                        <ArrowRight className="w-4 h-4" />
+                      </span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+
+              {/* Pagination */}
+              {totalPages > 1 && (
+                <div className="flex items-center justify-center gap-2 mt-12">
+                  <button 
+                    onClick={() => setCurrentPage(p => Math.max(1, p - 1))} 
+                    disabled={currentPage === 1} 
+                    className="p-3 rounded-xl border border-neutral-200 bg-white hover:bg-neutral-50 hover:border-neutral-300 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+                  >
+                    <ChevronLeft className="w-5 h-5" />
+                  </button>
+                  
+                  <div className="flex items-center gap-1">
+                    {[...Array(totalPages)].map((_, i) => (
+                      <button 
+                        key={i} 
+                        onClick={() => setCurrentPage(i + 1)} 
+                        className={`w-10 h-10 rounded-xl text-sm font-semibold transition-all ${
+                          currentPage === i + 1 
+                            ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/25' 
+                            : 'border border-neutral-200 bg-white hover:bg-neutral-50 hover:border-neutral-300'
+                        }`}
+                      >
+                        {i + 1}
+                      </button>
+                    ))}
+                  </div>
+                  
+                  <button 
+                    onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))} 
+                    disabled={currentPage === totalPages} 
+                    className="p-3 rounded-xl border border-neutral-200 bg-white hover:bg-neutral-50 hover:border-neutral-300 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+                  >
+                    <ChevronRight className="w-5 h-5" />
+                  </button>
+                </div>
+              )}
+            </div>
+          </section>
         </>
       )}
-      <section className="py-16 bg-gradient-to-r from-purple-600 to-pink-600"><div className="container mx-auto px-4"><div className="max-w-2xl mx-auto text-center"><h2 className="text-3xl font-bold text-white mb-4">Need a Professional Website?</h2><p className="text-purple-100 mb-8">Get a website that ranks on Google and converts visitors into customers.</p><Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-purple-600 font-semibold rounded-lg hover:bg-neutral-100 transition-colors">Get Free Quote <ArrowRight className="w-5 h-5" /></Link></div></div></section>
+
+      {/* Newsletter Section */}
+      <section className="py-16 md:py-20 bg-white border-t border-neutral-100">
+        <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium mb-4">
+            <TrendingUp className="w-4 h-4" />
+            Stay Updated
+          </div>
+          <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-3">Get the latest insights</h2>
+          <p className="text-neutral-600 mb-8 max-w-lg mx-auto">Subscribe to our newsletter for weekly tips on web development, SEO, and growing your business online.</p>
+          <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <input 
+              type="email" 
+              placeholder="Enter your email" 
+              className="flex-1 px-5 py-3 border-2 border-neutral-200 rounded-xl text-base focus:outline-none focus:border-purple-500 focus:ring-4 focus:ring-purple-100"
+            />
+            <button 
+              type="submit" 
+              className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-purple-500/25 transition-all whitespace-nowrap"
+            >
+              Subscribe
+            </button>
+          </form>
+          <p className="text-xs text-neutral-500 mt-3">No spam. Unsubscribe anytime.</p>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 md:py-20 bg-gradient-to-br from-purple-600 via-purple-700 to-pink-600 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }} />
+        
+        <div className="relative w-full max-w-3xl mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Build Your Dream Website?</h2>
+          <p className="text-purple-200 text-lg mb-8 max-w-xl mx-auto">Let's create a stunning website that ranks on Google and converts visitors into customers.</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link 
+              href="/contact" 
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-purple-600 font-bold rounded-xl hover:bg-neutral-100 hover:shadow-xl transition-all"
+            >
+              Get Free Quote
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+            <Link 
+              href="/portfolio" 
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 text-white font-bold rounded-xl border-2 border-white/30 hover:bg-white/20 transition-all"
+            >
+              View Our Work
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <Footer />
       <FloatingWhatsApp />
     </main>
