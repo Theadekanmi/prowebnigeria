@@ -1,20 +1,5 @@
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://prowebnaija.pythonanywhere.com/api'
 
-// Static blog posts (hardcoded pages in /app/blog/ - these have actual page files)
-const STATIC_BLOG_SLUGS = [
-  'top-10-best-web-designers-nigeria-2025',
-  'complete-seo-guide-nigerian-businesses-2025',
-  'website-cost-nigeria-2025-pricing-guide',
-  'how-to-choose-web-designer-nigeria',
-  'wordpress-vs-custom-website-nigeria',
-  'best-payment-gateways-nigeria',
-  'web-design-trends-2025',
-  'digital-marketing-nigerian-smes',
-  'best-ecommerce-platforms-nigeria-2025',
-  'web-design-services-lagos-nigeria',
-  'why-nigerian-business-needs-professional-website',
-]
-
 async function getBlogSlugsFromAPI() {
   try {
     const res = await fetch(`${API_URL}/blog/posts/?page_size=100`, { next: { revalidate: 3600 } })
@@ -27,29 +12,16 @@ async function getBlogSlugsFromAPI() {
   }
 }
 
-async function getPortfolioSlugs() {
-  try {
-    const res = await fetch(`${API_URL}/portfolio/projects/?page_size=100`, { next: { revalidate: 3600 } })
-    if (!res.ok) return []
-    const data = await res.json()
-    const projects = data?.results || data || []
-    return projects.map(project => project.slug).filter(Boolean)
-  } catch {
-    return []
-  }
-}
+
 
 export default async function sitemap() {
   const baseUrl = 'https://prowebnigeria.ng'
   
-  // Fetch dynamic content from API
-  const [apiBlogSlugs, portfolioSlugs] = await Promise.all([
-    getBlogSlugsFromAPI(),
-    getPortfolioSlugs()
-  ])
+  // Fetch blog posts from API
+  const apiBlogSlugs = await getBlogSlugsFromAPI()
   
-  // Combine static and API blog slugs (remove duplicates)
-  const allBlogSlugs = [...new Set([...STATIC_BLOG_SLUGS, ...apiBlogSlugs])]
+  // Blog slugs from API only
+  const allBlogSlugs = apiBlogSlugs
   
   // Static pages (13 pages)
   const staticPages = [
@@ -76,20 +48,12 @@ export default async function sitemap() {
     priority: 0.8
   }))
   
-  // All blog posts - static + API (11+ pages)
+  // All blog posts from API (29 pages)
   const blogPages = allBlogSlugs.map(slug => ({
     url: `${baseUrl}/blog/${slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly',
     priority: 0.7
-  }))
-  
-  // Dynamic portfolio projects
-  const portfolioPages = portfolioSlugs.map(slug => ({
-    url: `${baseUrl}/portfolio/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly',
-    priority: 0.6
   }))
   
   // Tech tips and reviews (1-9 each = 18 pages)
@@ -109,12 +73,11 @@ export default async function sitemap() {
     { url: `${baseUrl}/search`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.4 },
   ]
   
-  // Total: 13 + 4 + 11+ + portfolio + 18 + 3 = 49+ pages
+  // Total: 13 + 4 + 29 + 18 + 4 = 68 pages
   return [
     ...staticPages,
     ...locationPages,
     ...blogPages,
-    ...portfolioPages,
     ...techPages,
     ...legalPages
   ]
