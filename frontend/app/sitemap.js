@@ -1,6 +1,6 @@
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://prowebnaija.pythonanywhere.com/api'
 
-// Static blog posts (hardcoded pages in /app/blog/)
+// Static blog posts (hardcoded pages in /app/blog/ - these have actual page files)
 const STATIC_BLOG_SLUGS = [
   'top-10-best-web-designers-nigeria-2025',
   'complete-seo-guide-nigerian-businesses-2025',
@@ -13,31 +13,6 @@ const STATIC_BLOG_SLUGS = [
   'best-ecommerce-platforms-nigeria-2025',
   'web-design-services-lagos-nigeria',
   'why-nigerian-business-needs-professional-website',
-  // API blog posts
-  'nextjs-performance-optimization-techniques',
-  'javascript-es2024-features',
-  'building-secure-web-applications-guide',
-  'typescript-best-practices-large-applications',
-  'responsive-design-tailwind-css',
-  'api-design-best-practices',
-  'debugging-javascript-like-pro',
-  'mobile-first-development-strategy',
-  'git-workflow-development-teams',
-  'nextjs-14-vs-react-18-comparison',
-  'vercel-vs-netlify-vs-aws-hosting',
-  'tailwind-css-vs-styled-components-review',
-  'typescript-vs-javascript-when-to-switch',
-  'figma-vs-adobe-xd-comparison',
-  'mongodb-vs-postgresql-database-showdown',
-  'vs-code-extensions-top-20-web-developers',
-  'react-native-vs-flutter-mobile-development',
-  'github-vs-gitlab-vs-bitbucket-git-hosting',
-  'figma-vs-adobe-xd-design-tool-comparison',
-  'tailwind-css-vs-styled-components-2025-review',
-  'vercel-vs-netlify-vs-aws-hosting-showdown',
-  'nextjs-14-vs-react-18-complete-comparison',
-  'react-state-management-2025-guide',
-  'web-accessibility-wcag-compliance-guide',
 ]
 
 async function getBlogSlugsFromAPI() {
