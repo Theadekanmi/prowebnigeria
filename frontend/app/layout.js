@@ -115,11 +115,11 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'your-google-verification-code',
-    yandex: 'your-yandex-verification-code',
-    bing: 'your-bing-verification-code',
-  },
+  // Note: Add your actual verification codes from Google Search Console and Bing Webmaster Tools
+  // verification: {
+  //   google: 'YOUR_ACTUAL_GOOGLE_CODE',
+  //   bing: 'YOUR_ACTUAL_BING_CODE',
+  // },
 }
 
 export default function RootLayout({ children }) {
@@ -138,7 +138,11 @@ export default function RootLayout({ children }) {
         {/* Preload critical resources */}
         <link rel="preload" href="/logo.webp" as="image" />
         
-        {/* DNS Prefetch for external domains */}
+        {/* Preconnect to external domains for faster loading */}
+        <link rel="preconnect" href="https://prowebnaija.pythonanywhere.com" />
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://prowebnaija.pythonanywhere.com" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
         

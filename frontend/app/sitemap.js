@@ -1,8 +1,23 @@
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://prowebnaija.pythonanywhere.com/api'
 
-async function getBlogSlugs() {
+// Static blog posts (hardcoded pages in /app/blog/)
+const STATIC_BLOG_SLUGS = [
+  'top-10-best-web-designers-nigeria-2025',
+  'complete-seo-guide-nigerian-businesses-2025',
+  'website-cost-nigeria-2025-pricing-guide',
+  'how-to-choose-web-designer-nigeria',
+  'wordpress-vs-custom-website-nigeria',
+  'best-payment-gateways-nigeria',
+  'web-design-trends-2025',
+  'digital-marketing-nigerian-smes',
+  'best-ecommerce-platforms-nigeria-2025',
+  'web-design-services-lagos-nigeria',
+  'why-nigerian-business-needs-professional-website',
+]
+
+async function getBlogSlugsFromAPI() {
   try {
-    const res = await fetch(`${API_URL}/blog/posts/`, { next: { revalidate: 3600 } })
+    const res = await fetch(`${API_URL}/blog/posts/?page_size=100`, { next: { revalidate: 3600 } })
     if (!res.ok) return []
     const data = await res.json()
     const posts = data?.results || data || []
@@ -14,7 +29,7 @@ async function getBlogSlugs() {
 
 async function getPortfolioSlugs() {
   try {
-    const res = await fetch(`${API_URL}/portfolio/projects/`, { next: { revalidate: 3600 } })
+    const res = await fetch(`${API_URL}/portfolio/projects/?page_size=100`, { next: { revalidate: 3600 } })
     if (!res.ok) return []
     const data = await res.json()
     const projects = data?.results || data || []
@@ -27,13 +42,16 @@ async function getPortfolioSlugs() {
 export default async function sitemap() {
   const baseUrl = 'https://prowebnigeria.ng'
   
-  // Fetch dynamic content
-  const [blogSlugs, portfolioSlugs] = await Promise.all([
-    getBlogSlugs(),
+  // Fetch dynamic content from API
+  const [apiBlogSlugs, portfolioSlugs] = await Promise.all([
+    getBlogSlugsFromAPI(),
     getPortfolioSlugs()
   ])
   
-  // Static pages
+  // Combine static and API blog slugs (remove duplicates)
+  const allBlogSlugs = [...new Set([...STATIC_BLOG_SLUGS, ...apiBlogSlugs])]
+  
+  // Static pages (13 pages)
   const staticPages = [
     { url: baseUrl, lastModified: new Date(), changeFrequency: 'weekly', priority: 1 },
     { url: `${baseUrl}/about`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
@@ -50,7 +68,7 @@ export default async function sitemap() {
     { url: `${baseUrl}/resources/tech-reviews`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.5 },
   ]
   
-  // Location pages
+  // Location pages (4 pages)
   const locationPages = ['lagos', 'abuja', 'osogbo', 'ibadan'].map(city => ({
     url: `${baseUrl}/locations/${city}`,
     lastModified: new Date(),
@@ -58,8 +76,8 @@ export default async function sitemap() {
     priority: 0.8
   }))
   
-  // Dynamic blog posts
-  const blogPages = blogSlugs.map(slug => ({
+  // All blog posts - static + API (11+ pages)
+  const blogPages = allBlogSlugs.map(slug => ({
     url: `${baseUrl}/blog/${slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly',
@@ -74,7 +92,7 @@ export default async function sitemap() {
     priority: 0.6
   }))
   
-  // Tech tips and reviews (1-9)
+  // Tech tips and reviews (1-9 each = 18 pages)
   const techPages = []
   for (let i = 1; i <= 9; i++) {
     techPages.push(
@@ -83,13 +101,14 @@ export default async function sitemap() {
     )
   }
   
-  // Legal pages
+  // Legal pages (3 pages)
   const legalPages = [
     { url: `${baseUrl}/privacy`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.2 },
     { url: `${baseUrl}/terms`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.2 },
     { url: `${baseUrl}/advertise`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.3 },
   ]
   
+  // Total: 13 + 4 + 11+ + portfolio + 18 + 3 = 49+ pages
   return [
     ...staticPages,
     ...locationPages,
