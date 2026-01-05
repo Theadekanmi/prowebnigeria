@@ -6,6 +6,7 @@ import Footer from './Footer'
 import FloatingWhatsApp from './FloatingWhatsApp'
 import Counter from './Counter'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, Code2, ShoppingCart, Search, TrendingUp, CheckCircle, Star, Play, ChevronDown, ChevronUp } from 'lucide-react'
 
 const fallbackTestimonials = [
@@ -234,11 +235,13 @@ export default function HomeClient({ initialFaqs }) {
             <div className="grid md:grid-cols-3 gap-6">
               {posts.map((post, index) => (
                 <Link key={index} href={`/blog/${post.slug}`} className="group bg-white rounded-xl overflow-hidden border border-neutral-200 hover:border-purple-200 transition-all" style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.06)' }}>
-                  <div className="aspect-video bg-neutral-100 overflow-hidden">
-                    <img 
+                  <div className="aspect-video bg-neutral-100 overflow-hidden relative">
+                    <Image 
                       src={post.image || post.featured_image || blogImages[post.category?.name] || blogImages['Rankings']} 
-                      alt={post.title} 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                      alt={post.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 366px"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500" 
                     />
                   </div>
                   <div className="p-5">
