@@ -22,10 +22,7 @@ const nextConfig = {
     ],
   },
   experimental: {
-    optimizePackageImports: ['lucide-react'],
-    // Target modern browsers only - removes legacy polyfills (~12KB savings)
-    browsersListForSwc: true,
-    legacyBrowsers: false,
+    optimizePackageImports: ['lucide-react', 'aos'],
   },
   async headers() {
     return [

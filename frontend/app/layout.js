@@ -1,5 +1,5 @@
 import './globals.css'
-import { Inter, Poppins } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import AOSProvider from './components/AOSProvider'
 import CookieConsent from './components/CookieConsent'
 
@@ -8,14 +8,6 @@ const inter = Inter({
   display: 'swap',
   preload: true,
   variable: '--font-inter'
-})
-
-const poppins = Poppins({ 
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  display: 'swap',
-  preload: true,
-  variable: '--font-poppins'
 })
 
 export const metadata = {
@@ -124,7 +116,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
+    <html lang="en" className={inter.variable}>
       <head>
         {/* PWA */}
         <meta name="application-name" content="ProWeb Nigeria" />
