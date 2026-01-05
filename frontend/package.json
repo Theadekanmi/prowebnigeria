@@ -9,6 +9,12 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "browserslist": [
+    "chrome >= 87",
+    "firefox >= 78", 
+    "safari >= 14",
+    "edge >= 88"
+  ],
   "dependencies": {
     "aos": "^2.3.4",
     "autoprefixer": "^10.0.1",
