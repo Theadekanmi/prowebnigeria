@@ -7,13 +7,44 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import FloatingWhatsApp from '../components/FloatingWhatsApp'
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://prowebnaija.pythonanywhere.com/api'
+
 export default function BlogClient({ initialPosts }) {
   const [posts, setPosts] = useState(initialPosts || [])
   const [selectedCategory, setSelectedCategory] = useState('All')
   const [searchQuery, setSearchQuery] = useState('')
+  const [loading, setLoading] = useState(true)
 
-  // Get unique categories
-  const categories = ['All', ...new Set(initialPosts?.map(post => post.category) || [])]
+  // Fetch posts from API on mount
+  useEffect(() => {
+    async function fetchPosts() {
+      try {
+        const res = await fetch(`${API_URL}/blog/posts/?page_size=100`)
+        if (res.ok) {
+          const data = await res.json()
+          const apiPosts = (data?.results || data || []).map(post => ({
+            title: post.title,
+            excerpt: post.excerpt,
+            slug: post.slug,
+            category: post.category?.name || 'Uncategorized',
+            date: post.created_at?.split('T')[0] || new Date().toISOString().split('T')[0],
+            featured_image: post.featured_image
+          }))
+          if (apiPosts.length > 0) {
+            setPosts(apiPosts)
+          }
+        }
+      } catch (error) {
+        console.error('Failed to fetch posts:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchPosts()
+  }, [])
+
+  // Get unique categories from current posts
+  const categories = ['All', ...new Set(posts?.map(post => post.category) || [])]
 
   // Filter posts based on category and search
   const filteredPosts = posts.filter(post => {
