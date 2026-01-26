@@ -107,11 +107,9 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
-  // Note: Add your actual verification codes from Google Search Console and Bing Webmaster Tools
-  // verification: {
-  //   google: 'YOUR_ACTUAL_GOOGLE_CODE',
-  //   bing: 'YOUR_ACTUAL_BING_CODE',
-  // },
+  verification: {
+    google: '7KH4o_a3Nl5DSZOu4hUD_mE4fwcKQhs2xxPRBArwl-0',
+  },
 }
 
 export default function RootLayout({ children }) {
